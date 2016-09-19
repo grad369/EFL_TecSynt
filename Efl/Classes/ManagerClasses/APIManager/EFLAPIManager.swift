@@ -86,7 +86,7 @@ class EFLAPIManager: NSObject {
         dispatch_async(backgroundQueue, {
             
             let requestModel = EFLPlayerRefreshRequestModel()
-            requestModel.last_updated_on = EFLUtility.readValueFromUserDefaults(PLAYER_LAST_UPDATED_TIME_STAMP_KEY)
+            requestModel.last_updated_on = EFLUtility.readValueFromUserDefaults(PLAYER_LAST_UPDATED_TIME_STAMP_KEY)!
             EFLPlayerAPI().refreshPlayer(requestModel)  { (error, data) -> Void in
                 
                 if !error.isKindOfClass(APIErrorTypeNone){
@@ -99,19 +99,26 @@ class EFLAPIManager: NSObject {
                     let response = (data as! EFLPlayerResponse)
                     if response.status == ResponseStatusSuccess {
                         if response.data == nil {return}//TODO: Check this.
+                        print(response.data!)
                         EFLManager.sharedManager.refreshPlayerData(response.data!)
                         if response.data!.first_name != nil || response.data!.last_name != nil || response.data!.image != nil {
                             NSNotificationCenter.defaultCenter().postNotificationName(REFRESH_DATA_NOTIFICATION, object: nil)
                             EFLManager.sharedManager.isPlayerRefreshed = true
                         }
+                        
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            completion(status: CompletionStatusSuccess)
+                        })
                     }
                     else {
-                        completion(status: CompletionStatusFailed)
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            completion(status: CompletionStatusFailed)
+                        })
+                        
                     }
                 }
             }
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            })
+            
         })
     }
     

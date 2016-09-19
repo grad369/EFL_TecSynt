@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6BF36E30D9CA5E3DCD31ABC71C24BAEDAFA12DB1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "545F81EB36E0F1C70502072C20306DA3FA4349A8" : 0,
+    "6BF36E30D9CA5E3DCD31ABC71C24BAEDAFA12DB1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B13EC3D1-9610-4E8B-9ADC-2E69C09CFD63",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "545F81EB36E0F1C70502072C20306DA3FA4349A8" : "",
+    "6BF36E30D9CA5E3DCD31ABC71C24BAEDAFA12DB1" : "EFL\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Efl",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Efl.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dmitry9890\/ios_team_repo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "545F81EB36E0F1C70502072C20306DA3FA4349A8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/grad369\/EFL_TecSynt.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6BF36E30D9CA5E3DCD31ABC71C24BAEDAFA12DB1"
+    }
+  ]
+}
