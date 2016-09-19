@@ -1,0 +1,6 @@
+framework module Pods_Efl_EflUITests {
+  umbrella header "Pods-Efl-EflUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

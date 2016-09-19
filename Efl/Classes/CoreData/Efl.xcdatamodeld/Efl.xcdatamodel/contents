@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+    <entity name="CompetitionMatchdays" syncable="YES">
+        <attribute name="competition_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matchday_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matchday_label" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matchday_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matchday_status" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CompetitionMatches" syncable="YES">
+        <attribute name="away_team_image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="away_team_long_display_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="home_team_image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="home_team_long_display_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="match_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matchday_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start_time" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Competitions" syncable="YES">
+        <attribute name="competition_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="is_completed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="is_cup" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="last_updated_on" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastUpdatedServerTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pretty_display_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tiny_display_name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Friends" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSignedUp" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="playerId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PoolRoomCardMatches" syncable="YES"/>
+    <entity name="PoolRoomCardPlayerPicks" syncable="YES"/>
+    <entity name="PoolRoomCardPlayers" syncable="YES"/>
+    <entity name="PoolRoomCards" syncable="YES">
+        <attribute name="is_matchday_drawn" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="last_updated_on" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matchday_label" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matchday_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="matchday_status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poolcard_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poolroom_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PoolRoomPlayers" syncable="YES">
+        <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="invite_status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="player_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poolroom_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="room_points" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="room_position" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status_updated_on" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PoolRooms" syncable="YES">
+        <attribute name="competition_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_updated_on" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pool_image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pool_imageData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="pool_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="poolroom_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="room_status" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CompetitionMatchdays" positionX="115" positionY="-228" width="128" height="120"/>
+        <element name="CompetitionMatches" positionX="124" positionY="-42" width="128" height="150"/>
+        <element name="Competitions" positionX="-54" positionY="-252" width="128" height="180"/>
+        <element name="Friends" positionX="-182" positionY="-36" width="128" height="135"/>
+        <element name="PoolRoomCardMatches" positionX="-18" positionY="117" width="128" height="43"/>
+        <element name="PoolRoomCardPlayerPicks" positionX="-27" positionY="198" width="128" height="43"/>
+        <element name="PoolRoomCardPlayers" positionX="133" positionY="189" width="128" height="43"/>
+        <element name="PoolRoomCards" positionX="-270" positionY="-234" width="128" height="150"/>
+        <element name="PoolRoomPlayers" positionX="-477" positionY="-36" width="128" height="195"/>
+        <element name="PoolRooms" positionX="-479" positionY="-234" width="128" height="165"/>
+    </elements>
+</model>

@@ -1,0 +1,6 @@
+framework module Pods_Efl {
+  umbrella header "Pods-Efl-umbrella.h"
+
+  export *
+  module * { export * }
+}

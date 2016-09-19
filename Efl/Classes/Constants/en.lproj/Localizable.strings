@@ -1,0 +1,83 @@
+/* 
+  Localizable.strings
+  efl
+
+  Created by vishnu vijayan on 26/07/16.
+  Copyright © 2016 ZNET. All rights reserved.
+*/
+
+//Common strings
+"ALERT_OK_BUTTON_TITLE"                 = "OK";
+"ALERT_CANCEL_BUTTON_TITLE"             = "Cancel";
+"ALERT_DONT_SAVE_BUTTON_TITLE"          = "Don't save";
+"ALERT_FAILURE_TITLE"                   = "Something went wrong";
+"ALERT_FAILURE_MESSAGE"                 = "Please make sure you have internet connection and try again.";
+"SHARE_MESSAGE"                         = "Hey there, join me on Friendlies to predict football match results with friends!";
+"INVITE_FRIENDS_GAME_REQUEST_TITLE"     = "Invite friends";
+"NO_CONNECTION"                         = "No connection";
+"NO_CONNECTION_ALERT_TITLE"             = "You’re offline";
+"NO_CONNECTION_ALERT_MESSAGE"           = "Sorry, we can’t save your changes. Please connect to the internet and try again.";
+
+//Button titles
+"SEND_BUTTON_TITLE"         = "Send";
+
+//Login View Controller Strings
+"USER_CANCEL_LOGIN"     = "User cancelled login.";
+
+//Settings View Controller Strings
+"SETTINGS_TITLE"                        = "Settings";
+"SETTINGS_NOTIFICATION_TEXT"            = "Notifications";
+"SETTINGS_RULES_TEXT"                   = "Rules";
+"SETTINGS_TELL_A_FRIEND_TEXT"           = "Tell a friend";
+"SETTINGS_LIKE_US_ON_FACEBOOK_TEXT"     = "Like us on Facebook";
+"SETTINGS_GIVE_US_FEEDBACK_TEXT"        = "Give us feedback";
+"SETTINGS_TERMS_PRIVACY_TEXT"           = "Privacy & Terms";
+"SETTINGS_LICENSES_TEXT"                = "Licenses";
+
+//Profile View Controller Strings
+"PROFILE_TITLE"                 = "Profile";
+"LOG_OUT_ALERT_TITLE"           = "Log out?";
+"LOG_OUT_BUTTON_TITLE"          = "Log out";
+"LOG_OUT_ALERT_MESSAGE_TEXT"    = "While you’re logged out, you won’t receive any notifications.";
+"TRY_AGAIN_BUTTON_TITLE"        = "Try again";
+"PROFILE_FIELD_VALIDATION_BANNER_MESSAGE" = "Please enter your first and last name";
+
+
+// Rooms View Controller Strings
+"ROOMS_TITLE"                       = "Rooms";
+"SELECT_COMPETITION_TITLE"          = "Select competition";
+"NEW_POOL_TITLE"                    = "New pool";
+"ADD_PLAYERS_TITLE"                 = "Add players";
+
+"ADD_PLAYER_BUTTON_TITLE"           = "Add";
+    //Pool texts
+"POOL_NAME_TEXT"                    = "Pool name";
+"POOL_PICTURE_TEXT"                 = "Pool picture";
+"POOL_COMPETITION_TEXT"             = "Competition";
+"POOL_DEFAULT_MESSAGE"              = "Hey there, join my season pool...";
+    //Pool placeholder texts
+"POOL_NAME_PLACEHOLDER_TEXT"                = "Enter pool name";
+"POOL_COMPETITION_PLACEHOLDER_TEXT"         = "Select competition";
+    //Pool header texts
+"POOL_MESSAGE_HEADER_TEXT"              = "Message";
+"POOL_PLAYERS_HEADER_TEXT"              = "Players";
+    // Pool add friends titles
+"POOL_FRIENDS_TEXT"             = "Friends";
+"POOL_INVITE_TEXT"              = "Invite";
+
+
+//Friends View Controller Strings
+"FRIENDS_TITLE"                 = "Friends";
+"INVITE_FACEBOOK_FRIENDS_TEXT"  = "Invite Facebook friends";
+"MESSAGE_WHATSAPP_TEXT"         = "Message friends in WhatsApp";
+"MESSAGE_LINE_TEXT"             = "Message friends in LINE";
+"MESSAGE_WECHAT_TEXT"           = "Message friends in WeChat";
+"TWEET_INVITE_TEXT"             = "Post on Twitter";
+"EMAIL_FRIENDS_TEXT"            = "Email friends";
+"MORE_TEXT"                     = "More";
+"NO_EMAIL_ACCOUNT_TITLE"        = "No email account found";
+"NO_EMAIL_ACCOUNT_MESSAGE"      = "Please configure an email account on this device to invite your friends.";
+
+//Select Competetion Strings
+"FOOTER_TITLE" = "We will add more competitions soon. Give us feedback which ones you’d like to see.";
+

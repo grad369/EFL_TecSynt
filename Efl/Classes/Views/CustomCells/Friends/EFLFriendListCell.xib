@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendListCellIdentifier" id="KGk-i7-Jjw" customClass="EFLFriendListCell" customModule="efl" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar40x40Icon" translatesAutoresizingMaskIntoConstraints="NO" id="YHE-29-yaK">
+                        <rect key="frame" x="16" y="5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="61f-OQ-seg"/>
+                            <constraint firstAttribute="height" constant="40" id="R0e-FP-Vpp"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ff-mr-SfT">
+                        <rect key="frame" x="72" y="3" width="238" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="TGe-rX-jxT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App invite Pending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rE5-6w-9fd">
+                        <rect key="frame" x="72" y="22" width="195" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="w11-V7-PZZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                        <color key="textColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxu-Y8-Sqk">
+                        <rect key="frame" x="269" y="5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="NT2-C0-BS5"/>
+                            <constraint firstAttribute="width" constant="40" id="yeD-o9-3D8"/>
+                        </constraints>
+                        <state key="selected" image="SelectIcon"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="gxu-Y8-Sqk" secondAttribute="trailing" constant="11" id="GV5-RM-ZQk"/>
+                    <constraint firstItem="YHE-29-yaK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HCc-nL-A05"/>
+                    <constraint firstItem="3ff-mr-SfT" firstAttribute="leading" secondItem="YHE-29-yaK" secondAttribute="trailing" constant="16" id="LPM-Z3-jeE"/>
+                    <constraint firstItem="rE5-6w-9fd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="MdO-1B-ORK"/>
+                    <constraint firstItem="gxu-Y8-Sqk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QVc-GD-4QE"/>
+                    <constraint firstItem="YHE-29-yaK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="aAF-74-8yJ"/>
+                    <constraint firstAttribute="trailing" secondItem="3ff-mr-SfT" secondAttribute="trailing" constant="10" id="b5i-I5-iJk"/>
+                    <constraint firstAttribute="trailing" secondItem="rE5-6w-9fd" secondAttribute="trailing" constant="53" id="bY6-U9-4Ve"/>
+                    <constraint firstItem="3ff-mr-SfT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="mf1-mv-jip"/>
+                    <constraint firstItem="rE5-6w-9fd" firstAttribute="leading" secondItem="YHE-29-yaK" secondAttribute="trailing" constant="16" id="twf-RL-J2A"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <inset key="separatorInset" minX="82" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="friendImageView" destination="YHE-29-yaK" id="gYB-5W-wL9"/>
+                <outlet property="nameLabel" destination="3ff-mr-SfT" id="GJZ-fG-PEL"/>
+                <outlet property="nameTopContraint" destination="mf1-mv-jip" id="NG7-Q7-vGQ"/>
+                <outlet property="nameTrailingConstraint" destination="b5i-I5-iJk" id="RMi-u2-C0w"/>
+                <outlet property="selectButton" destination="gxu-Y8-Sqk" id="3VI-NW-lbi"/>
+                <outlet property="statusLabel" destination="rE5-6w-9fd" id="uv4-fH-61B"/>
+            </connections>
+            <point key="canvasLocation" x="117" y="332"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Avatar40x40Icon" width="40" height="40"/>
+        <image name="SelectIcon" width="30" height="23"/>
+    </resources>
+</document>
