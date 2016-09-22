@@ -8,6 +8,6 @@
 
 import UIKit
 
-class EFLREceivePoolResponse: EFLBaseAPIResponse {
+class EFLReceivePoolResponse: EFLBaseAPIResponse {
 
 }

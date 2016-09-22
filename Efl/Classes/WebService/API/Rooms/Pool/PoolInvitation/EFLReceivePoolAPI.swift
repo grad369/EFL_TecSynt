@@ -26,7 +26,7 @@ class EFLReceivePoolAPI: EFLBaseAPI {
     
     override func processSuccessResponse(with response: AnyObject?) -> EFLBaseAPIResponse?{
         
-        let response  = Mapper<EFLREceivePoolResponse>().map(response!)
+        let response  = Mapper<EFLReceivePoolResponse>().map(response!)
         return response
     }
     

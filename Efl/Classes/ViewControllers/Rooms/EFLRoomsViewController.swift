@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EFLRoomsViewController: EFLBaseViewController {
+class EFLRoomsViewController: EFLBaseViewController, EFLAlertViewDelegate {
     @IBOutlet weak var roomsTableView: UITableView!
     @IBOutlet weak var topContainerView: UIView!
     @IBOutlet weak var pointerImageView: UIImageView!
@@ -92,7 +92,6 @@ class EFLRoomsViewController: EFLBaseViewController {
         }
         self.performSelector(#selector(self.hideUpdateIndicator), withObject: nil, afterDelay: 5)
     }
-    
     
     func hideUpdateIndicator() {
         if indicatorView != nil {
@@ -179,12 +178,14 @@ class EFLRoomsViewController: EFLBaseViewController {
     //MARK: Selector Methods
     
     func rightBarButtonItemDidPress() {
-        if ReachabilityManager.isReachable() {
-            let selectCompetitionVC = self.storyboard?.instantiateViewControllerWithIdentifier(SELECT_COMPETITION_VIEW_CONTROLLER_ID) as? EFLSelectCompetitionViewController
-            self.navigationController?.pushViewController(selectCompetitionVC!, animated: true)
+        
+        if ReachabilityManager.isReachable() {            
+            let alert = EFLAlertView.alertView()
+            alert.show()
+            alert.delegate = self
         }
         else {
-            EFLBannerView.sharedBanner.showBanner(self.view, message: "NO_CONNECTION".localized, yOffset: 0)
+              EFLBannerView.sharedBanner.showBanner(self.view, message: "NO_CONNECTION".localized, yOffset: 0)
         }
     }
     
@@ -288,16 +289,16 @@ class EFLRoomsViewController: EFLBaseViewController {
         }
         return false
     }
+    
+}
 
+extension EFLRoomsViewController { // EFLAlertViewDelegate
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func challengeButtonClickWithAlertView(view: EFLAlertView) {
+        
+    }
     
+    func poolButtonClickWithAlertView(view: EFLAlertView){
+        
+    }
 }
