@@ -58,31 +58,11 @@ private extension AppDelegate {
         {
             let tabBarController = storyboard.instantiateViewControllerWithIdentifier(TAB_BAR_CONTROLLER_ID) as! EFLBaseTabBarController
             tabBarController.selectedIndex = 1
-            rootNavigationController!.viewControllers = [tabBarController]
+            rootNavigationController!.viewControllers = [loginViewController, tabBarController]
             EFLManager.sharedManager.player_id = Int(EFLUtility.readValueFromUserDefaults(EFL_PLAYER_ID_KEY)!)!
         }
         
         return rootNavigationController!;
-    }
-    
-    func test() {
-        //EFLAPIManager.sharedAPIManager.createOrUpdateDeviceDetails()
-//        EFLAPIManager.sharedAPIManager.refreshPlayer(){
-//            (status: String) in
-//            
-//        }
-//        EFLAPIManager.sharedAPIManager.getFriends(){
-//            (status: String) in
-//            
-//        }
-        EFLAPIManager.sharedAPIManager.friendList(){
-            (status: String) in
-        }
-//        EFLAPIManager.sharedAPIManager.getCompetitionList()
-//        EFLAPIManager.sharedAPIManager.getCompetition()
-//        EFLAPIManager.sharedAPIManager.getPoolRoomList()
-//        EFLAPIManager.sharedAPIManager.getPoolRoom()
-        
     }
 }
 
