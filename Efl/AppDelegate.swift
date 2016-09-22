@@ -23,8 +23,6 @@ extension AppDelegate: UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        self.test()
-        return true
         
         self.window!.rootViewController = addRootNavigationController()
         
@@ -68,6 +66,22 @@ private extension AppDelegate {
     }
     
     func test() {
+        //EFLAPIManager.sharedAPIManager.createOrUpdateDeviceDetails()
+//        EFLAPIManager.sharedAPIManager.refreshPlayer(){
+//            (status: String) in
+//            
+//        }
+//        EFLAPIManager.sharedAPIManager.getFriends(){
+//            (status: String) in
+//            
+//        }
+        EFLAPIManager.sharedAPIManager.friendList(){
+            (status: String) in
+        }
+//        EFLAPIManager.sharedAPIManager.getCompetitionList()
+//        EFLAPIManager.sharedAPIManager.getCompetition()
+//        EFLAPIManager.sharedAPIManager.getPoolRoomList()
+//        EFLAPIManager.sharedAPIManager.getPoolRoom()
         
     }
 }

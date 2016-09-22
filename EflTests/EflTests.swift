@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import efl
+@testable import Efl
 
 class eflTests: XCTestCase {
     
