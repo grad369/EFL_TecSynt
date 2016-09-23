@@ -48,42 +48,27 @@ class EFLActivityIndicator: UIView {
     // = CGSizeMake(30, 30)
     init(supView: UIView, size: CGSize, centerPoint: CGPoint = CGPointZero) {
         
-        super.init(frame: UIScreen.mainScreen().bounds)
+        super.init(frame: supView.frame)
         
         self.spinnerSuperView = supView
         self.spinnerImageView = UIImageView(frame: CGRectMake(centerPoint.x - size.width/2, centerPoint.y - size.height/2, size.width, size.height))
-        
-        self.backgroundColor = UIColor.eflBlackColor()
-        
-        self.alpha = 0.5
-        
-        
-        if !CGPointEqualToPoint(centerPoint, CGPointZero){
-            self.spinnerImageView.center = centerPoint
-        }
         let image: UIImage = UIImage(named: SpinnerWhiteIcon)!
         self.spinnerImageView.image = image
         self.addSubview(spinnerImageView)
         
-        self.spinnerSuperView.addSubview(self)
+        self.backgroundColor = UIColor.eflBlackColor()
+        self.alpha = 0.5
         
+        if !CGPointEqualToPoint(centerPoint, CGPointZero){
+            self.spinnerImageView.center = centerPoint
+        }
     }
     
-//    func setSpinner() {
-//        
-//        self.backgroundColor = UIColor.eflBlackColor()
-//        self.alpha = 0.5
-//        spinnerImageView = UIImageView(frame: CGRectMake(0, 0, 45, 45))
-//        spinnerImageView.center = self.center
-//        let image: UIImage = UIImage(named: SpinnerWhiteIcon)!
-//        spinnerImageView?.image = image
-//        self.addSubview(spinnerImageView)
-//    }
-    
     func showIndicator() {
-//        APP_DELEGATE.window?.addSubview(self)
         self.spinnerSuperView.addSubview(self)
-        self.startAnimation()
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+            self.startAnimation()
+        }
     }
     
     func hideIndicator() {
@@ -93,20 +78,12 @@ class EFLActivityIndicator: UIView {
     
     func startAnimation() {
         
-//        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-//        rotationAnimation.fromValue = 0.0
-//        rotationAnimation.toValue = 2*M_PI
-//        rotationAnimation.duration = 1.5
-//        rotationAnimation.repeatCount = Float.infinity 
-//        self.spinnerImageView.layer.addAnimation(rotationAnimation, forKey:"rotation")
-        
-        UIView.animateWithDuration(0.5, delay: 0, options: .CurveLinear, animations: { () -> Void in
-            
-            self.spinnerImageView.transform = CGAffineTransformRotate(self.spinnerImageView.transform, CGFloat(M_PI_2))
-            
-        }) { (finished) -> Void in
-                print("FINISHED!!!")
-        }
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotationAnimation.fromValue = 0.0
+        rotationAnimation.toValue = 2*M_PI
+        rotationAnimation.duration = 1.5
+        rotationAnimation.repeatCount = Float.infinity 
+        self.spinnerImageView.layer.addAnimation(rotationAnimation, forKey:"rotation")
     }
     
     func stopAnimation() {

@@ -65,9 +65,7 @@ class EFLLoginViewController: EFLBaseViewController {
                 }
                 else {
                     if (FBSDKAccessToken.currentAccessToken() != nil) {
-//                        EFLActivityIndicator.sharedSpinner.showIndicator()
                         self.spinner = EFLActivityIndicator(supView: self.view, size: CGSizeMake(45, 45), centerPoint: self.view.center)
-
                         self.spinner!.showIndicator()
                         
                         EFLFacebookManager.sharedFacebookManager.getFacebookDataWith({ (connection, result, error) in
