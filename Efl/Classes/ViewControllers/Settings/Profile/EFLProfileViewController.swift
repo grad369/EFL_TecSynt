@@ -22,6 +22,8 @@ class EFLProfileViewController: EFLBaseViewController, UITextFieldDelegate, UINa
 
     var activeTextField:UITextField?
     
+    var spinner:EFLActivityIndicator? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addNavigationBackButton()
@@ -331,7 +333,10 @@ class EFLProfileViewController: EFLBaseViewController, UITextFieldDelegate, UINa
                 //let response = (data as! EFLLogoutResponse)
                 //if response.status == ResponseStatusSuccess {
                     EFLManager.sharedManager.logOut()
-                    EFLActivityIndicator.sharedSpinner.showIndicator()
+//                  EFLActivityIndicator.sharedSpinner.showIndicator()
+            self.spinner = EFLActivityIndicator(supView: self.view, size: CGSizeMake(45, 45), centerPoint: self.view.center)
+            self.spinner!.showIndicator()
+        
                     NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(EFLProfileViewController.popToLoginScreen), userInfo: nil, repeats: false)
                 //}
 //                else {
@@ -343,7 +348,10 @@ class EFLProfileViewController: EFLBaseViewController, UITextFieldDelegate, UINa
     
     func popToLoginScreen() {
         // Something after a delay
-        EFLActivityIndicator.sharedSpinner.hideIndicator()
+//        EFLActivityIndicator.sharedSpinner.hideIndicator()
+//        let spinner = EFLActivityIndicator(supView: self.view, size: CGSizeMake(45, 45), centerPoint: self.view.center)
+         self.spinner!.hideIndicator()
+
         self.tabBarController?.navigationController?.popToRootViewControllerAnimated(true)
     }
     

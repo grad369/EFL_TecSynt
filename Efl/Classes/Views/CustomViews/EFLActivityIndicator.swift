@@ -11,6 +11,7 @@ import UIKit
 class EFLActivityIndicator: UIView {
 
     private var spinnerImageView : UIImageView!
+    private weak var spinnerSuperView: UIView!
     
     class var sharedSpinner : EFLActivityIndicator {
         struct Static {
@@ -18,7 +19,7 @@ class EFLActivityIndicator: UIView {
             static var token : dispatch_once_t = 0
         }
         dispatch_once(&Static.token) {
-            Static.instance = EFLActivityIndicator()
+//            Static.instance = EFLActivityIndicator()
         }
         return Static.instance!
     }
@@ -26,34 +27,62 @@ class EFLActivityIndicator: UIView {
     init()
     {
         super.init(frame: APP_DELEGATE.window!.frame)
-        self.setSpinner()
+//        self.setSpinner()
     }
     
     required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)!
-        self.setSpinner()
+//        self.setSpinner()
     }
     
     override init(frame: CGRect)
     {
         super.init(frame: frame)
-        self.setSpinner()
+//        self.setSpinner()
     }
     
-    func setSpinner() {
+    deinit {
+        
+    }
+    // = CGSizeMake(30, 30)
+    init(supView: UIView, size: CGSize, centerPoint: CGPoint = CGPointZero) {
+        
+        super.init(frame: UIScreen.mainScreen().bounds)
+        
+        self.spinnerSuperView = supView
+        self.spinnerImageView = UIImageView(frame: CGRectMake(centerPoint.x - size.width/2, centerPoint.y - size.height/2, size.width, size.height))
         
         self.backgroundColor = UIColor.eflBlackColor()
+        
         self.alpha = 0.5
-        spinnerImageView = UIImageView(frame: CGRectMake(0, 0, 45, 45))
-        spinnerImageView.center = self.center
+        
+        
+        if !CGPointEqualToPoint(centerPoint, CGPointZero){
+            self.spinnerImageView.center = centerPoint
+        }
         let image: UIImage = UIImage(named: SpinnerWhiteIcon)!
-        spinnerImageView?.image = image
+        self.spinnerImageView.image = image
         self.addSubview(spinnerImageView)
+        
+        self.spinnerSuperView.addSubview(self)
+        
     }
     
+//    func setSpinner() {
+//        
+//        self.backgroundColor = UIColor.eflBlackColor()
+//        self.alpha = 0.5
+//        spinnerImageView = UIImageView(frame: CGRectMake(0, 0, 45, 45))
+//        spinnerImageView.center = self.center
+//        let image: UIImage = UIImage(named: SpinnerWhiteIcon)!
+//        spinnerImageView?.image = image
+//        self.addSubview(spinnerImageView)
+//    }
+    
     func showIndicator() {
-        APP_DELEGATE.window?.addSubview(self)
+//        APP_DELEGATE.window?.addSubview(self)
+        self.spinnerSuperView.addSubview(self)
         self.startAnimation()
     }
     
@@ -64,25 +93,26 @@ class EFLActivityIndicator: UIView {
     
     func startAnimation() {
         
-        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotationAnimation.fromValue = 0.0
-        rotationAnimation.toValue = 2*M_PI
-        rotationAnimation.duration = 1.5
-        rotationAnimation.repeatCount = Float.infinity
+//        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+//        rotationAnimation.fromValue = 0.0
+//        rotationAnimation.toValue = 2*M_PI
+//        rotationAnimation.duration = 1.5
+//        rotationAnimation.repeatCount = Float.infinity 
+//        self.spinnerImageView.layer.addAnimation(rotationAnimation, forKey:"rotation")
         
-        self.spinnerImageView.layer.addAnimation(rotationAnimation, forKey: nil)
+        UIView.animateWithDuration(0.5, delay: 0, options: .CurveLinear, animations: { () -> Void in
+            
+            self.spinnerImageView.transform = CGAffineTransformRotate(self.spinnerImageView.transform, CGFloat(M_PI_2))
+            
+        }) { (finished) -> Void in
+                print("FINISHED!!!")
+        }
     }
     
     func stopAnimation() {
         self.spinnerImageView.layer.removeAllAnimations();
     }
     
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+
 
 }

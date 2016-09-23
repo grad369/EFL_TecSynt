@@ -14,10 +14,15 @@ class EFLLoginViewController: EFLBaseViewController {
     @IBOutlet weak var termsAndPolicyLabel: UILabel!
     
     var videoPlayer: MPMoviePlayerController!
-
+    var spinner: EFLActivityIndicator? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.bringSubviewToFront(self.view)
+
+        
+//        self.spinner?.showIndicator()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -60,12 +65,18 @@ class EFLLoginViewController: EFLBaseViewController {
                 }
                 else {
                     if (FBSDKAccessToken.currentAccessToken() != nil) {
-                        EFLActivityIndicator.sharedSpinner.showIndicator()
+//                        EFLActivityIndicator.sharedSpinner.showIndicator()
+                        self.spinner = EFLActivityIndicator(supView: self.view, size: CGSizeMake(45, 45), centerPoint: self.view.center)
+
+                        self.spinner!.showIndicator()
+                        
                         EFLFacebookManager.sharedFacebookManager.getFacebookDataWith({ (connection, result, error) in
+                            
                             if error == nil {
                                 self.loginToApp(loginResult.token.tokenString, facebookId: (result.valueForKey("id") as? String)!)
                             } else {
-                                EFLActivityIndicator.sharedSpinner.hideIndicator()
+                                //  EFLActivityIndicator.sharedSpinner.hideIndicator()
+                                self.spinner!.hideIndicator()
                                 EFLUtility.showOKAlertWithMessage(error.localizedDescription, andTitle: EmptyString)
                             }
                         })
@@ -94,7 +105,12 @@ class EFLLoginViewController: EFLBaseViewController {
         
         let requestModel = self.loginRequestModel(accessToken, facebookId: facebookId)
         EFLPlayerAPI().loginPlayer(requestModel)  { (error, data) -> Void in
-            EFLActivityIndicator.sharedSpinner.hideIndicator()
+//            EFLActivityIndicator.sharedSpinner.hideIndicator()
+            
+//            let spinner = EFLActivityIndicator(supView: self.view, size: CGSizeMake(45, 45), centerPoint: self.view.center)
+//            spinner.hideIndicator()
+            
+            self.spinner!.hideIndicator()
             if !error.isKindOfClass(APIErrorTypeNone){
                 if error.code == HTTP_STATUS_REQUEST_TIME_OUT || error.code == HTTP_STATUS_CONFLICT {
                     self.showLoginFailureAlert(accessToken, facebookId: facebookId)

@@ -8,7 +8,10 @@ target ‘Efl' do
   # Pods for Efl
   pod 'Alamofire', '~> 3.1.2'
   pod 'AlamofireImage', '~> 2.0'
-  
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKMessengerShareKit'
   target ‘EflTests' do
       pod 'PMKVObserver'
 
