@@ -11,6 +11,8 @@ import SafariServices
 
 class EFLTermsPolicyViewController: EFLBaseViewController {
     @IBOutlet weak var webView: UIWebView!
+    var spinner = EFLActivityIndicator()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +40,15 @@ class EFLTermsPolicyViewController: EFLBaseViewController {
     
     func webViewDidStartLoad(webView: UIWebView) {
         
-        EFLActivityIndicator.sharedSpinner.showIndicator()
+//        EFLActivityIndicator.sharedSpinner.showIndicator()
+        self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
+        self.spinner.showIndicator()
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
         
-        EFLActivityIndicator.sharedSpinner.hideIndicator()
+//        EFLActivityIndicator.sharedSpinner.hideIndicator()
+        self.spinner.hideIndicator()
     }
 
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {

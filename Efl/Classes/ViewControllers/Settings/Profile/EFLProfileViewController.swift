@@ -206,13 +206,19 @@ class EFLProfileViewController: EFLBaseViewController, UITextFieldDelegate, UINa
     // MARK: Check Access Token
     func checkAccessToken() {
         if (FBSDKAccessToken.currentAccessToken() != nil) {
-            EFLActivityIndicator.sharedSpinner.showIndicator()
+//            EFLActivityIndicator.sharedSpinner.showIndicator()
+            self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(45, 45), centerPoint: self.view.center)
+            self.spinner?.showIndicator()
+            
+            
             FBSDKAccessToken.refreshCurrentAccessToken({ (connection :FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) in
                 if (FBSDKAccessToken.currentAccessToken() != nil) {
                     self.getFacebookData()
                 }
                 else {
-                    EFLActivityIndicator.sharedSpinner.hideIndicator()
+//                    EFLActivityIndicator.sharedSpinner.hideIndicator()
+                    self.spinner?.hideIndicator()
+                    
                     EFLFacebookManager.sharedFacebookManager.setFacebookPermissionsWith { (loginResult, error) in
                         if (error != nil) {
                             EFLUtility.showOKAlertWithMessage(error.localizedDescription, andTitle: EmptyString)
@@ -221,7 +227,10 @@ class EFLProfileViewController: EFLBaseViewController, UITextFieldDelegate, UINa
                         }
                         else {
                             if (FBSDKAccessToken.currentAccessToken() != nil) {
-                                EFLActivityIndicator.sharedSpinner.showIndicator()
+//                                EFLActivityIndicator.sharedSpinner.showIndicator()
+                                self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(45, 45), centerPoint: self.view.center)
+                                self.spinner?.showIndicator()
+                                
                                 self.updateProfileData(FBSDKAccessToken.currentAccessToken().tokenString)
                             }
                             else {
@@ -240,7 +249,10 @@ class EFLProfileViewController: EFLBaseViewController, UITextFieldDelegate, UINa
                 }
                 else {
                     if (FBSDKAccessToken.currentAccessToken() != nil) {
-                        EFLActivityIndicator.sharedSpinner.showIndicator()
+//                        EFLActivityIndicator.sharedSpinner.showIndicator()
+                        self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
+                        self.spinner?.showIndicator()
+                        
                         self.updateProfileData(FBSDKAccessToken.currentAccessToken().tokenString)
                     }
                     else {
@@ -259,7 +271,9 @@ class EFLProfileViewController: EFLBaseViewController, UITextFieldDelegate, UINa
                 self.updateRequired = true
                 self.saveAndReloadData(result)
             } else {
-                EFLActivityIndicator.sharedSpinner.hideIndicator()
+//                EFLActivityIndicator.sharedSpinner.hideIndicator()
+                self.spinner?.hideIndicator()
+                
                 EFLUtility.showOKAlertWithMessage(error.localizedDescription, andTitle: EmptyString)
             }
         })
@@ -271,7 +285,9 @@ class EFLProfileViewController: EFLBaseViewController, UITextFieldDelegate, UINa
         let data = picture!.valueForKey("data")
         let is_silhouette = data?.valueForKey("is_silhouette") as! Bool
 
-        EFLActivityIndicator.sharedSpinner.hideIndicator()
+//        EFLActivityIndicator.sharedSpinner.hideIndicator()
+        self.spinner?.hideIndicator()
+        
         EFLUtility.saveValuesToUserDefaults((result.valueForKey("first_name") as? String)!, key: FIRST_NAME_KEY)
         EFLUtility.saveValuesToUserDefaults((result.valueForKey("last_name") as? String)!, key: LAST_NAME_KEY)
         if is_silhouette { // If Facebook avatar, no image required
@@ -462,9 +478,14 @@ class EFLProfileViewController: EFLBaseViewController, UITextFieldDelegate, UINa
     func updateProfileData(accessToken:String?) {
         
         let requestModel = self.profileUpdateRequest(accessToken)
-        EFLActivityIndicator.sharedSpinner.showIndicator()
+//        EFLActivityIndicator.sharedSpinner.showIndicator()
+        self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
+        self.spinner?.showIndicator()
+        
         EFLPlayerAPI().updatePlayer(requestModel) { (error, data) -> Void in
-            EFLActivityIndicator.sharedSpinner.hideIndicator()
+//            EFLActivityIndicator.sharedSpinner.hideIndicator()
+            self.spinner?.hideIndicator()
+            
             if !error.isKindOfClass(APIErrorTypeNone){
                 if accessToken == nil {
                     self.showProfileUpdateFailureAlert()

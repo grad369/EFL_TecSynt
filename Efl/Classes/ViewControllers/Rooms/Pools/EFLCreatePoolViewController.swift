@@ -22,6 +22,8 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
     
     var createPoolRequest = EFLCreatePoolRequestModel()
     
+    var spinner = EFLActivityIndicator()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,9 +135,13 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
             
             createPoolRequest.players.append(addManagerModel)
             
-            EFLActivityIndicator.sharedSpinner.showIndicator()
+//            EFLActivityIndicator.sharedSpinner.showIndicator()
+            self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
+            self.spinner.showIndicator()
+            
             EFLCreatePoolAPI().createPoolWith(createPoolRequest){ (error, data) -> Void in
-                EFLActivityIndicator.sharedSpinner.hideIndicator()
+//                EFLActivityIndicator.sharedSpinner.hideIndicator()
+                self.spinner.hideIndicator()
                 
                 if !error.isKindOfClass(APIErrorTypeNone){
                     if error.code == HTTP_STATUS_REQUEST_TIME_OUT || error.code == HTTP_STATUS_CONFLICT {

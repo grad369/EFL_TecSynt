@@ -34,6 +34,8 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
     var completefriendListArray = [EFLFriendListModel]() // Prior to any Search
     var friendListArray = [EFLFriendListModel]()
     var selectedPlayers = [EFLAddPlayerModel]()
+    
+    var spinner = EFLActivityIndicator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -384,7 +386,10 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
                 //                EFLUtility.showOKAlertWithMessage("USER_CANCEL_LOGIN".localized, andTitle: EmptyString)
             }
             else {
-                EFLActivityIndicator.sharedSpinner.showIndicator()
+//                EFLActivityIndicator.sharedSpinner.showIndicator()
+                self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width,self.view.frame.height), centerPoint: self.view.center)
+                self.spinner.showIndicator()
+                
                 self.updateAccesToken(FBSDKAccessToken.currentAccessToken().tokenString)
             }
         }
@@ -401,9 +406,14 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
         let requestModel = EFLPlayerUpdateRequestModel()
         requestModel.facebook_token = EFLUtility.readValueFromUserDefaults(FB_ACCESS_TOKEN_KEY)
         
-        EFLActivityIndicator.sharedSpinner.showIndicator()
+//        EFLActivityIndicator.sharedSpinner.showIndicator()
+        self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
+        self.spinner.showIndicator()
+        
         EFLPlayerAPI().updatePlayer(requestModel) { (error, data) -> Void in
-            EFLActivityIndicator.sharedSpinner.hideIndicator()
+//            EFLActivityIndicator.sharedSpinner.hideIndicator()
+            self.spinner.hideIndicator()
+            
             if !error.isKindOfClass(APIErrorTypeNone){
                 return
             }
@@ -420,12 +430,17 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
 
     // MARK: API Methods
     func inviteFriends(recipients:[String]) {
-        EFLActivityIndicator.sharedSpinner.showIndicator()
+//        EFLActivityIndicator.sharedSpinner.showIndicator()
+        self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
+        
         let requestModel = EFLFriendsUpdateRequestModel()
         requestModel.facebook_ids = recipients
         
         EFLFriendsAPI().updateFriends(requestModel) { (error, data) -> Void in
-            EFLActivityIndicator.sharedSpinner.hideIndicator()
+//            EFLActivityIndicator.sharedSpinner.hideIndicator()
+            self.spinner.hideIndicator()
+            
+            
             if !error.isKindOfClass(APIErrorTypeNone){
                 print(error.code)
                 EFLUtility.showOKAlertWithMessage("ALERT_FAILURE_MESSAGE".localized.localized, andTitle: "ALERT_FAILURE_TITLE".localized)

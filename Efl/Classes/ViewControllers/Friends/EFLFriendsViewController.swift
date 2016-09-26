@@ -27,6 +27,8 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
     var searchFriendBar: UISearchBar = UISearchBar (frame: CGRectMake(0,0,0,40))
     var seperationView: UIView = UIView (frame: CGRectZero)
     
+    var spinner = EFLActivityIndicator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadUIComponents()
@@ -181,12 +183,18 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
     // MARK: API Methods
     func upateFriends(recipients:[String]) { // Invite friends from Facebook
         
-        EFLActivityIndicator.sharedSpinner.showIndicator()
+//        EFLActivityIndicator.sharedSpinner.showIndicator()
+        self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
+        self.spinner.showIndicator()
+        
         let requestModel = EFLFriendsUpdateRequestModel()
         requestModel.facebook_ids = recipients
         
         EFLFriendsAPI().updateFriends(requestModel) { (error, data) -> Void in
-            EFLActivityIndicator.sharedSpinner.hideIndicator()
+//            EFLActivityIndicator.sharedSpinner.hideIndicator()
+            self.spinner.hideIndicator()
+            
+            
             if !error.isKindOfClass(APIErrorTypeNone){
                 print(error.code)
                 EFLUtility.showOKAlertWithMessage("ALERT_FAILURE_MESSAGE".localized.localized, andTitle: "ALERT_FAILURE_TITLE".localized)
@@ -357,7 +365,11 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
                 print("User cancelled authentication")
             }
             else {
-                EFLActivityIndicator.sharedSpinner.showIndicator()
+//                EFLActivityIndicator.sharedSpinner.showIndicator()
+                self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
+                self.spinner.showIndicator()
+                
+                
                 self.updateAccesToken(FBSDKAccessToken.currentAccessToken().tokenString)
             }
         }
@@ -371,9 +383,15 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
         let requestModel = EFLPlayerUpdateRequestModel()
         requestModel.facebook_token = EFLUtility.readValueFromUserDefaults(FB_ACCESS_TOKEN_KEY)
         
-        EFLActivityIndicator.sharedSpinner.showIndicator()
+//        EFLActivityIndicator.sharedSpinner.showIndicator()
+        self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
+        self.spinner.showIndicator()
+        
+        
         EFLPlayerAPI().updatePlayer(requestModel) { (error, data) -> Void in
-            EFLActivityIndicator.sharedSpinner.hideIndicator()
+//            EFLActivityIndicator.sharedSpinner.hideIndicator()
+            self.spinner.hideIndicator()
+            
             if !error.isKindOfClass(APIErrorTypeNone){
                 return
             }

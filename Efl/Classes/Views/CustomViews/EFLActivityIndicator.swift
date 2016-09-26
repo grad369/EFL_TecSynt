@@ -47,8 +47,7 @@ class EFLActivityIndicator: UIView {
     }
     // = CGSizeMake(30, 30)
     init(supView: UIView, size: CGSize, centerPoint: CGPoint = CGPointZero) {
-        
-        super.init(frame: supView.frame)
+        super.init(frame: UIScreen.mainScreen().bounds)
         
         self.spinnerSuperView = supView
         self.spinnerImageView = UIImageView(frame: CGRectMake(centerPoint.x - size.width/2, centerPoint.y - size.height/2, size.width, size.height))
