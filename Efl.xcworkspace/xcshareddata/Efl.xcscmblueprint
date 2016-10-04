@@ -10,7 +10,7 @@
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F244AAB0-A6FD-4978-9115-4463F080E4DF",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "545F81EB36E0F1C70502072C20306DA3FA4349A8" : "",
-    "6BF36E30D9CA5E3DCD31ABC71C24BAEDAFA12DB1" : "EFL\/"
+    "6BF36E30D9CA5E3DCD31ABC71C24BAEDAFA12DB1" : "trunk_Anton\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Efl",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,

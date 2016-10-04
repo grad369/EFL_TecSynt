@@ -22,7 +22,7 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
     
     var createPoolRequest = EFLCreatePoolRequestModel()
     
-    var spinner = EFLActivityIndicator()
+    var spinner: EFLActivityIndicator?
     
     
     override func viewDidLoad() {

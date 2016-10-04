@@ -13,44 +13,18 @@ class EFLActivityIndicator: UIView {
     private var spinnerImageView : UIImageView!
     private weak var spinnerSuperView: UIView!
     
-    class var sharedSpinner : EFLActivityIndicator {
-        struct Static {
-            static var instance : EFLActivityIndicator?
-            static var token : dispatch_once_t = 0
-        }
-        dispatch_once(&Static.token) {
-//            Static.instance = EFLActivityIndicator()
-        }
-        return Static.instance!
-    }
-
-    init()
-    {
-        super.init(frame: APP_DELEGATE.window!.frame)
-//        self.setSpinner()
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    required init(coder aDecoder: NSCoder)
-    {
-        super.init(coder: aDecoder)!
-//        self.setSpinner()
-    }
-    
-    override init(frame: CGRect)
-    {
-        super.init(frame: frame)
-//        self.setSpinner()
-    }
-    
-    deinit {
-        
-    }
     // = CGSizeMake(30, 30)
-    init(supView: UIView, size: CGSize, centerPoint: CGPoint = CGPointZero) {
+    init(supView: UIView, size: CGSize = CGSizeMake(30, 30), centerPoint: CGPoint = CGPointZero) {
         super.init(frame: UIScreen.mainScreen().bounds)
         
+        let centPoint = CGPointEqualToPoint(centerPoint, CGPointZero) ? supView.center : centerPoint;
+        
         self.spinnerSuperView = supView
-        self.spinnerImageView = UIImageView(frame: CGRectMake(centerPoint.x - size.width/2, centerPoint.y - size.height/2, size.width, size.height))
+        self.spinnerImageView = UIImageView(frame: CGRectMake(centPoint.x - size.width/2, centPoint.y - size.height/2, size.width, size.height))
         let image: UIImage = UIImage(named: SpinnerWhiteIcon)!
         self.spinnerImageView.image = image
         self.addSubview(spinnerImageView)
@@ -58,9 +32,7 @@ class EFLActivityIndicator: UIView {
         self.backgroundColor = UIColor.eflBlackColor()
         self.alpha = 0.5
         
-        if !CGPointEqualToPoint(centerPoint, CGPointZero){
-            self.spinnerImageView.center = centerPoint
-        }
+        self.spinnerImageView.center = centPoint
     }
     
     func showIndicator() {
@@ -88,7 +60,4 @@ class EFLActivityIndicator: UIView {
     func stopAnimation() {
         self.spinnerImageView.layer.removeAllAnimations();
     }
-    
-
-
 }

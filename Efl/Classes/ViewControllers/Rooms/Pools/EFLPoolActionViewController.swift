@@ -17,7 +17,7 @@ class EFLPoolActionViewController: EFLBaseViewController {
     var playerArray = [NSManagedObject]()
     
     var messageTextView = UITextView()
-    var spinner = EFLActivityIndicator()
+    var spinner: EFLActivityIndicator? 
     
 
     override func viewDidLoad() {
@@ -301,14 +301,12 @@ class EFLPoolActionViewController: EFLBaseViewController {
             let updatePoolRoomRequest = EFLUpdatePoolRequestModel()
             updatePoolRoomRequest.players.append(playerModel)
             
-//            EFLActivityIndicator.sharedSpinner.showIndicator()
-            self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
-            self.spinner.showIndicator()
+            self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height))
+            self.spinner!.showIndicator()
             
             EFLCreatePoolAPI().updatePoolWith(poolRoomDetails!.valueForKey("poolroom_id") as? String, request: updatePoolRoomRequest) { (error, data) -> Void in
                 
-//                EFLActivityIndicator.sharedSpinner.hideIndicator()
-                self.spinner.hideIndicator()
+                self.spinner!.hideIndicator()
                 
                 if !error.isKindOfClass(APIErrorTypeNone){
                     if error.code == HTTP_STATUS_REQUEST_TIME_OUT || error.code == HTTP_STATUS_CONFLICT {
