@@ -133,7 +133,7 @@ class EFLPoolRoomDataManager: NSObject {
 //        }
     }
     
-    //Syn new pool room created to cache
+    //Synс new pool room created to cache
     func syncCreatedPoolRoomToCache(poolRoom: EFLCreatePoolRoomModel, and completion:poolRoomSyncCompletion) {
         
         let privateMOC = EFLCoreDataManager.sharedInstance.writerManagedObjectContext

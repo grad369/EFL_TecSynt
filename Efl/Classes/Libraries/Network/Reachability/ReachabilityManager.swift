@@ -12,7 +12,7 @@ class ReachabilityManager: NSObject {
     
     var reachability : Reachability?
 
-    //MARK: Default Manager
+    // MARK: Default Manager
     class var sharedManager: ReachabilityManager {
         struct Static {
             static var onceToken: dispatch_once_t = 0
@@ -24,7 +24,7 @@ class ReachabilityManager: NSObject {
         return Static.instance!
     }
     
-    //MARK: Class Methods
+    // MARK: Class Methods
     static func isReachable() -> Bool{
     return ReachabilityManager.sharedManager.reachability!.isReachable()
     }
@@ -41,7 +41,7 @@ class ReachabilityManager: NSObject {
     return ReachabilityManager.sharedManager.reachability!.isReachableViaWiFi()
     }
 
-    //MARK: Private Initialization
+    // MARK: Private Initialization
     override init() {
         do {
             // Initialize Reachability

@@ -9,6 +9,36 @@
 import Foundation
 import UIKit
 
+enum EFLTransitionAnimationType {
+    case None
+    case Default
+    case FlipHorizontal
+}
+
+enum EFLBarButtonType {
+    case None
+    case Ok
+    case Plus
+    case Send
+    case AddFriends
+    case Back
+    case Close
+    case Cancel
+    case Share
+}
+
+enum EFLBarButtonPlaceType {
+    case Left
+    case Right
+}
+
+enum EFLColorType {
+    case Black
+    case White
+    case Green
+}
+
+
 public let EmptyString = ""
 public let DeviceType = "ios"
 

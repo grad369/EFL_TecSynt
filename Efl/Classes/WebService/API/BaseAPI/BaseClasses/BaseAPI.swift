@@ -194,7 +194,7 @@ class BaseAPI: NSObject {
                     switch encodingResult {
                     case .Success(let upload, _, _):
                         upload.responseJSON(completionHandler: { (response) -> Void in
-                            //MARK: Request Success Block
+                            // MARK: Request Success Block
                             // Create the response object
                             let status_code = response.response?.statusCode
                             if response.result.isSuccess {
@@ -274,7 +274,7 @@ class BaseAPI: NSObject {
             completion(error: error, data: nil)
             
         }else{
-            //MARK: Request Failure Error with no response
+            // MARK: Request Failure Error with no response
             completion(error: BaseAPIError.initWith(response.result.error), data: nil)
         }
     }

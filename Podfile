@@ -12,8 +12,9 @@ target ‘Efl' do
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKMessengerShareKit'
+#pod 'PMKVObserver'
+
   target ‘EflTests' do
-      pod 'PMKVObserver'
 
       #inherit! :search_paths
     # Pods for testing
@@ -23,5 +24,11 @@ target ‘Efl' do
       #inherit! :search_paths
     # Pods for testing
   end
-
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '2.3'
+        end
+    end
+end
 end

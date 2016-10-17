@@ -31,9 +31,8 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
         createPoolRequest.message = "POOL_DEFAULT_MESSAGE".localized
     }
     
-    override func initialiseView() {
+    override func configurationView() {
         
-        self.addNavigationCancelButton()
         self.addRightBarButtonItem()
         self.navigationItem.title = "NEW_POOL_TITLE".localized
         self.tabBarController?.navigationController?.navigationBar.hidden = true
@@ -60,7 +59,7 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
         let navController: EFLBaseNavigationController = self.navigationController as! EFLBaseNavigationController
         navController.setShadow()
     }
-    //MARK: UI Methods
+    // MARK: UI Methods
     
     func addRightBarButtonItem() {
         
@@ -95,9 +94,9 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
     }
     
     
-    //MARK: Selector Methods
+    // MARK: Selector Methods
     
-    override func backButtonAction() {
+    func backButtonAction() {
         for controller in self.navigationController!.viewControllers as Array {
             if controller.isKindOfClass(EFLRoomsViewController) {
                 self.navigationController?.popToViewController(controller as UIViewController, animated: true)
@@ -137,11 +136,11 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
             
 //            EFLActivityIndicator.sharedSpinner.showIndicator()
             self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
-            self.spinner.showIndicator()
+            self.spinner!.showIndicator()
             
             EFLCreatePoolAPI().createPoolWith(createPoolRequest){ (error, data) -> Void in
 //                EFLActivityIndicator.sharedSpinner.hideIndicator()
-                self.spinner.hideIndicator()
+                self.spinner!.hideIndicator()
                 
                 if !error.isKindOfClass(APIErrorTypeNone){
                     if error.code == HTTP_STATUS_REQUEST_TIME_OUT || error.code == HTTP_STATUS_CONFLICT {
@@ -170,7 +169,7 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
                         }
                     }
                     else {
-                        print(response.message)
+                        //print(response.message)
                     }
                 }
             }
@@ -287,7 +286,7 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
         }
     }
     
-    //MARK: UI Tableview Delegate
+    // MARK: UI Tableview Delegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 50
@@ -329,13 +328,13 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
         }
     }
     
-    //MARK: EFLSelectCompetitionDelegate
+    // MARK: EFLSelectCompetitionDelegate
     func didSelectCompetition(competitionId: Int) {
         createPoolRequest.competition_id = competitionId
         self.reloadPoolData()
     }
     
-    //MARK: Edit image
+    // MARK: Edit image
     func imageButtonDidPress() {
         let imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
@@ -431,14 +430,14 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
         return view
     }
     
-    //MARK: AddPlayerDelegate Method
+    // MARK: AddPlayerDelegate Method
     
     func reloadPoolRequestWithSelectedPlayers(players: [EFLAddPlayerModel]) {
         createPoolRequest.players = players
         self.reloadPoolData()
     }
     
-    //MARK: UITextFieldDelegate Methods
+    // MARK: UITextFieldDelegate Methods
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -466,7 +465,7 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
     func textFieldDidEndEditing(textField: UITextField) {
     }
     
-    //MARK: UITextViewDelegate
+    // MARK: UITextViewDelegate
     
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
@@ -556,16 +555,5 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
         }
         return true
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

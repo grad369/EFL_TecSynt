@@ -26,7 +26,7 @@ class EFLAlertView: UIView {
     private var defaultTopAlertView: CGFloat?
     
     class func alertView() -> EFLAlertView {
-        let alertView = NSBundle.mainBundle().loadNibNamed("EFLAlertView", owner: nil, options: nil)[0] as! EFLAlertView
+        let alertView = NSBundle.mainBundle().loadNibNamed("EFLAlertView", owner: nil, options: nil)![0] as! EFLAlertView
         alertView.frame = APP_DELEGATE.window!.frame
         
         return alertView

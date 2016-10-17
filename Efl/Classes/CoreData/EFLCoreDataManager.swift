@@ -13,14 +13,6 @@ class EFLCoreDataManager {
 
     static let sharedInstance       = EFLCoreDataManager()
     typealias operationCompletion   = (success: Bool, error: String?) -> Void
-    private init() {
-//        addObservers()
-    }
-
-    private func addObservers() {
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(contextDidSavePrivateQueueContext(_:)), name: NSManagedObjectContextDidSaveNotification, object: self.privateManagedObjectContext)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(contextDidSaveMainQueueContext(_:)), name: NSManagedObjectContextDidSaveNotification, object: self.mainThreadManagedObjectContext)
-    }
     
     
     lazy var applicationDocumentsDirectory: NSURL = {
@@ -241,11 +233,4 @@ class EFLCoreDataManager {
             }
         }
     }
-
-//    deinit {
-//        //remove observers..
-//        print("DEALLOC:: SFCoreDataManger has been deinited")
-//        NSNotificationCenter.defaultCenter().removeObserver(self)
-//    }
-
 }

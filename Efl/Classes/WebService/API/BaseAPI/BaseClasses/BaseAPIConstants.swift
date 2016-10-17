@@ -12,7 +12,7 @@ enum Status: Int {
     case StatusLoading, StatusCompleted, StatusFailed
 }
 
-//MARK: HTTP Status codes
+// MARK: - HTTP Status codes
 public let HTTP_STATUS_OK                      = 200
 public let HTTP_STATUS_CREATED                 = 201
 public let HTTP_STATUS_ACCEPTED                = 202
@@ -37,7 +37,7 @@ public let HTTP_STATUS_NOT_IMPLEMENTED         = 501
 public let HTTP_STATUS_SERVICE_OVERLOADED      = 502
 public let HTTP_STATUS_GATEWAY_TIMEOUT         = 504
 
-//MARK: Server Status codes
+// MARK: - Server Status codes
 public let SERVER_STATUS_SUCCESS                = "20" // Success
 public let SERVER_STATUS_UNAUTHERIZED           = "41" // Unauthorized/Authentication Error
 public let SERVER_STATUS_RESOURSE_GONE          = "44" // Resource gone
@@ -45,21 +45,21 @@ public let SERVER_STATUS_CONFLICT_IN_REQUEST    = "49" // Conflict in request - 
 public let SERVER_STATUS_UNSUPPORTED_MEDIA_TYPE = "46" // Unsupported Media Type
 public let SERVER_STATUS_INVALID_REQUEST_FORMAT = "30" // Invalid Request Format
 
-//MARK: app utility constants
+// MARK: app utility constants
 public let REQUEST_TIMEOUT_IN_SECONDS = 60
 public let REQUEST_TIMEOUT_MULTIPART_IN_SECONDS = 180
 
 
-//MARK: app boolean Keys
+// MARK: app boolean Keys
 public let SHOULD_LOG = false
 public let SHOULD_USE_TEST_RESPONSE = false
 
-//MARK: app utility Keys
+// MARK: app utility Keys
 public let ErrorLocalizedDescription = "NSLocalizedDescription"
 
 public let AFNetworkingOperationFailingURLResponseDataErrorKey = "com.alamofire.serialization.response.error.data"
 
-//MARK: api response messages
+// MARK: api response messages
 public let KSuccessMessage              = "Success"
 public let KNetworkTimeOutMessage       = "Your session is timed out"
 public let KNoNetworkMessage            = "Please make sure you have internet connection and try again."
@@ -70,7 +70,7 @@ public let KServerNotReachableMessage   = "Server not reachable. Please try agai
 public let KSystemErrorMessage          = "System error, please try again later"
 public let KUnknownErrorMessage         = "System error, please try again later"
 
-//MARK: Urls
+// MARK: Urls
 
 //TODO: UnComment below line to active Staging Server
 public let URLBase = "http://efl-server-staging-1.appspot.com/api/v1.0/"

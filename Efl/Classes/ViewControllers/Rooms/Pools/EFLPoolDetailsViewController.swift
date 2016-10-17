@@ -26,7 +26,7 @@ class EFLPoolDetailsViewController: EFLBaseViewController, EFLSegmentedControlDe
         // Do any additional setup after loading the view.
     }
     
-    override func initialiseView() {
+    override func configurationView() {
         
         segmentedControl.setUpControl(UIColor.eflGreenColor(), buttonTitles: ["Matchdays", "Ranking", "Pool info"])
         self.view.addSubview(segmentedControl)
@@ -34,7 +34,7 @@ class EFLPoolDetailsViewController: EFLBaseViewController, EFLSegmentedControlDe
         segmentedControl.setSelectedIndex(3)
         segmentedControl.userInteractionEnabled =  false
         
-        self.addNavigationBackButton()
+        //self.addNavigationBackButton()
 //        self.navigationItem.title = poolRoomDetails!.valueForKey("pool_name") as? String
         self.showNavigationTitle()
         self.tabBarController?.navigationController?.navigationBar.hidden = true
@@ -91,9 +91,9 @@ class EFLPoolDetailsViewController: EFLBaseViewController, EFLSegmentedControlDe
         }
     }
     
-    //MARK: UI Methods
+    // MARK: UI Methods
     
-    //MARK: Show navigation title view
+    // MARK: Show navigation title view
     func showNavigationTitle() {
         
         let titleView = UIView.init(frame: CGRectMake(0, 0, CGRectGetWidth(self.view.frame) - 75, 44)) //75 TO DO
@@ -270,7 +270,7 @@ class EFLPoolDetailsViewController: EFLBaseViewController, EFLSegmentedControlDe
     }
     
     
-    //MARK: UI Tableview Delegate
+    // MARK: UI Tableview Delegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if indexPath.section == 0 {
@@ -347,7 +347,7 @@ class EFLPoolDetailsViewController: EFLBaseViewController, EFLSegmentedControlDe
         return view
     }
     
-    //MARK: Helper Methods
+    // MARK: Helper Methods
     
     func isManager() -> Bool {
         

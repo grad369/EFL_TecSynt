@@ -14,7 +14,7 @@ enum EFLDeviceAPIType{
     case Update
 }
 
-class EFLDeviceAPI:EFLBaseAPI {
+class EFLDeviceAPI: EFLBaseAPI {
     var apiMethod = EFLDeviceAPIType.Update
     
 //    func updateDeviceWith(request: EFLDeviceRequestModel?, and completion:RequestCompletion) {
@@ -46,6 +46,7 @@ class EFLDeviceAPI:EFLBaseAPI {
         
         switch apiMethod {
         case .Create:
+            print(EFLAPIManager.sharedAPIManager.playerURLSuffix + URLDevices)
             return EFLAPIManager.sharedAPIManager.playerURLSuffix + URLDevices
         default:
             return EFLAPIManager.sharedAPIManager.deviceUpdateURLPrefix
@@ -85,6 +86,5 @@ class EFLDeviceAPI:EFLBaseAPI {
             return .URL
         }
     }
-    //override func
     
 }

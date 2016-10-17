@@ -56,8 +56,8 @@ class EFLSelectCompetitionViewController: EFLBaseViewController {
         
     }
     
-    override func initialiseView() {
-        self.addNavigationCancelButton()
+    override func configurationView() {
+     //   self.addNavigationCancelButton()
         self.setFooter()
         self.navigationItem.title = "SELECT_COMPETITION_TITLE".localized
         self.tabBarController?.navigationController?.navigationBar.hidden = true
@@ -70,7 +70,7 @@ class EFLSelectCompetitionViewController: EFLBaseViewController {
     }
     
     
-    override func backButtonAction() {
+    func backButtonAction() {
         if self.navigationController!.presentingViewController != nil {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
@@ -83,7 +83,7 @@ class EFLSelectCompetitionViewController: EFLBaseViewController {
         super.didReceiveMemoryWarning()
     }
     
-    //MARK: View setup
+    // MARK: View setup
     func setFooter() {
         let backgroundFooterView : UIView = UIView (frame: CGRectMake(0,0,0,40))
         let footerLabel = UILabel(frame:CGRectMake(10, 0, self.view.frame.size.width - 20, 40))
@@ -133,7 +133,7 @@ class EFLSelectCompetitionViewController: EFLBaseViewController {
         return cell
     }
     
-    //MARK: UI Tableview Delegate
+    // MARK: UI Tableview Delegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50
     }

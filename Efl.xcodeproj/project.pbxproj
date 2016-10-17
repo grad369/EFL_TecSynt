@@ -165,22 +165,19 @@
 		27EDFCA11D5B7C680002D96F /* EFLFriendsShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EDFC9F1D5B7C680002D96F /* EFLFriendsShareCell.xib */; };
 		27F0D7541D4B3A8800FADBFB /* EFLRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0D7531D4B3A8800FADBFB /* EFLRoomsViewController.swift */; };
 		27F0D7561D4B3B9A00FADBFB /* EFLFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0D7551D4B3B9A00FADBFB /* EFLFriendsViewController.swift */; };
-		4ADB8CB178C3D3F3949D094F /* Pods_Efl_EflUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D39A90DFB636457F4677E7 /* Pods_Efl_EflUITests.framework */; };
+		435295BD796FE314EC99D1B3 /* Pods_Efl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3102E3706BE399A22997D3EC /* Pods_Efl.framework */; };
 		510770061D88381E00EFB7C5 /* EFLApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510770051D88381E00EFB7C5 /* EFLApiTest.swift */; };
 		5107700B1D88397A00EFB7C5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279FCEEE1D5C75FE00936075 /* Social.framework */; };
-		510770A11D8954F100EFB7C5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5107709D1D8954F100EFB7C5 /* Bolts.framework */; };
-		510770A21D8954F100EFB7C5 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5107709D1D8954F100EFB7C5 /* Bolts.framework */; };
-		510770A31D8954F100EFB7C5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5107709E1D8954F100EFB7C5 /* FBSDKCoreKit.framework */; };
-		510770A41D8954F100EFB7C5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5107709E1D8954F100EFB7C5 /* FBSDKCoreKit.framework */; };
-		510770A51D8954F200EFB7C5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5107709F1D8954F100EFB7C5 /* FBSDKLoginKit.framework */; };
-		510770A61D8954F200EFB7C5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5107709F1D8954F100EFB7C5 /* FBSDKLoginKit.framework */; };
-		510770A71D8954F200EFB7C5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510770A01D8954F100EFB7C5 /* FBSDKShareKit.framework */; };
-		510770A81D8954F200EFB7C5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510770A01D8954F100EFB7C5 /* FBSDKShareKit.framework */; };
+		512914061DA29CD500336E8F /* UIViewController+EFLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512914051DA29CD500336E8F /* UIViewController+EFLExtensions.swift */; };
+		51C3A9E21DAEBA4C00E96913 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A9E11DAEBA4C00E96913 /* File.swift */; };
+		51C3A9E81DAEBC0100E96913 /* Friends+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A9E51DAEBC0100E96913 /* Friends+CoreDataClass.m */; };
+		51C3A9E91DAEBC0100E96913 /* Friends+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A9E71DAEBC0100E96913 /* Friends+CoreDataProperties.m */; };
+		5ACB361701F2FC6F5EEC1CCE /* Pods_Efl_EflTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722970D169A794443AA3F198 /* Pods_Efl_EflTests.framework */; };
+		6BDFB1BF1AF7B8E507D6C8EB /* Pods_Efl_EflUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAECC9A8E0C57E9D4EDF4EA3 /* Pods_Efl_EflUITests.framework */; };
 		924FEF9D1D92C9A70059C82E /* UIView+EFLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924FEF9C1D92C9A70059C82E /* UIView+EFLExtensions.swift */; };
 		924FEFA61D933F3D0059C82E /* EFLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924FEFA41D933F3D0059C82E /* EFLAlertView.swift */; };
 		924FEFA71D933F3D0059C82E /* EFLAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 924FEFA51D933F3D0059C82E /* EFLAlertView.xib */; };
-		9464E8EB0331BF708333BE49 /* Pods_Efl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E678800E371B0B42E7914375 /* Pods_Efl.framework */; };
-		ACC0767206BAFE6C04FEB799 /* Pods_Efl_EflTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A96CEFE9828F37918252B96 /* Pods_Efl_EflTests.framework */; };
+		92AA2E1D1DAAE0D30064E242 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA2E1C1DAAE0D30064E242 /* QuartzCore.framework */; };
 		C4ED36C91D7A9CB30021D362 /* EFLRankingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED36C81D7A9CB30021D362 /* EFLRankingListCell.swift */; };
 		C4ED36CB1D7A9CCB0021D362 /* EFLRankingListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4ED36CA1D7A9CCB0021D362 /* EFLRankingListCell.xib */; };
 /* End PBXBuildFile section */
@@ -202,12 +199,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		51ABFF3C1DA673E5006C94B6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0A96CEFE9828F37918252B96 /* Pods_Efl_EflTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Efl_EflTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2707E0A21D50615400DA9973 /* EFLTermsPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLTermsPolicyViewController.swift; sourceTree = "<group>"; };
+		18A7C24C96247873675E0DFA /* Pods-Efl-EflUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflUITests/Pods-Efl-EflUITests.release.xcconfig"; sourceTree = "<group>"; };
+		21BF8CBE7F0740FB5131FDDA /* Pods-Efl-EflTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflTests/Pods-Efl-EflTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2707E0A21D50615400DA9973 /* EFLTermsPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLTermsPolicyViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27217ADC1D464206007CA51E /* EFLBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLBaseNavigationController.swift; sourceTree = "<group>"; };
 		27217ADE1D464223007CA51E /* EFLBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLBaseTabBarController.swift; sourceTree = "<group>"; };
-		27217AE01D464230007CA51E /* EFLBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLBaseViewController.swift; sourceTree = "<group>"; };
+		27217AE01D464230007CA51E /* EFLBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLBaseViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27217AF81D472232007CA51E /* APIErrorTypeAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorTypeAuthentication.swift; sourceTree = "<group>"; };
 		27217AF91D472232007CA51E /* APIErrorTypeGeneric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorTypeGeneric.swift; sourceTree = "<group>"; };
 		27217AFA1D472232007CA51E /* APIErrorTypeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorTypeNetwork.swift; sourceTree = "<group>"; };
@@ -219,12 +230,12 @@
 		27217B001D472232007CA51E /* BaseAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIError.swift; sourceTree = "<group>"; };
 		27217B0B1D4728C2007CA51E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		27217B0C1D4728C2007CA51E /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		27217B0D1D4728C2007CA51E /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		27217B0D1D4728C2007CA51E /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ReachabilityManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27217B251D472AD6007CA51E /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireObjectMapper.swift; sourceTree = "<group>"; };
 		27217B291D472B6F007CA51E /* FromJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FromJSON.swift; sourceTree = "<group>"; };
 		27217B2A1D472B6F007CA51E /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		27217B2B1D472B6F007CA51E /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
-		27217B2C1D472B6F007CA51E /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		27217B2C1D472B6F007CA51E /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Mapper.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27217B2D1D472B6F007CA51E /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		27217B2E1D472B6F007CA51E /* ToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSON.swift; sourceTree = "<group>"; };
 		27217B341D472B6F007CA51E /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDateFormatTransform.swift; sourceTree = "<group>"; };
@@ -238,8 +249,8 @@
 		27217B591D473EE9007CA51E /* BaseAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIModel.swift; sourceTree = "<group>"; };
 		27217B5B1D473F0A007CA51E /* BaseMapableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMapableModel.swift; sourceTree = "<group>"; };
 		27217B5D1D473F49007CA51E /* BaseMappableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMappableObject.swift; sourceTree = "<group>"; };
-		27217B6A1D474277007CA51E /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
-		27217B6B1D474277007CA51E /* BaseAPIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIConstants.swift; sourceTree = "<group>"; };
+		27217B6A1D474277007CA51E /* BaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BaseAPI.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		27217B6B1D474277007CA51E /* BaseAPIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = BaseAPIConstants.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27217B6C1D474277007CA51E /* BaseAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIRequest.swift; sourceTree = "<group>"; };
 		27217B6D1D474277007CA51E /* BaseAPIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAPIResponse.swift; sourceTree = "<group>"; };
 		27217B7C1D4746B8007CA51E /* EFLBaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLBaseAPI.swift; sourceTree = "<group>"; };
@@ -258,18 +269,18 @@
 		2733322A1D40AB510095167E /* Efl.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Efl.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2733322E1D40AB510095167E /* EflUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EflUITests.swift; sourceTree = "<group>"; };
 		273332301D40AB520095167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		273488DF1D486B4A00A27FD0 /* EFLUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLUtility.swift; sourceTree = "<group>"; };
-		273488EB1D48758200A27FD0 /* EFLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLManager.swift; sourceTree = "<group>"; };
-		273488ED1D48908700A27FD0 /* EFLLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLLoginViewController.swift; sourceTree = "<group>"; };
+		273488DF1D486B4A00A27FD0 /* EFLUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLUtility.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		273488EB1D48758200A27FD0 /* EFLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		273488ED1D48908700A27FD0 /* EFLLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLLoginViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		273488FF1D48D22200A27FD0 /* EFLColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLColor.swift; sourceTree = "<group>"; };
 		273489011D48F7B600A27FD0 /* EFLActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLActivityIndicator.swift; sourceTree = "<group>"; };
-		273489061D49064800A27FD0 /* EFLSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLSettingsViewController.swift; sourceTree = "<group>"; };
+		273489061D49064800A27FD0 /* EFLSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLSettingsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		273652AA1D7D67B500154BD1 /* EFLAddPlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLAddPlayerModel.swift; sourceTree = "<group>"; };
 		273652AC1D7D67E700154BD1 /* EFLCreatePoolResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLCreatePoolResponseModel.swift; sourceTree = "<group>"; };
 		273652AE1D7D686600154BD1 /* EFLCreatePoolRoomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLCreatePoolRoomModel.swift; sourceTree = "<group>"; };
-		273652B01D7D79B000154BD1 /* EFLCompetitionDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLCompetitionDataManager.swift; sourceTree = "<group>"; };
-		277ADDF71D7060C3007CB85A /* EFLPoolDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPoolDetailsViewController.swift; sourceTree = "<group>"; };
-		277ADDF91D7078BF007CB85A /* EFLPoolActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPoolActionViewController.swift; sourceTree = "<group>"; };
+		273652B01D7D79B000154BD1 /* EFLCompetitionDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLCompetitionDataManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		277ADDF71D7060C3007CB85A /* EFLPoolDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLPoolDetailsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		277ADDF91D7078BF007CB85A /* EFLPoolActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLPoolActionViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		277ADDFC1D70E0C6007CB85A /* EFLReceivePoolAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLReceivePoolAPI.swift; sourceTree = "<group>"; };
 		277ADDFE1D70E0D9007CB85A /* EFLReceivePoolRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLReceivePoolRequestModel.swift; sourceTree = "<group>"; };
 		277ADE001D70E0E5007CB85A /* EFLReceivePoolResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLReceivePoolResponse.swift; sourceTree = "<group>"; };
@@ -289,13 +300,13 @@
 		279C001E1D7AB65800C59693 /* EFLRoomPlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLRoomPlayerModel.swift; sourceTree = "<group>"; };
 		279C00201D7AB68B00C59693 /* EFLPoolRoomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPoolRoomModel.swift; sourceTree = "<group>"; };
 		279C00221D7AB85300C59693 /* EFLPoolCardResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPoolCardResponseModel.swift; sourceTree = "<group>"; };
-		279FCEE81D5C323500936075 /* EFLFriendsShareActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLFriendsShareActionSheet.swift; sourceTree = "<group>"; };
+		279FCEE81D5C323500936075 /* EFLFriendsShareActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLFriendsShareActionSheet.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		279FCEEE1D5C75FE00936075 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		279FCF1E1D5CD06400936075 /* EFLUserFriendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLUserFriendModel.swift; sourceTree = "<group>"; };
 		279FCF221D5CE67B00936075 /* EFLFriendListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLFriendListCell.swift; sourceTree = "<group>"; };
 		279FCF231D5CE67B00936075 /* EFLFriendListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLFriendListCell.xib; sourceTree = "<group>"; };
 		279FCF671D5D082900936075 /* EFLCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLCoreDataManager.swift; sourceTree = "<group>"; };
-		279FCF6A1D5D091500936075 /* EFLAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLAPIManager.swift; sourceTree = "<group>"; };
+		279FCF6A1D5D091500936075 /* EFLAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLAPIManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27AA940A1D4A492400A5925D /* EFLUserDetailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLUserDetailsModel.swift; sourceTree = "<group>"; };
 		27B5FD531D77E67000B3B7D7 /* EFLPlayerLoginRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPlayerLoginRequestModel.swift; sourceTree = "<group>"; };
 		27B5FD551D77E69800B3B7D7 /* EFLPlayerUpdateRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPlayerUpdateRequestModel.swift; sourceTree = "<group>"; };
@@ -313,7 +324,7 @@
 		27B9B7E31D50C799001E1FD2 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		27BCA5111D7E7D9900163C05 /* Login_BG_Video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Login_BG_Video.mp4; sourceTree = "<group>"; };
 		27BCA5131D7EACDA00163C05 /* EFLPoolRoomDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPoolRoomDataManager.swift; sourceTree = "<group>"; };
-		27BCA5171D7EED3800163C05 /* EFLPlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPlayerDataManager.swift; sourceTree = "<group>"; };
+		27BCA5171D7EED3800163C05 /* EFLPlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLPlayerDataManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27C87AF01D79631B00481917 /* EFLLogoutAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLLogoutAPI.swift; sourceTree = "<group>"; };
 		27C87AF11D79631B00481917 /* EFLLogoutResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLLogoutResponse.swift; sourceTree = "<group>"; };
 		27C87AFB1D79660800481917 /* EFLDeviceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLDeviceAPI.swift; sourceTree = "<group>"; };
@@ -329,23 +340,23 @@
 		27C87B171D79A82600481917 /* EFLCompetitionListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLCompetitionListResponse.swift; sourceTree = "<group>"; };
 		27C87B181D79A82600481917 /* EFLCompetitionRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLCompetitionRequestModel.swift; sourceTree = "<group>"; };
 		27C87B191D79A82600481917 /* EFLCompetitionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLCompetitionResponse.swift; sourceTree = "<group>"; };
-		27CC797C1D6DA1A500DCED48 /* EFLRoomListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLRoomListCell.swift; sourceTree = "<group>"; };
+		27CC797C1D6DA1A500DCED48 /* EFLRoomListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLRoomListCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27CC797D1D6DA1A500DCED48 /* EFLRoomListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLRoomListCell.xib; sourceTree = "<group>"; };
-		27CD76C21D49C93600C40CBD /* EFLProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLProfileViewController.swift; sourceTree = "<group>"; };
+		27CD76C21D49C93600C40CBD /* EFLProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLProfileViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27DBAF1D1D7B0083000BE863 /* EFLFriendListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLFriendListModel.swift; sourceTree = "<group>"; };
 		27DEC1561D5319D10015F6D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		27DEC15E1D532AB70015F6D6 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		27E75D3C1D6DCE1200C6DAD9 /* EFLSelectCompetitionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLSelectCompetitionCell.swift; sourceTree = "<group>"; };
 		27E75D3D1D6DCE1200C6DAD9 /* EFLSelectCompetitionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLSelectCompetitionCell.xib; sourceTree = "<group>"; };
-		27E75D421D6DF8F200C6DAD9 /* EFLSelectCompetitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLSelectCompetitionViewController.swift; sourceTree = "<group>"; };
-		27E75D441D6DF90500C6DAD9 /* EFLCreatePoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLCreatePoolViewController.swift; sourceTree = "<group>"; };
+		27E75D421D6DF8F200C6DAD9 /* EFLSelectCompetitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLSelectCompetitionViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		27E75D441D6DF90500C6DAD9 /* EFLCreatePoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLCreatePoolViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27E75D461D6DFA6100C6DAD9 /* EFLPoolDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPoolDetailsCell.swift; sourceTree = "<group>"; };
 		27E75D471D6DFA6100C6DAD9 /* EFLPoolDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLPoolDetailsCell.xib; sourceTree = "<group>"; };
 		27E75D4A1D6DFA7100C6DAD9 /* EFLPoolMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPoolMessageCell.swift; sourceTree = "<group>"; };
 		27E75D4B1D6DFA7100C6DAD9 /* EFLPoolMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLPoolMessageCell.xib; sourceTree = "<group>"; };
 		27E75D4E1D6DFA8900C6DAD9 /* EFLPoolPlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPoolPlayerCell.swift; sourceTree = "<group>"; };
 		27E75D4F1D6DFA8900C6DAD9 /* EFLPoolPlayerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLPoolPlayerCell.xib; sourceTree = "<group>"; };
-		27E75D521D6E309100C6DAD9 /* EFLAddPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLAddPlayerViewController.swift; sourceTree = "<group>"; };
+		27E75D521D6E309100C6DAD9 /* EFLAddPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLAddPlayerViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27E75D541D6E329B00C6DAD9 /* EFLSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLSegmentedControl.swift; sourceTree = "<group>"; };
 		27E94FBC1D772ED9009DBF1F /* EFLPlayerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPlayerAPI.swift; sourceTree = "<group>"; };
 		27EA74C11D51A16800CC5C2A /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -367,26 +378,30 @@
 		27EDFC8E1D5B7A9B0002D96F /* EFLSettingsLogoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLSettingsLogoCell.xib; sourceTree = "<group>"; };
 		27EDFC9E1D5B7C680002D96F /* EFLFriendsShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLFriendsShareCell.swift; sourceTree = "<group>"; };
 		27EDFC9F1D5B7C680002D96F /* EFLFriendsShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLFriendsShareCell.xib; sourceTree = "<group>"; };
-		27F0D7531D4B3A8800FADBFB /* EFLRoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLRoomsViewController.swift; sourceTree = "<group>"; };
-		27F0D7551D4B3B9A00FADBFB /* EFLFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLFriendsViewController.swift; sourceTree = "<group>"; };
-		2DE9B347D741917EA1FA6FB6 /* Pods-Efl-EflTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflTests/Pods-Efl-EflTests.release.xcconfig"; sourceTree = "<group>"; };
+		27F0D7531D4B3A8800FADBFB /* EFLRoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLRoomsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		27F0D7551D4B3B9A00FADBFB /* EFLFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLFriendsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		2AAB90F941FC6E4B5A1BBBFD /* Pods-Efl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl.release.xcconfig"; path = "Pods/Target Support Files/Pods-Efl/Pods-Efl.release.xcconfig"; sourceTree = "<group>"; };
+		3102E3706BE399A22997D3EC /* Pods_Efl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Efl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		510770051D88381E00EFB7C5 /* EFLApiTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLApiTest.swift; sourceTree = "<group>"; };
-		5107709D1D8954F100EFB7C5 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = efl/Frameworks/Bolts.framework; sourceTree = "<group>"; };
-		5107709E1D8954F100EFB7C5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = efl/Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		5107709F1D8954F100EFB7C5 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = efl/Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		510770A01D8954F100EFB7C5 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = efl/Frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
-		5351C6369818C7D7AA00A1AB /* Pods-Efl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Efl/Pods-Efl.debug.xcconfig"; sourceTree = "<group>"; };
-		66D39A90DFB636457F4677E7 /* Pods_Efl_EflUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Efl_EflUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B3D9EDA7F3A6AE8DE71FA55 /* Pods-Efl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl.release.xcconfig"; path = "Pods/Target Support Files/Pods-Efl/Pods-Efl.release.xcconfig"; sourceTree = "<group>"; };
+		512914051DA29CD500336E8F /* UIViewController+EFLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+EFLExtensions.swift"; sourceTree = "<group>"; };
+		51C3A9E11DAEBA4C00E96913 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = File.swift; path = Efl/Classes/CoreData/File.swift; sourceTree = SOURCE_ROOT; };
+		51C3A9E31DAEBC0000E96913 /* Efl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Efl-Bridging-Header.h"; sourceTree = "<group>"; };
+		51C3A9E41DAEBC0100E96913 /* Friends+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friends+CoreDataClass.h"; sourceTree = "<group>"; };
+		51C3A9E51DAEBC0100E96913 /* Friends+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataClass.m"; sourceTree = "<group>"; };
+		51C3A9E61DAEBC0100E96913 /* Friends+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friends+CoreDataProperties.h"; sourceTree = "<group>"; };
+		51C3A9E71DAEBC0100E96913 /* Friends+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataProperties.m"; sourceTree = "<group>"; };
+		722970D169A794443AA3F198 /* Pods_Efl_EflTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Efl_EflTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		924FEF9C1D92C9A70059C82E /* UIView+EFLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+EFLExtensions.swift"; sourceTree = "<group>"; };
 		924FEFA41D933F3D0059C82E /* EFLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLAlertView.swift; sourceTree = "<group>"; };
 		924FEFA51D933F3D0059C82E /* EFLAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLAlertView.xib; sourceTree = "<group>"; };
+		92AA2E191DA3CA8D0064E242 /* Efl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Efl.entitlements; path = Efl/Efl.entitlements; sourceTree = SOURCE_ROOT; };
+		92AA2E1C1DAAE0D30064E242 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C4ED36C81D7A9CB30021D362 /* EFLRankingListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLRankingListCell.swift; sourceTree = "<group>"; };
 		C4ED36CA1D7A9CCB0021D362 /* EFLRankingListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLRankingListCell.xib; sourceTree = "<group>"; };
-		C7E864A0520E527E0B0E146E /* Pods-Efl-EflTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflTests/Pods-Efl-EflTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D6C0C1998D1D8B546DD6F67B /* Pods-Efl-EflUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflUITests/Pods-Efl-EflUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		DB3424A3BAF2098E79CF80B4 /* Pods-Efl-EflUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflUITests/Pods-Efl-EflUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E678800E371B0B42E7914375 /* Pods_Efl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Efl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D363AD106D56FB48664A67CE /* Pods-Efl-EflTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflTests/Pods-Efl-EflTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE87373ED475A9EB34D06178 /* Pods-Efl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Efl/Pods-Efl.debug.xcconfig"; sourceTree = "<group>"; };
+		EAECC9A8E0C57E9D4EDF4EA3 /* Pods_Efl_EflUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Efl_EflUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE50DB863BC2EA009F1FAA1D /* Pods-Efl-EflUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflUITests/Pods-Efl-EflUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,12 +409,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				510770A11D8954F100EFB7C5 /* Bolts.framework in Frameworks */,
-				510770A31D8954F100EFB7C5 /* FBSDKCoreKit.framework in Frameworks */,
-				510770A71D8954F200EFB7C5 /* FBSDKShareKit.framework in Frameworks */,
-				510770A51D8954F200EFB7C5 /* FBSDKLoginKit.framework in Frameworks */,
+				92AA2E1D1DAAE0D30064E242 /* QuartzCore.framework in Frameworks */,
 				279FCEEF1D5C75FE00936075 /* Social.framework in Frameworks */,
-				9464E8EB0331BF708333BE49 /* Pods_Efl.framework in Frameworks */,
+				435295BD796FE314EC99D1B3 /* Pods_Efl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,12 +419,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				510770A41D8954F100EFB7C5 /* FBSDKCoreKit.framework in Frameworks */,
-				510770A61D8954F200EFB7C5 /* FBSDKLoginKit.framework in Frameworks */,
-				510770A81D8954F200EFB7C5 /* FBSDKShareKit.framework in Frameworks */,
 				5107700B1D88397A00EFB7C5 /* Social.framework in Frameworks */,
-				510770A21D8954F100EFB7C5 /* Bolts.framework in Frameworks */,
-				ACC0767206BAFE6C04FEB799 /* Pods_Efl_EflTests.framework in Frameworks */,
+				5ACB361701F2FC6F5EEC1CCE /* Pods_Efl_EflTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +428,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ADB8CB178C3D3F3949D094F /* Pods_Efl_EflUITests.framework in Frameworks */,
+				6BDFB1BF1AF7B8E507D6C8EB /* Pods_Efl_EflUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +611,7 @@
 				2733322D1D40AB510095167E /* EflUITests */,
 				2733320C1D40AB510095167E /* Products */,
 				F56E9EE70E77F0F8006D0E1F /* Frameworks */,
-				F248B2E2F8330FFFE1D9B377 /* Pods */,
+				67128F0BA940F61192BBE488 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -769,6 +777,7 @@
 		27862D0B1D45EE8B00FA6877 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				92AA2E191DA3CA8D0064E242 /* Efl.entitlements */,
 				27BCA5111D7E7D9900163C05 /* Login_BG_Video.mp4 */,
 				273488F31D48AB0300A27FD0 /* Fonts */,
 				273332151D40AB510095167E /* Assets.xcassets */,
@@ -906,7 +915,9 @@
 		279FCF631D5D025700936075 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				51C3A9D81DAEB1EC00E96913 /* Models */,
 				278ED6041D8189E2003DC2B8 /* Efl.xcdatamodeld */,
+				51C3A9E11DAEBA4C00E96913 /* File.swift */,
 				279FCF671D5D082900936075 /* EFLCoreDataManager.swift */,
 				27BCA5171D7EED3800163C05 /* EFLPlayerDataManager.swift */,
 				273652B01D7D79B000154BD1 /* EFLCompetitionDataManager.swift */,
@@ -1135,9 +1146,36 @@
 			path = Friends;
 			sourceTree = "<group>";
 		};
+		51C3A9D81DAEB1EC00E96913 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				51C3A9E41DAEBC0100E96913 /* Friends+CoreDataClass.h */,
+				51C3A9E51DAEBC0100E96913 /* Friends+CoreDataClass.m */,
+				51C3A9E61DAEBC0100E96913 /* Friends+CoreDataProperties.h */,
+				51C3A9E71DAEBC0100E96913 /* Friends+CoreDataProperties.m */,
+				51C3A9E31DAEBC0000E96913 /* Efl-Bridging-Header.h */,
+			);
+			name = Models;
+			path = Efl/Classes/CoreData/Models;
+			sourceTree = SOURCE_ROOT;
+		};
+		67128F0BA940F61192BBE488 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE87373ED475A9EB34D06178 /* Pods-Efl.debug.xcconfig */,
+				2AAB90F941FC6E4B5A1BBBFD /* Pods-Efl.release.xcconfig */,
+				21BF8CBE7F0740FB5131FDDA /* Pods-Efl-EflTests.debug.xcconfig */,
+				D363AD106D56FB48664A67CE /* Pods-Efl-EflTests.release.xcconfig */,
+				FE50DB863BC2EA009F1FAA1D /* Pods-Efl-EflUITests.debug.xcconfig */,
+				18A7C24C96247873675E0DFA /* Pods-Efl-EflUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		924FEF9B1D92C98E0059C82E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				512914051DA29CD500336E8F /* UIViewController+EFLExtensions.swift */,
 				924FEF9C1D92C9A70059C82E /* UIView+EFLExtensions.swift */,
 			);
 			name = Extensions;
@@ -1163,30 +1201,14 @@
 			path = Ranking;
 			sourceTree = "<group>";
 		};
-		F248B2E2F8330FFFE1D9B377 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5351C6369818C7D7AA00A1AB /* Pods-Efl.debug.xcconfig */,
-				7B3D9EDA7F3A6AE8DE71FA55 /* Pods-Efl.release.xcconfig */,
-				C7E864A0520E527E0B0E146E /* Pods-Efl-EflTests.debug.xcconfig */,
-				2DE9B347D741917EA1FA6FB6 /* Pods-Efl-EflTests.release.xcconfig */,
-				D6C0C1998D1D8B546DD6F67B /* Pods-Efl-EflUITests.debug.xcconfig */,
-				DB3424A3BAF2098E79CF80B4 /* Pods-Efl-EflUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		F56E9EE70E77F0F8006D0E1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5107709D1D8954F100EFB7C5 /* Bolts.framework */,
-				5107709E1D8954F100EFB7C5 /* FBSDKCoreKit.framework */,
-				5107709F1D8954F100EFB7C5 /* FBSDKLoginKit.framework */,
-				510770A01D8954F100EFB7C5 /* FBSDKShareKit.framework */,
+				92AA2E1C1DAAE0D30064E242 /* QuartzCore.framework */,
 				279FCEEE1D5C75FE00936075 /* Social.framework */,
-				E678800E371B0B42E7914375 /* Pods_Efl.framework */,
-				0A96CEFE9828F37918252B96 /* Pods_Efl_EflTests.framework */,
-				66D39A90DFB636457F4677E7 /* Pods_Efl_EflUITests.framework */,
+				3102E3706BE399A22997D3EC /* Pods_Efl.framework */,
+				722970D169A794443AA3F198 /* Pods_Efl_EflTests.framework */,
+				EAECC9A8E0C57E9D4EDF4EA3 /* Pods_Efl_EflUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1204,6 +1226,7 @@
 				273332091D40AB510095167E /* Resources */,
 				3FF252DF57D184C4121DCBB4 /* [CP] Embed Pods Frameworks */,
 				136D8B0311A1A6D53D513E05 /* [CP] Copy Pods Resources */,
+				51ABFF3C1DA673E5006C94B6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1262,12 +1285,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = ZNET;
 				TargetAttributes = {
 					2733320A1D40AB510095167E = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 6C66NF5WHF;
+						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					2733321E1D40AB510095167E = {
 						CreatedOnToolsVersion = 7.1;
@@ -1488,6 +1517,7 @@
 				279C00231D7AB85300C59693 /* EFLPoolCardResponseModel.swift in Sources */,
 				279FCF6B1D5D091500936075 /* EFLAPIManager.swift in Sources */,
 				27217B071D472232007CA51E /* APIErrorTypeServer.swift in Sources */,
+				512914061DA29CD500336E8F /* UIViewController+EFLExtensions.swift in Sources */,
 				27C87AF61D79631B00481917 /* EFLLogoutAPI.swift in Sources */,
 				278ED60C1D818A1E003DC2B8 /* EFLCreatePoolResponse.swift in Sources */,
 				27C87B1B1D79A82600481917 /* EFLCompetitionListResponse.swift in Sources */,
@@ -1556,6 +1586,7 @@
 				27B5FD5C1D77E9D500B3B7D7 /* EFLPlayerResponse.swift in Sources */,
 				27B5FD7F1D78808600B3B7D7 /* EFLFriendModel.swift in Sources */,
 				27DEC15F1D532AB70015F6D6 /* StringExtension.swift in Sources */,
+				51C3A9E21DAEBA4C00E96913 /* File.swift in Sources */,
 				27217B7D1D4746B8007CA51E /* EFLBaseAPI.swift in Sources */,
 				277ADDFA1D7078BF007CB85A /* EFLPoolActionViewController.swift in Sources */,
 				27E75D4C1D6DFA7100C6DAD9 /* EFLPoolMessageCell.swift in Sources */,
@@ -1579,9 +1610,11 @@
 				279C00161D7AB4B400C59693 /* EFLPoolRoomResponse.swift in Sources */,
 				27E75D3E1D6DCE1200C6DAD9 /* EFLSelectCompetitionCell.swift in Sources */,
 				279FCF1F1D5CD06400936075 /* EFLUserFriendModel.swift in Sources */,
+				51C3A9E91DAEBC0100E96913 /* Friends+CoreDataProperties.m in Sources */,
 				273488EE1D48908700A27FD0 /* EFLLoginViewController.swift in Sources */,
 				27217B401D472B6F007CA51E /* Operators.swift in Sources */,
 				27EDFC911D5B7A9B0002D96F /* EFLLogoutCell.swift in Sources */,
+				51C3A9E81DAEBC0100E96913 /* Friends+CoreDataClass.m in Sources */,
 				27217B4B1D472B6F007CA51E /* TransformType.swift in Sources */,
 				27E94FBD1D772ED9009DBF1F /* EFLPlayerAPI.swift in Sources */,
 				27DBAF1E1D7B0083000BE863 /* EFLFriendListModel.swift in Sources */,
@@ -1688,8 +1721,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1719,6 +1754,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1735,8 +1771,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: ZNET Labs Pte. Ltd. (6C66NF5WHF)";
@@ -1758,16 +1796,21 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "5db587af-7ddc-4c85-9aac-10cc3491a26a";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		273332341D40AB520095167E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5351C6369818C7D7AA00A1AB /* Pods-Efl.debug.xcconfig */;
+			baseConfigurationReference = DE87373ED475A9EB34D06178 /* Pods-Efl.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Efl/Efl.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Efl/Frameworks",
@@ -1778,15 +1821,21 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.znetlabs.efl;
 				PRODUCT_NAME = Efl;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Efl/Classes/CoreData/Models/Efl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
 		273332351D40AB520095167E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B3D9EDA7F3A6AE8DE71FA55 /* Pods-Efl.release.xcconfig */;
+			baseConfigurationReference = 2AAB90F941FC6E4B5A1BBBFD /* Pods-Efl.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Efl/Efl.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: ZNET Labs Pte. Ltd. (6C66NF5WHF)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ZNET Labs Pte. Ltd. (6C66NF5WHF)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1799,13 +1848,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.znetlabs.efl;
 				PRODUCT_NAME = Efl;
 				PROVISIONING_PROFILE = "5db587af-7ddc-4c85-9aac-10cc3491a26a";
+				SWIFT_OBJC_BRIDGING_HEADER = "Efl/Classes/CoreData/Models/Efl-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
 		273332371D40AB520095167E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7E864A0520E527E0B0E146E /* Pods-Efl-EflTests.debug.xcconfig */;
+			baseConfigurationReference = 21BF8CBE7F0740FB5131FDDA /* Pods-Efl-EflTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1826,8 +1878,9 @@
 		};
 		273332381D40AB520095167E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DE9B347D741917EA1FA6FB6 /* Pods-Efl-EflTests.release.xcconfig */;
+			baseConfigurationReference = D363AD106D56FB48664A67CE /* Pods-Efl-EflTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1848,8 +1901,9 @@
 		};
 		2733323A1D40AB520095167E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6C0C1998D1D8B546DD6F67B /* Pods-Efl-EflUITests.debug.xcconfig */;
+			baseConfigurationReference = FE50DB863BC2EA009F1FAA1D /* Pods-Efl-EflUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = eflUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.znetlabs.eflUITests;
@@ -1861,8 +1915,9 @@
 		};
 		2733323B1D40AB520095167E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB3424A3BAF2098E79CF80B4 /* Pods-Efl-EflUITests.release.xcconfig */;
+			baseConfigurationReference = 18A7C24C96247873675E0DFA /* Pods-Efl-EflUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = eflUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.znetlabs.eflUITests;

@@ -10,7 +10,7 @@ import UIKit
 
 public class EFLUtility: NSObject {
     
-    //MARK : UserDefaults methods
+    // MARK : UserDefaults methods
     // MARK : Set values to user defaults
     static func saveValuesToUserDefaults(value: String, key: String) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
@@ -39,7 +39,7 @@ public class EFLUtility: NSObject {
         return NSUserDefaults.standardUserDefaults().boolForKey(key)
     }
 
-    //MARK : Remove values from user defaults
+    // MARK : Remove values from user defaults
     static func removeValueFromUserDefaults(key :String)
     {
         let userDefaults = NSUserDefaults.standardUserDefaults()
@@ -47,19 +47,19 @@ public class EFLUtility: NSObject {
         userDefaults.synchronize()
     }
     
-    //MARK: Check empty string
+    // MARK: Check empty string
     static func isEmptyString(text : String?) -> Bool {
         if text == nil { return true }
         if text!.isEmpty { return true }
         return false
     }
     
-    //MARK : Save user image
+    // MARK : Save user image
     static func saveUserImage(image: UIImage) {
         
         let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         let url = NSURL(fileURLWithPath: path)
-        let filePath = url.URLByAppendingPathComponent("UserImage.JPEG").path!
+        let filePath = url.URLByAppendingPathComponent("UserImage.JPEG")!.path!
 
         let imageData       = UIImageJPEGRepresentation(image, 0.6)
         let result = imageData!.writeToFile(filePath, atomically: true)
@@ -69,12 +69,12 @@ public class EFLUtility: NSObject {
     }
     
     
-    //MARK : remove user image
+    // MARK : remove user image
     static func removeUserImage() {
         
         let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         let url = NSURL(fileURLWithPath: path)
-        let filePath = url.URLByAppendingPathComponent("UserImage.JPEG").path!
+        let filePath = url.URLByAppendingPathComponent("UserImage.JPEG")!.path!
         let fileManager = NSFileManager.defaultManager()
         if fileManager.fileExistsAtPath(filePath) {
             do {
@@ -84,13 +84,13 @@ public class EFLUtility: NSObject {
         }
     }
 
-    //MARK : get user image
+    // MARK : get user image
     static func getUserImage() -> UIImage? {
         
         let fileManager = NSFileManager.defaultManager()
         let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         let url = NSURL(fileURLWithPath: path)
-        let filePath = url.URLByAppendingPathComponent("UserImage.JPEG").path!
+        let filePath = url.URLByAppendingPathComponent("UserImage.JPEG")!.path!
         
         if fileManager.fileExistsAtPath(filePath) {
             return UIImage(contentsOfFile: filePath)
@@ -99,18 +99,22 @@ public class EFLUtility: NSObject {
         }
     }
     
-    //MARK: Create Device Request
+    // MARK: Create Device Request
     static func getDeviceModel() -> EFLDeviceRequestModel {
         let requestModel = EFLDeviceRequestModel()
         requestModel.device_token = EFLManager.sharedManager.device_token
         requestModel.device_type = DeviceType
         requestModel.device_language = DeviceLanguagueCode
         requestModel.device_utc_offset = LocalTimeZoneAbbreviation
+        print(requestModel.device_type)
+        print(requestModel.device_token)
+        print(requestModel.device_language)
+        print(requestModel.device_utc_offset)
         return requestModel
     }
     
-    //MARK : AlertController methods
-    //MARK : Alert with ok button
+    // MARK : AlertController methods
+    // MARK : Alert with ok button
     static func showOKAlertWithMessage(message :String, andTitle title:String) {
         let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.view.tintColor = UIColor.eflGreenColor()
@@ -132,7 +136,7 @@ public class EFLUtility: NSObject {
         }
     }
 
-    //MARK: Scale Down Image
+    // MARK: Scale Down Image
     static func scaleDownImage(image: UIImage, ToSize newSize: CGSize) -> UIImage {
         
         var desiredSize = newSize
@@ -150,7 +154,7 @@ public class EFLUtility: NSObject {
         let newImgae = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
-        return newImgae
+        return newImgae!
     }
     
     static func getFactorValue(imageSize: CGSize, desiredSize: CGSize) -> CGFloat {
@@ -165,7 +169,7 @@ public class EFLUtility: NSObject {
         return dividorValue
     }
     
-    //MARK: Remove Alamofire Image Cache
+    // MARK: Remove Alamofire Image Cache
     static func clearImageFromCache(imageURL: String) {
         let URL = NSURL(string: imageURL)!
         let URLRequest = NSURLRequest(URL: URL)
@@ -242,7 +246,7 @@ public class EFLUtility: NSObject {
         })
     }
     
-    //MARK: Get competition list
+    // MARK: Get competition list
     static func getCompetitionList() {
         
         if !EFLManager.sharedManager.isCompetitionSynchronisationStarted {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="CompetitionMatchdays" syncable="YES">
         <attribute name="competition_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="matchday_id" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,18 +20,18 @@
         <attribute name="competition_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="is_completed" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="is_cup" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="is_completed" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="is_cup" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="last_updated_on" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastUpdatedServerTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pretty_display_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tiny_display_name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Friends" syncable="YES">
+    <entity name="Friends" representedClassName="Friends" syncable="YES">
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="isSignedUp" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isSignedUp" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="playerId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -39,7 +39,7 @@
     <entity name="PoolRoomCardPlayerPicks" syncable="YES"/>
     <entity name="PoolRoomCardPlayers" syncable="YES"/>
     <entity name="PoolRoomCards" syncable="YES">
-        <attribute name="is_matchday_drawn" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="is_matchday_drawn" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="last_updated_on" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="matchday_label" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="matchday_number" optional="YES" attributeType="String" syncable="YES"/>

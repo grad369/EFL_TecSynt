@@ -31,7 +31,7 @@
 #import "FBSDKInternalUtility.h"
 #import "FBSDKLogger.h"
 #import "FBSDKSettings+Internal.h"
-#import "FBSDKURLSessionTask.h"
+#import "FBSDKURLConnection.h"
 
 NSString *const FBSDKNonJSONResponseProperty = @"FACEBOOK_NON_JSON_RESULT";
 
@@ -76,18 +76,17 @@ typedef NS_ENUM(NSUInteger, FBSDKGraphRequestConnectionState)
 // Private properties and methods
 
 @interface FBSDKGraphRequestConnection () <
-NSURLSessionDataDelegate
+FBSDKURLConnectionDelegate
 #if !TARGET_OS_TV
 , FBSDKGraphErrorRecoveryProcessorDelegate
 #endif
 >
 
-@property (nonatomic, strong) NSURLSession *session;
-@property (nonatomic, strong) FBSDKURLSessionTask *task;
+@property (nonatomic, retain) FBSDKURLConnection *connection;
 @property (nonatomic, retain) NSMutableArray *requests;
-@property (nonatomic, assign) FBSDKGraphRequestConnectionState state;
-@property (nonatomic, strong) FBSDKLogger *logger;
-@property (nonatomic, assign) unsigned long requestStartTime;
+@property (nonatomic) FBSDKGraphRequestConnectionState state;
+@property (nonatomic, retain) FBSDKLogger *logger;
+@property (nonatomic) unsigned long requestStartTime;
 
 @end
 
@@ -118,7 +117,8 @@ NSURLSessionDataDelegate
 
 - (void)dealloc
 {
-  [_session invalidateAndCancel];
+  _connection.delegate = nil;
+  [_connection cancel];
 }
 
 #pragma mark - Public
@@ -163,8 +163,8 @@ NSURLSessionDataDelegate
 - (void)cancel
 {
   self.state = kStateCancelled;
-  [self.task cancel];
-  [self cleanUpSession];
+  [self.connection cancel];
+  self.connection = nil;
 }
 
 - (void)overrideVersionPartWith:(NSString *)version
@@ -196,22 +196,24 @@ NSURLSessionDataDelegate
   [self logRequest:request bodyLength:0 bodyLogger:nil attachmentLogger:nil];
   _requestStartTime = [FBSDKInternalUtility currentTimeInMilliseconds];
 
-  FBSDKURLSessionTaskHandler handler =  ^(NSError *error,
-                                          NSURLResponse *response,
-                                          NSData *responseData) {
-    [self completeFBSDKURLSessionWithResponse:response
-                                         data:responseData
-                                 networkError:error];
+  FBSDKURLConnectionHandler handler =
+  ^(FBSDKURLConnection *connection,
+    NSError *error,
+    NSURLResponse *response,
+    NSData *responseData) {
+    [self completeFBSDKURLConnectionWithResponse:response
+                                            data:responseData
+                                    networkError:error];
   };
 
-  if (!self.session) {
-    self.session = [self defaultSession];
+  FBSDKURLConnection *connection = [[FBSDKURLConnection alloc] initWithRequest:request
+                                                             completionHandler:handler];
+  if (_delegateQueue) {
+    [connection setDelegateQueue:_delegateQueue];
   }
-
-  self.task = [[FBSDKURLSessionTask alloc] initWithRequest:request
-                                               fromSession:self.session
-                                         completionHandler:handler];
-  [self.task start];
+  connection.delegate = self;
+  self.connection = connection;
+  [connection start];
 
   id<FBSDKGraphRequestConnectionDelegate> delegate = self.delegate;
   if ([delegate respondsToSelector:@selector(requestConnectionWillBeginLoading:)]) {
@@ -501,9 +503,9 @@ NSURLSessionDataDelegate
 
 #pragma mark - Private methods (response parsing)
 
-- (void)completeFBSDKURLSessionWithResponse:(NSURLResponse *)response
-                                       data:(NSData *)data
-                               networkError:(NSError *)error
+- (void)completeFBSDKURLConnectionWithResponse:(NSURLResponse *)response
+                                          data:(NSData *)data
+                                  networkError:(NSError *)error
 {
   if (self.state != kStateCancelled) {
     NSAssert(self.state == kStateStarted,
@@ -524,7 +526,7 @@ NSURLSessionDataDelegate
     if (!error && [response.MIMEType hasPrefix:@"image"]) {
       error = [FBSDKError errorWithCode:FBSDKGraphRequestNonTextMimeTypeReturnedErrorCode
                                 message:@"Response is a non-text MIME type; endpoints that return images and other "
-               @"binary data should be fetched using NSURLRequest and NSURLSession"];
+               @"binary data should be fetched using NSURLRequest and NSURLConnection"];
     } else {
       results = [self parseJSONResponse:data
                                   error:&error
@@ -558,7 +560,7 @@ NSURLSessionDataDelegate
 
   [self completeWithResults:results networkError:error];
 
-  [self cleanUpSession];
+  self.connection = nil;
 }
 
 //
@@ -609,7 +611,7 @@ NSURLSessionDataDelegate
     [results addObject:@{
                          @"code":@(statusCode),
                          @"body":response
-                         }];
+                        }];
   } else if ([response isKindOfClass:[NSArray class]]) {
     // response is the array of responses, but the body element of each needs
     // to be decoded from JSON.
@@ -638,7 +640,7 @@ NSURLSessionDataDelegate
     NSDictionary *result = @{
                              @"code":@(statusCode),
                              @"body":response
-                             };
+                            };
 
     for (NSUInteger resultIndex = 0, resultCount = self.requests.count; resultIndex < resultCount; ++resultIndex) {
       [results addObject:result];
@@ -786,7 +788,7 @@ NSURLSessionDataDelegate
     }
   }
 #endif
-  // this is already on the queue since we are currently in the NSURLSession callback.
+  // this is already on the queue since we are currently in the NSURLConnection callback.
   finishAndInvokeCompletionHandler();
 }
 
@@ -952,35 +954,27 @@ NSURLSessionDataDelegate
   return agent;
 }
 
-- (NSURLSession *)defaultSession
+- (void)setConnection:(FBSDKURLConnection *)connection
 {
-    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    return [NSURLSession sessionWithConfiguration:config
-                                         delegate:self
-                                    delegateQueue:_delegateQueue];
+  if (_connection != connection) {
+    _connection.delegate = nil;
+    _connection = connection;
+  }
 }
 
-- (void)cleanUpSession
-{
-  [self.session invalidateAndCancel];
-  self.session = nil;
-}
+#pragma mark - FBSDKURLConnectionDelegate
 
-#pragma mark - NSURLSessionDataDelegate
-
-- (void)URLSession:(NSURLSession *)session
-              task:(NSURLSessionTask *)task
-   didSendBodyData:(int64_t)bytesSent
-    totalBytesSent:(int64_t)totalBytesSent
-totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend
-{
-  id<FBSDKGraphRequestConnectionDelegate> delegate = self.delegate;
+- (void)facebookURLConnection:(FBSDKURLConnection *)connection
+              didSendBodyData:(NSInteger)bytesWritten
+            totalBytesWritten:(NSInteger)totalBytesWritten
+    totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
+  id<FBSDKGraphRequestConnectionDelegate> delegate = [self delegate];
 
   if ([delegate respondsToSelector:@selector(requestConnection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
     [delegate requestConnection:self
-                didSendBodyData:(NSUInteger)bytesSent
-              totalBytesWritten:(NSUInteger)totalBytesSent
-      totalBytesExpectedToWrite:(NSUInteger)totalBytesExpectedToSend];
+                didSendBodyData:bytesWritten
+              totalBytesWritten:totalBytesWritten
+      totalBytesExpectedToWrite:totalBytesExpectedToWrite];
   }
 }
 

@@ -66,7 +66,7 @@ public final class Mapper<N: Mappable> {
 		return object
 	}
 
-	//MARK: Mapping functions that create an object
+	// MARK: Mapping functions that create an object
 	
 	/// Map an optional JSON string to an object that conforms to Mappable
 	public func map(JSONString: String?) -> N? {

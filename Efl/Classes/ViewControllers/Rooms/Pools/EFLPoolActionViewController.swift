@@ -36,9 +36,9 @@ class EFLPoolActionViewController: EFLBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func initialiseView() {
+    override func configurationView() {
         
-        self.addNavigationBackButton()
+        //self.addNavigationBackButton()
 //        self.navigationItem.title = poolRoomDetails!.valueForKey("pool_name") as? String
         self.showNavigationTitle()
         self.tabBarController?.navigationController?.navigationBar.hidden = true
@@ -63,7 +63,7 @@ class EFLPoolActionViewController: EFLBaseViewController {
         }
     }
     
-    //MARK: Show navigation title view
+    // MARK: Show navigation title view
     func showNavigationTitle() {
         
         let titleView = UIView.init(frame: CGRectMake(0, 0, CGRectGetWidth(self.view.frame) - 75, 44)) //70 TO DO
@@ -199,7 +199,7 @@ class EFLPoolActionViewController: EFLBaseViewController {
         }
     }
     
-    //MARK: UI Tableview Delegate
+    // MARK: UI Tableview Delegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 50
@@ -264,7 +264,7 @@ class EFLPoolActionViewController: EFLBaseViewController {
         return view
     }
 
-    //MARK: Button Actions
+    // MARK: Button Actions
 
     
     @IBAction func declineButtonTapped(sender: AnyObject) {
@@ -287,7 +287,7 @@ class EFLPoolActionViewController: EFLBaseViewController {
     }
     
     
-    //MARK : API methods
+    // MARK : API methods
     //Update pool room
     
     // MARK: - API Methods
@@ -323,7 +323,7 @@ class EFLPoolActionViewController: EFLBaseViewController {
                         self.updateCacheWithStatus(inviteStatus, poolRoom: response.data.poolroom!)
                     }
                     else {
-                        print(response.message)
+                        //print(response.message)
                     }
                 }
             }

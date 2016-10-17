@@ -63,7 +63,7 @@ class EFLRoomListCell: UITableViewCell {
         }
     }
     
-    //MARK: Localmethods: cell View
+    // MARK: Localmethods: cell View
     func cellViewforUnreadNotification() {
         timeStamp.textColor = UIColor.eflRedColor()
         notificationRedAlert.hidden = false

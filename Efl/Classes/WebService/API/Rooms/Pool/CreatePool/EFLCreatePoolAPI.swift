@@ -24,7 +24,7 @@ class EFLCreatePoolAPI: EFLBaseAPI {
         performRequest(request, completion: completion)
     }
     
-    func  updatePoolWith(poolroomId: String?, request: EFLUpdatePoolRequestModel?, and completion:RequestCompletion) {
+    func updatePoolWith(poolroomId: String?, request: EFLUpdatePoolRequestModel?, and completion:RequestCompletion) {
         poolRoomID = poolroomId
         apiCall = EFLcreatePoolAPIType.Update
         performRequest(request, completion: completion)

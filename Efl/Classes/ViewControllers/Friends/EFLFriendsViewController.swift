@@ -12,7 +12,8 @@ import Social
 import CoreData
 import MessageUI
 
-class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionSheetDelegate, FBSDKGameRequestDialogDelegate, MFMailComposeViewControllerDelegate, UISearchBarDelegate {
+
+class EFLFriendsViewController: EFLBaseViewController, FBSDKGameRequestDialogDelegate, MFMailComposeViewControllerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var friendsTableView: UITableView!
     @IBOutlet weak var topContainerView: UIView!
     @IBOutlet weak var pointerImageView: UIImageView!
@@ -20,31 +21,14 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
     @IBOutlet weak var imageConstraint: NSLayoutConstraint!
     @IBOutlet weak var textConstraint: NSLayoutConstraint!
     
-    var overLayView: UIView?
-    var actionSheetView:EFLFriendsShareActionSheet?
-    var friendListArray = [NSManagedObject]()
+    var alphabeticalFriends: [String : [Friends]]?
     
     var searchFriendBar: UISearchBar = UISearchBar (frame: CGRectMake(0,0,0,40))
     var seperationView: UIView = UIView (frame: CGRectZero)
     
-    var spinner = EFLActivityIndicator()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.loadUIComponents()
-        let recognizer = UITapGestureRecognizer(target: self, action:#selector(EFLFriendsViewController.handleTap))
-        friendsTableView.addGestureRecognizer(recognizer)
-        // Do any additional setup after loading the view.
-    }
-    
-    override func initialiseView() {
-        self.addRightBarButtonItem()
-        self.navigationItem.title = "FRIENDS_TITLE".localized
-        self.tabBarController?.navigationController?.navigationBar.hidden = true
-        friendsTableView.registerNib(UINib(nibName: "EFLFriendListCell", bundle: nil), forCellReuseIdentifier: friendListCellIdentifier)
-        friendsTableView.tableFooterView = UIView()
-        
-    }
+    lazy var spinner: EFLActivityIndicator = {
+        return EFLActivityIndicator (supView: self.view)
+    }()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -59,38 +43,74 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
         super.viewWillDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: REFRESH_DATA_NOTIFICATION, object: nil)
     }
+}
+
+
+// MARK: - EFLBaseViewController functions
+extension EFLFriendsViewController {
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func configurationNavigationAndStatusBars() {
+        self.setConfigurationStatusBar(.Green)
+        self.setConfigurationNavigationBar("FRIENDS_TITLE".localized, titleView: nil, backgroundColor: .Green, topRoundCorner: 0)
+        self.setBarButtonItem(.AddFriends, placeType: .Right, tintColorType: .White)
+        self.setBarButtonItem(.Share, placeType: .Left, tintColorType: .White)
     }
     
+    override func configurationView() {
+        self.tabBarController?.navigationController?.navigationBar.hidden = true
+        friendsTableView.registerNib(UINib(nibName: "EFLFriendListCell", bundle: nil), forCellReuseIdentifier: friendListCellIdentifier)
+        friendsTableView.tableFooterView = UIView()
+        
+        self.addSearchBar()
+        self.loadUIComponents()
+        let recognizer = UITapGestureRecognizer(target: self, action:#selector(EFLFriendsViewController.handleTap))
+        friendsTableView.addGestureRecognizer(recognizer)
+    }
+}
+
+
+// MARK: - Actions
+extension EFLFriendsViewController {
     
-    //MARK: UI Methods
-    
-    func addRightBarButtonItem() {
-        let rightButtonitem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named:"NavigationPlusButtonWhiteIcon"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(EFLFriendsViewController.rightBarButtonItemDidPress))
-        rightButtonitem.tintColor = UIColor.eflWhiteColor()
-        let negativeSpace:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
-        negativeSpace.width = 0
-        self.navigationItem.setRightBarButtonItems([negativeSpace,rightButtonitem], animated: true)
+    func rightBarButtonItemDidPress() {
+        
+        self.searchFriendBar.resignFirstResponder()
+        if ReachabilityManager.isReachable() {
+            self.showGameRequestDialogue()
+        }
+        else {
+            EFLBannerView.sharedBanner.showBanner(self.view, message: "NO_CONNECTION".localized, yOffset: 0)
+        }
     }
     
-    func addSearchBar(){
-        //Search Bar set up
-        searchFriendBar.placeholder = "Search";
-        searchFriendBar.backgroundColor = UIColor.eflWhiteColor()
-        searchFriendBar.barTintColor = UIColor.eflRedColor()
-        searchFriendBar.searchBarStyle = UISearchBarStyle.Minimal;
-        searchFriendBar.delegate = self;
+    func leftBarButtonItemDidPress() {
+        let string: String = "SHARE_MESSAGE".localized
+        let URL: NSURL = NSURL(string: "http://example.com")!
         
-        //View seperating Searchbar + TableView
-        seperationView.frame = (CGRectMake(0, searchFriendBar.frame.size.height - 0.5, self.view!.frame.size.width, 0.5))
-        seperationView.backgroundColor = friendsTableView.separatorColor;
-        
-        //Adding Header
-        friendsTableView.tableHeaderView = searchFriendBar;
-        friendsTableView.tableHeaderView!.addSubview(seperationView)
+        let activityViewController = UIActivityViewController(activityItems: [string, URL], applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeAddToReadingList, UIActivityTypeAirDrop]
+        self.navigationController?.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
+    // MARK: Email action - CHEK This
+    func email() {
+        if MFMailComposeViewController.canSendMail() {
+            let mailComposerVC = MFMailComposeViewController()
+            mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+            
+            mailComposerVC.setSubject("Friendlies")
+            mailComposerVC.setMessageBody("SHARE_MESSAGE".localized + " " + "http://example.com", isHTML: true)
+            
+            self.presentViewController(mailComposerVC, animated: true, completion: nil)
+        } else {
+            EFLUtility.showOKAlertWithMessage("NO_EMAIL_ACCOUNT_MESSAGE".localized, andTitle: "NO_EMAIL_ACCOUNT_TITLE".localized)
+        }
+    }
+    
+    func handleTap(){
+        UIView.animateWithDuration(0.5, animations: {
+            self.searchFriendBar.resignFirstResponder()
+        })
     }
     
     func reloadData() {
@@ -99,101 +119,165 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
             self.loadUIComponents()
         })
     }
-    
-    func reloadTableData() {
-        friendsTableView.reloadData()
-    }
-    
-    func loadUIComponents() {
-        if let array = EFLPlayerDataManager.sharedDataManager.getFriendsFromCache() {
-            friendListArray = array as! [NSManagedObject]
-            self.handleUIEmptyState(true)
-            addSearchBar()
-            self.reloadTableData()
-            //To do
-            //Update friend list cache parallely
-        }
-        else {
-            if IS_IPHONE4 {
-                imageConstraint.constant = -20.0
-                textConstraint.constant = -40.0
-            }
-            self.handleUIEmptyState(false)
-            
-            EFLAPIManager.sharedAPIManager.getFriends({ (status) in
-                print("getFriends \(status)")
+}
 
-                if status == CompletionStatusSuccess {
-                    if let array = EFLPlayerDataManager.sharedDataManager.getFriendsFromCache() {
-                        self.friendListArray = array as! [NSManagedObject]
-                        self.handleUIEmptyState(true)
-                        self.reloadTableData()
-                    }
-                }
-            })
-        }
-    }
-    
-    func handleUIEmptyState(isDataToLoad: Bool) {
-        friendsTableView.hidden = !isDataToLoad
-        pointerImageView.hidden = isDataToLoad
-        emptyFriendsImageView.hidden = isDataToLoad
-        topContainerView.hidden = isDataToLoad
-    }
-    
-    func handleTap(){
-        UIView .animateWithDuration(0.5, animations: {
-            self.searchFriendBar.resignFirstResponder()
-        });
-    }
-    
-    func resetSearchBarPosition(){
-        if (!friendsTableView.hidden) {
-            searchFriendBar.text = EmptyString
-            loadUIComponents()
-            let heightOffset = CGPointMake(0, friendsTableView.tableHeaderView!.frame.size.height);
-            friendsTableView.contentOffset = heightOffset;
-        }
-    }
-    
-    //MARK: Selector Methods
-    
-    func rightBarButtonItemDidPress() {
+
+// MARK: UITableView DataSource Methods
+extension EFLFriendsViewController {
         
-        self.searchFriendBar.resignFirstResponder()
-        if ReachabilityManager.isReachable() {
-            overLayView = UIView.init(frame: APP_DELEGATE.window!.frame)
-            overLayView!.backgroundColor = UIColor.eflBlackColor()
-            overLayView!.alpha = 0.5
-            
-            actionSheetView = EFLFriendsShareActionSheet.init(frame: CGRectMake(7, CGRectGetHeight(APP_DELEGATE.window!.frame), CGRectGetWidth(self.view.bounds) - 14, 407))
-            actionSheetView!.delegate = self
-            UIView.animateWithDuration(Double(0.4), animations: {
-                APP_DELEGATE.window?.addSubview(self.overLayView!)
-                APP_DELEGATE.window?.addSubview(self.actionSheetView!)
-                
-                self.actionSheetView!.frame = CGRectMake(7, CGRectGetHeight(APP_DELEGATE.window!.frame) - 414, CGRectGetWidth(self.view.bounds) - 14, 407)
-            })
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if alphabeticalFriends == nil {
+            return 0
+        } else {
+            return alphabeticalFriends!.keys.count
+        }
+    }
+    
+    // number of rows in table view
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if alphabeticalFriends != nil {
+            let symbols = sortedSymbols()!
+            let friends = alphabeticalFriends![symbols[section]]! as [Friends]
+            return friends.count
+        } else {
+            return 0
+        }
+    }
+    
+    // MARK create a cell for each table view row
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell:EFLFriendListCell = tableView.dequeueReusableCellWithIdentifier(friendListCellIdentifier) as! EFLFriendListCell
+        
+        let symbols = sortedSymbols()!
+        let friends = alphabeticalFriends![symbols[indexPath.section]]! as [Friends]
+        
+        let userFriend: NSManagedObject? = friends[indexPath.row]
+        cell.selectButton.hidden = true
+        if let user = userFriend {
+            cell.setUSerFriendImage(user.valueForKey("playerId") as! String, imageURL: user.valueForKey("imageURL") as? String)
+            let firstName = user.valueForKey("firstName") as? String
+            let lastName = user.valueForKey("lastName") as? String
+            cell.nameLabel.text = firstName! + " " + lastName!
+            if let boolValue = user.valueForKey("isSignedUp") as? Bool {
+                if !boolValue {
+                    cell.statusLabel.hidden = false
+                    cell.nameTopContraint.constant = 3
+                }
+                else {
+                    cell.statusLabel.hidden = true
+                    cell.nameTopContraint.constant = 12
+                }
+            }
+        }
+    
+        if indexPath.row == friends.count - 1 {
+            cell.separatorInset = UIEdgeInsetsZero
+            cell.layoutMargins = UIEdgeInsetsZero
         }
         else {
-            EFLBannerView.sharedBanner.showBanner(self.view, message: "NO_CONNECTION".localized, yOffset: 0)
+            cell.separatorInset.left = 72
         }
+        return cell
+    }
+}
+
+
+// MARK: UI Tableview Delegate
+extension EFLFriendsViewController {
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50
     }
     
-    // MARK: API Methods
-    func upateFriends(recipients:[String]) { // Invite friends from Facebook
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 26
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel(frame: CGRectMake(16, 8, 40, 15))
+        label.textColor = UIColor.eflMidGreyColor()
+        label.font = FONT_REGULAR_16
         
-//        EFLActivityIndicator.sharedSpinner.showIndicator()
-        self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
+        if alphabeticalFriends != nil {
+            label.text = sortedSymbols()![section]
+        } else {
+            label.text = EmptyString
+        }
+        
+        let view = UIView(frame: CGRectMake(0, 0, 50, 26))
+        view.addSubview(label)
+        return view
+    }
+    
+    func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+        if alphabeticalFriends == nil {
+            return [""]
+        } else {
+            return self.sortedSymbols()
+        }
+    }
+}
+
+
+// MARK: UI SearchBar Delegate
+extension EFLFriendsViewController {
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.handleTap()
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchText.characters.count == 0) {
+            alphabeticalFriends = EFLPlayerDataManager.sharedDataManager.getAlphabeticalFriends()
+            friendsTableView.reloadData()
+        }
+        else {
+            let textArraySeperartedBySpace = searchBar.text!.componentsSeparatedByString(" ");
+            var firstName = searchBar.text;
+            var lastName = searchBar.text;
+            var predicate: NSPredicate?
+            
+            if(textArraySeperartedBySpace.count > 1){
+                firstName = textArraySeperartedBySpace[0];
+                lastName = textArraySeperartedBySpace[1];
+                
+                predicate = NSPredicate (format:"(firstName CONTAINS[cd] %@ AND lastName CONTAINS[cd] %@) OR (firstName CONTAINS[cd] %@ AND lastName CONTAINS[cd] %@)", firstName!, lastName!, lastName!, firstName!);
+                
+                if textArraySeperartedBySpace[1] == "" {
+                    predicate = NSPredicate (format:"firstName CONTAINS[cd] %@ OR lastName CONTAINS[cd] %@", String(firstName!.characters.dropLast()), String(lastName!.characters.dropLast()));
+                }
+            } else {
+                predicate = NSPredicate (format:"firstName CONTAINS[cd] %@ OR lastName CONTAINS[cd] %@", firstName!, lastName!);
+            }
+            
+            let searchDataSource = EFLPlayerDataManager.sharedDataManager.getAlphabeticalFriends({ (friends: [Friends]) -> [Friends] in
+                return friends.filter{ predicate!.evaluateWithObject($0)
+            }})
+            
+            alphabeticalFriends = searchDataSource;
+            friendsTableView .reloadData()
+        }
+    }
+}
+
+
+// MARK: - API Methods
+extension EFLFriendsViewController {
+    
+    func updateFriends(recipients:[String]) { // Invite friends from Facebook
+        
         self.spinner.showIndicator()
         
         let requestModel = EFLFriendsUpdateRequestModel()
         requestModel.facebook_ids = recipients
         
         EFLFriendsAPI().updateFriends(requestModel) { (error, data) -> Void in
-//            EFLActivityIndicator.sharedSpinner.hideIndicator()
             self.spinner.hideIndicator()
-            
             
             if !error.isKindOfClass(APIErrorTypeNone){
                 print(error.code)
@@ -215,128 +299,12 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
             }
         }
     }
+}
+
+
+// MARK: - FBSDKGameRequestDialog
+extension EFLFriendsViewController {
     
-    // MARK: Hanlde login response
-    func handleResponseFailure(response: EFLFriendsResponse) {
-        print(response.message)
-    }
-    
-    
-    // MARK: UITableView DataSource Methods
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    // number of rows in table view
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friendListArray.count
-    }
-    
-    // create a cell for each table view row
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell:EFLFriendListCell = tableView.dequeueReusableCellWithIdentifier(friendListCellIdentifier) as! EFLFriendListCell
-        let userFriend: NSManagedObject? = friendListArray[indexPath.row]
-        cell.selectButton.hidden = true
-        if let user = userFriend {
-            cell.setUSerFriendImage(user.valueForKey("playerId") as! String, imageURL: user.valueForKey("imageURL") as? String)
-            let firstName = user.valueForKey("firstName") as? String
-            let lastName = user.valueForKey("lastName") as? String
-            cell.nameLabel.text = firstName! + " " + lastName!
-            if let boolValue = user.valueForKey("isSignedUp") as? Bool {
-                if !boolValue {
-                    cell.statusLabel.hidden = false
-                    cell.nameTopContraint.constant = 3
-                }
-                else {
-                    cell.statusLabel.hidden = true
-                    cell.nameTopContraint.constant = 12
-                }
-            }
-        }
-        if indexPath.row == friendListArray.count - 1 {
-            cell.separatorInset = UIEdgeInsetsZero
-            cell.layoutMargins = UIEdgeInsetsZero
-        }
-        else {
-            cell.separatorInset.left = 72
-        }
-        return cell
-    }
-    
-    //MARK: UI Tableview Delegate
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 50
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
-    }
-    
-    //MARK: UI SearchBar Delegate
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        self.handleTap()
-    }
-    
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        if (searchText.characters.count == 0) {
-            let searchDataSource = EFLPlayerDataManager.sharedDataManager.getFriendsFromCache()
-            friendListArray = searchDataSource as! [NSManagedObject]
-            friendsTableView .reloadData()
-        }
-        else {
-            let textArraySeperartedBySpace = searchBar.text!.componentsSeparatedByString(" ");
-            var firstName = searchBar.text;
-            var lastName = searchBar.text;
-            var predicate: NSPredicate?
-            
-            if(textArraySeperartedBySpace.count > 1){
-                firstName = textArraySeperartedBySpace[0];
-                lastName = textArraySeperartedBySpace[1];
-                
-                predicate = NSPredicate (format:"(firstName CONTAINS[cd] %@ AND lastName CONTAINS[cd] %@) OR (firstName CONTAINS[cd] %@ AND lastName CONTAINS[cd] %@)", firstName!, lastName!, lastName!, firstName!);
-                
-                if textArraySeperartedBySpace[1] == "" {
-                    predicate = NSPredicate (format:"firstName CONTAINS[cd] %@ OR lastName CONTAINS[cd] %@", String(firstName!.characters.dropLast()), String(lastName!.characters.dropLast()));
-                }
-            } else {
-                predicate = NSPredicate (format:"firstName CONTAINS[cd] %@ OR lastName CONTAINS[cd] %@", firstName!, lastName!);
-            }
-            let searchDataSource = (EFLPlayerDataManager.sharedDataManager.getFriendsFromCache()as! [NSManagedObject]).filter{ predicate!.evaluateWithObject($0) }
-            
-            friendListArray = searchDataSource;
-            friendsTableView .reloadData()
-        }
-    }
-    
-    //MARK:  ActionSheetDelegate Method
-    
-    func actionSheetSelected(tag: Int) {
-        
-        UIView.animateWithDuration(0.4, animations: {
-            self.actionSheetView!.frame = CGRectMake(7, CGRectGetHeight(APP_DELEGATE.window!.frame), CGRectGetWidth(self.view.bounds) - 14, 355)
-        }) { (Void) in
-            self.overLayView?.removeFromSuperview()
-            self.actionSheetView?.removeFromSuperview()
-        }
-        
-        if tag == 0 {
-            self.showGameRequestDialogue()
-        }
-        else if tag == 4 {
-            self.tweet()
-        }
-        else if tag == 5 {
-            self.email()
-        }
-        else if tag == 6 {
-            self.showShareDialogue()
-        }
-        
-    }
-    
-    // MARK: Show FBSDKGameRequestDialog
     func showGameRequestDialogue() {
         let inviteDialog:FBSDKGameRequestContent = FBSDKGameRequestContent()
         inviteDialog.filters = FBSDKGameRequestFilter.AppNonUsers
@@ -345,14 +313,13 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
         FBSDKGameRequestDialog.showWithContent(inviteDialog, delegate: self)
     }
     
-    // MARK: FBSDKGameRequestDialogDelegate Methods
-    
+    // FBSDKGameRequestDialogDelegate Methods
     func gameRequestDialog(gameRequestDialog: FBSDKGameRequestDialog!, didCompleteWithResults results: [NSObject : AnyObject]?) {
         if results != nil {
             let recipients = results!["to"] as? [String]
             if recipients?.count > 0 {
                 print(recipients!)
-                self.upateFriends(recipients!)
+                self.updateFriends(recipients!)
             }
         }
     }
@@ -365,10 +332,7 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
                 print("User cancelled authentication")
             }
             else {
-//                EFLActivityIndicator.sharedSpinner.showIndicator()
-                self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
                 self.spinner.showIndicator()
-                
                 
                 self.updateAccesToken(FBSDKAccessToken.currentAccessToken().tokenString)
             }
@@ -377,19 +341,19 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
     
     func gameRequestDialogDidCancel(gameRequestDialog: FBSDKGameRequestDialog!) {
     }
+}
+
+
+// MARK: Update Access_Token To Server
+extension EFLFriendsViewController {
     
-    //MARK: Update Access_Token To Server
     func updateAccesToken(accessToken :String) {
         let requestModel = EFLPlayerUpdateRequestModel()
         requestModel.facebook_token = EFLUtility.readValueFromUserDefaults(FB_ACCESS_TOKEN_KEY)
-        
-//        EFLActivityIndicator.sharedSpinner.showIndicator()
-        self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
+    
         self.spinner.showIndicator()
         
-        
         EFLPlayerAPI().updatePlayer(requestModel) { (error, data) -> Void in
-//            EFLActivityIndicator.sharedSpinner.hideIndicator()
             self.spinner.hideIndicator()
             
             if !error.isKindOfClass(APIErrorTypeNone){
@@ -405,55 +369,95 @@ class EFLFriendsViewController: EFLBaseViewController, EFLFriendsShareActionShee
             }
         }
     }
-    
-    //MARK: Tweet action
-    func tweet() {
-        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
-            let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            vc.setInitialText("SHARE_MESSAGE".localized)
-            vc.addURL(NSURL(string: "http://example.com"))
-            presentViewController(vc, animated: true, completion: nil)
-        }
-    }
-    
-    //MARK: Email action
-    func email() {
-        if MFMailComposeViewController.canSendMail() {
-            let mailComposerVC = MFMailComposeViewController()
-            mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-            
-            mailComposerVC.setSubject("Friendlies")
-            mailComposerVC.setMessageBody("SHARE_MESSAGE".localized + " " + "http://example.com", isHTML: true)
-            
-            self.presentViewController(mailComposerVC, animated: true, completion: nil)
-        } else {
-            EFLUtility.showOKAlertWithMessage("NO_EMAIL_ACCOUNT_MESSAGE".localized, andTitle: "NO_EMAIL_ACCOUNT_TITLE".localized)
-        }
-    }
-    
-    // MARK: MFMailComposeViewControllerDelegate Method
+}
+
+
+// MARK: MFMailComposeViewControllerDelegate Method
+extension EFLFriendsViewController {
+        
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
+}
+
+
+// MARK: - Private functions
+private extension EFLFriendsViewController {
     
-    // MARK:  More action
-    func showShareDialogue() {
-        let string: String = "SHARE_MESSAGE".localized
-        let URL: NSURL = NSURL(string: "http://example.com")!
+    func addSearchBar(){
+        //Search Bar set up
+        searchFriendBar.placeholder = "Search";
+        searchFriendBar.backgroundColor = UIColor.eflWhiteColor()
+        searchFriendBar.barTintColor = UIColor.eflRedColor()
+        searchFriendBar.searchBarStyle = UISearchBarStyle.Minimal;
+        searchFriendBar.delegate = self;
         
-        let activityViewController = UIActivityViewController(activityItems: [string, URL], applicationActivities: nil)
-        activityViewController.excludedActivityTypes = [UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeAddToReadingList, UIActivityTypeAirDrop]
-        self.navigationController?.presentViewController(activityViewController, animated: true, completion: nil)
+        //View seperating Searchbar + TableView
+        seperationView.frame = (CGRectMake(0, searchFriendBar.frame.size.height - 0.5, self.view!.frame.size.width, 0.5))
+        seperationView.backgroundColor = friendsTableView.separatorColor;
+        
+        //Adding Header
+        friendsTableView.tableHeaderView = searchFriendBar;
+        friendsTableView.tableHeaderView!.addSubview(seperationView)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func reloadTableData() {
+        friendsTableView.reloadData()
+    }
     
+    func loadUIComponents() {
+        if let array = EFLPlayerDataManager.sharedDataManager.getAlphabeticalFriends() {
+            alphabeticalFriends = array
+            self.handleUIEmptyState(true)
+            self.reloadTableData()
+            //To do
+            //Update friend list cache parallely
+        } else {
+            self.handleUIEmptyState(false)
+            
+            EFLAPIManager.sharedAPIManager.getFriends({ (status) in
+                print("getFriends \(status)")
+                
+                if status == CompletionStatusSuccess {
+                    if let array = EFLPlayerDataManager.sharedDataManager.getAlphabeticalFriends() {
+                        self.alphabeticalFriends = array
+                        self.handleUIEmptyState(true)
+                        self.reloadTableData()
+                    }
+                }
+            })
+        }
+    }
+    
+    func handleUIEmptyState(isDataToLoad: Bool) {
+        friendsTableView.hidden = !isDataToLoad
+        pointerImageView.hidden = isDataToLoad
+        emptyFriendsImageView.hidden = isDataToLoad
+        topContainerView.hidden = isDataToLoad
+    }
+    
+    func resetSearchBarPosition() {
+        if (!friendsTableView.hidden) {
+            searchFriendBar.text = EmptyString
+            loadUIComponents()
+            let heightOffset = CGPointMake(0, friendsTableView.tableHeaderView!.frame.size.height);
+            friendsTableView.contentOffset = heightOffset;
+        }
+    }
+    
+    // MARK: Hanlde login response
+    func handleResponseFailure(response: EFLFriendsResponse) {
+        //print(response.message)
+    }
+    
+    func sortedSymbols() -> [String]? {
+        guard alphabeticalFriends != nil else {
+            return nil
+        }
+        
+        return alphabeticalFriends?.keys.sort({ (char1, char2) -> Bool in
+            char1 < char2
+        })
+    }
+
 }

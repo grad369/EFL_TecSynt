@@ -11,7 +11,7 @@ import SafariServices
 
 class EFLTermsPolicyViewController: EFLBaseViewController {
     @IBOutlet weak var webView: UIWebView!
-    var spinner = EFLActivityIndicator()
+    var spinner: EFLActivityIndicator!
     
 
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class EFLTermsPolicyViewController: EFLBaseViewController {
         let url = NSURL (string: URLTermsAndPolicy);
         let requestObj = NSURLRequest(URL: url!);
         webView.loadRequest(requestObj);
-        self.addNavigationBackButton()
+        //self.addNavigationBackButton()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -36,7 +36,7 @@ class EFLTermsPolicyViewController: EFLBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: UIWebView Delegate Methods
+    // MARK: UIWebView Delegate Methods
     
     func webViewDidStartLoad(webView: UIWebView) {
         
@@ -54,15 +54,4 @@ class EFLTermsPolicyViewController: EFLBaseViewController {
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         EFLUtility.showOKAlertWithMessage((error?.localizedDescription)!, andTitle: EmptyString)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

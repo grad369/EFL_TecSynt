@@ -83,7 +83,7 @@ class EFLFriendsShareActionSheet: UIView, UITableViewDataSource, UITableViewDele
         return cell
     }
     
-    //MARK: UI Tableview Delegate
+    // MARK: UI Tableview Delegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50
     }
@@ -94,7 +94,6 @@ class EFLFriendsShareActionSheet: UIView, UITableViewDataSource, UITableViewDele
     }
     
     // MARK: - Set Cell component
-    
     func setCellData(indexPath: NSIndexPath, cell: EFLFriendsShareCell) {
         switch indexPath.row {
         case 0:
@@ -130,14 +129,4 @@ class EFLFriendsShareActionSheet: UIView, UITableViewDataSource, UITableViewDele
             break
         }
     }
-
-    
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

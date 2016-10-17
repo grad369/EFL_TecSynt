@@ -7,77 +7,157 @@
 //
 
 import UIKit
+import QuartzCore
 
 class EFLBaseViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        initialiseView()
-    }
-
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    //MARK: Initialise View
-    func initialiseView() {
-    }
-
-    // MARK: - Navigation
-    
-    func addNavigationBackButton() {
         
-        let backButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named:"NavigationBackButtonWhiteIcon"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(EFLBaseViewController.backButtonAction))
-        backButtonItem.tintColor = UIColor.eflWhiteColor()
+        self.configurationNavigationAndStatusBars()
+        self.configurationView()
+    }
+}
+
+extension EFLBaseViewController {
+    
+    // MARK: - configuration Navigation Item and Status Bar in inherit classes
+    func configurationNavigationAndStatusBars() {
+    }
+    
+    // MARK: Initialise View in inherit classes
+    func configurationView() {
+    }
+}
+
+
+// MARK: Configuration Navigation and Status bars
+extension EFLBaseViewController {
+    
+    func setConfigurationNavigationBar(title: String?, titleView: UIView?, backgroundColor: EFLColorType, topRoundCorner: CGFloat) {
+        if title != nil {
+            self.navigationItem.title = title
+        }
+        if titleView != nil {
+            self.navigationItem.titleView = titleView
+        }
+        if topRoundCorner != 0 {
+            roundNavigationBar(topRoundCorner)
+        }
+        
+        let navigationBar = self.navigationController!.navigationBar
+        navigationBar.translucent = false
+        
+        switch backgroundColor {
+        case .White:
+            navigationBar.barTintColor = UIColor.eflWhiteColor()
+            navigationBar.titleTextAttributes = [NSFontAttributeName: FONT_MEDIUM_19!, NSForegroundColorAttributeName: UIColor.eflBlackColor()]
+        case .Green:
+            navigationBar.barTintColor = UIColor.eflGreenColor()
+            navigationBar.titleTextAttributes = [NSFontAttributeName: FONT_MEDIUM_19!, NSForegroundColorAttributeName: UIColor.eflWhiteColor()]
+        default: break
+        }
+    }
+    
+    func setConfigurationStatusBar(colorBackgroundType: EFLColorType) {
+        
+        guard let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
+            return
+        }
+        
+        switch colorBackgroundType {
+        case .Black:
+            statusBar.backgroundColor = UIColor.eflBlackColor()
+            UIApplication.sharedApplication().statusBarStyle = .LightContent
+        case .White:
+            statusBar.backgroundColor = UIColor.eflWhiteColor()
+            UIApplication.sharedApplication().statusBarStyle = .Default
+        case .Green:
+            statusBar.backgroundColor = UIColor.clearColor()
+            UIApplication.sharedApplication().statusBarStyle = .LightContent
+        }
+        
+        UIApplication.sharedApplication().statusBarHidden = false
+    }
+    
+    func setBarButtonItem(buttonType: EFLBarButtonType, placeType: EFLBarButtonPlaceType, tintColorType: EFLColorType, widthSpace: CGFloat = 0) -> UIBarButtonItem? {
+        
+        let buttonItem: UIBarButtonItem? = self.barButtonItem(buttonType, placeType: placeType, tintColorType: tintColorType)
+        
+        if buttonItem == nil {
+            return nil
+        }
+        
         let negativeSpace:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
-        negativeSpace.width = 0
-        self.navigationItem.setLeftBarButtonItems([negativeSpace,backButtonItem], animated: true)
-    }
-    
-    func addNavigationCancelButton() {
+        negativeSpace.width = widthSpace
         
-        let cancelButton = UIButton.init(type: UIButtonType.System)
-        cancelButton.frame = CGRectMake(0, 0, 60, 44)
-        cancelButton.backgroundColor = UIColor.clearColor()
-        cancelButton.setTitle("ALERT_CANCEL_BUTTON_TITLE".localized, forState: UIControlState.Normal)
-        cancelButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
-        cancelButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 3, 0)
+        if placeType == .Left {
+            self.navigationItem.setLeftBarButtonItems([negativeSpace, buttonItem!], animated: true)
+        } else {
+            self.navigationItem.setRightBarButtonItems([buttonItem!, negativeSpace], animated: true)
+        }
         
-        cancelButton.setTitleColor(UIColor.eflWhiteColor(), forState: UIControlState.Normal)
-        cancelButton.titleLabel?.font = FONT_REGULAR_19
-        cancelButton.addTarget(self, action: #selector(backButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
-        cancelButton.titleLabel?.textAlignment = NSTextAlignment.Left
-        let backButtonItem: UIBarButtonItem = UIBarButtonItem.init(customView: cancelButton)
-        let negativeSpace:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
-        negativeSpace.width = 0
-        self.navigationItem.setLeftBarButtonItems([negativeSpace,backButtonItem], animated: true)
+        return buttonItem
     }
+}
 
-    func hideBackButton() {
-        self.navigationItem.leftBarButtonItems = nil
-        self.navigationItem.hidesBackButton = true
+// Mark: private functions
+private extension EFLBaseViewController {
+    
+    func roundNavigationBar(roundCorner: CGFloat = 8) {
+        let navigationBar = self.navigationController!.navigationBar
+        let path = UIBezierPath(roundedRect: navigationBar.bounds, byRoundingCorners: [.TopLeft, .TopRight], cornerRadii: CGSizeMake(roundCorner, roundCorner))
+        let layer = CAShapeLayer()
+        layer.frame = navigationBar.bounds
+        layer.path = path.CGPath
+        navigationBar.layer.mask = layer
     }
     
-    func backButtonAction(){
-        self.navigationController?.popViewControllerAnimated(true)
+    func barButtonItem(buttonType: EFLBarButtonType, placeType: EFLBarButtonPlaceType, tintColorType: EFLColorType) -> UIBarButtonItem? {
+        var buttonItem: UIBarButtonItem?
+        
+        let actionSelector = Selector((placeType == .Left ? "left" : "right") + "BarButtonItemDidPress")
+        
+        switch buttonType {
+        case .None:
+            buttonItem = nil
+        case .Ok:
+            buttonItem = UIBarButtonItem(customView: self.buttonForBarButton("".localized, placeType: placeType, tintColorType: tintColorType))
+        case .Plus:
+            buttonItem = UIBarButtonItem(image: UIImage(named:"NavigationPlusButtonWhiteIcon"), style: UIBarButtonItemStyle.Plain, target: self, action: actionSelector)
+        case .Send:
+            buttonItem = UIBarButtonItem(customView: self.buttonForBarButton("SEND_BUTTON_TITLE".localized, placeType: placeType, tintColorType: tintColorType))
+        case .AddFriends:
+            buttonItem = UIBarButtonItem(image: UIImage(named:"topnav_addfriend_white"), style: UIBarButtonItemStyle.Plain, target: self, action: actionSelector)
+        case .Back:
+            buttonItem = UIBarButtonItem(image: UIImage(named:"NavigationBackButtonWhiteIcon"), style: UIBarButtonItemStyle.Plain, target: self, action: actionSelector)
+        case .Close:
+            buttonItem = UIBarButtonItem(image: UIImage(named:"NavigationPlusButtonWhiteIcon"), style: UIBarButtonItemStyle.Plain, target: self, action: actionSelector)
+        case .Cancel:
+            buttonItem = UIBarButtonItem(customView: self.buttonForBarButton("ALERT_CANCEL_BUTTON_TITLE".localized, placeType: placeType, tintColorType: tintColorType))
+        case .Share:
+            buttonItem = UIBarButtonItem(image: UIImage(named:"topnav_share_white"), style: UIBarButtonItemStyle.Plain, target: self, action: actionSelector)
+        }
+        buttonItem?.tintColor = tintColorType == .White ? UIColor.eflWhiteColor() : UIColor.eflBlackColor()
+        
+        return buttonItem
     }
-
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func buttonForBarButton(title: String, placeType: EFLBarButtonPlaceType, tintColorType: EFLColorType) -> UIButton {
+        
+        let button = UIButton.init(type: UIButtonType.System)
+        button.frame = CGRectMake(0, 0, 60, 44)
+        button.backgroundColor = UIColor.clearColor()
+        button.setTitle(title, forState: UIControlState.Normal)
+        button.contentHorizontalAlignment = (placeType == .Left ? .Left : .Right)
+        
+        let titleColor = tintColorType == .White ? UIColor.eflWhiteColor() : UIColor.eflBlackColor()
+        let actionSelector = Selector((placeType == .Left ? "left" : "right") + "BarButtonItemDidPress")
+        button.setTitleColor(titleColor, forState: UIControlState.Normal)
+        button.titleLabel?.font = FONT_REGULAR_19
+        button.addTarget(self, action: actionSelector, forControlEvents: UIControlEvents.TouchUpInside)
+        button.titleLabel?.textAlignment = (placeType == .Left ? .Left : .Right)
+        
+        return button
     }
-    */
-
 }

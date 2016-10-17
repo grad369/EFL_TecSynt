@@ -35,15 +35,10 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
     var friendListArray = [EFLFriendListModel]()
     var selectedPlayers = [EFLAddPlayerModel]()
     
-    var spinner = EFLActivityIndicator()
+    var spinner: EFLActivityIndicator!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let recognizer = UITapGestureRecognizer(target: self, action:#selector(EFLAddPlayerViewController.handleTap))
-//        friendsTableView.addGestureRecognizer(recognizer)
-//        self.view.addGestureRecognizer(recognizer)
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews(){
@@ -53,7 +48,7 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
         }
     }
 
-    override func initialiseView() {
+    override func configurationView() {
         
         if IS_IPHONE4 {
             textConstraint.constant = -25.0
@@ -64,10 +59,8 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
         let constraint = half - 20.5
         imageTrailingConstraint.constant = constraint
 
-
         searchFriendBar.text = ""
 
-        self.addNavigationCancelButton()
         self.addRightBarButtonItem()        
         self.navigationItem.title = "ADD_PLAYERS_TITLE".localized
         self.tabBarController?.navigationController?.navigationBar.hidden = true
@@ -107,7 +100,7 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: UI Methods
+    // MARK: UI Methods
     
     func addRightBarButtonItem() {
         
@@ -261,7 +254,7 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
         return cell
     }
     
-    //MARK: UI Tableview Delegate
+    // MARK: UI Tableview Delegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50
     }
@@ -310,7 +303,7 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
         self.activateOkButton()
     }
     
-    //MARK: UI SearchBar Delegate
+    // MARK: UI SearchBar Delegate
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         self.handleTap()
     }
@@ -401,7 +394,7 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
 
     // MARK: API Methods
     
-    //MARK: Update Access_Token To Server
+    // MARK: Update Access_Token To Server
     func updateAccesToken(accessToken :String) {
         let requestModel = EFLPlayerUpdateRequestModel()
         requestModel.facebook_token = EFLUtility.readValueFromUserDefaults(FB_ACCESS_TOKEN_KEY)
@@ -462,54 +455,6 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
 
     // MARK: Hanlde login response
     func handleResponseFailure(response: EFLFriendsResponse) {
-        print(response.message)
+        //print(response.message)
     }
-    
-    // MARK: Navigation Bar Seperation Hide
-   /*
-    func removeNavigationBarSperarationView(){
-        
-        let navController: EFLBaseNavigationController = self.navigationController as! EFLBaseNavigationController
-        
-        self.tabBarController?.tabBar.hidden = true
-        
-        navController.navigationBar.clipsToBounds = true
-        UIApplication.sharedApplication().statusBarHidden = false
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
-        
-        let statusBar: UIView = UIApplication.sharedApplication().valueForKey("statusBar") as! UIView
-        if statusBar.respondsToSelector(Selector("setBackgroundColor:")) {
-            statusBar.backgroundColor = UIColor.eflGreenColor()
-        }
-        
-        if shadowImageView == nil {
-            shadowImageView = findShadowImageUnderView(navController.navigationBar)
-        }
-        shadowImageView?.hidden = true
-    }
-    
-    private func findShadowImageUnderView(view: UIView) -> UIImageView? {
-        if view is UIImageView && view.bounds.size.height == 0.5 {
-            return (view as! UIImageView)
-        }
-        
-        for subview in view.subviews {
-            if let imageView = findShadowImageUnderView(subview) {
-                return imageView
-            }
-        }
-        return nil
-    }
- */
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

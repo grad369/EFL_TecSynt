@@ -8,25 +8,18 @@
 
 import UIKit
 
+
 class EFLSettingsViewController: EFLBaseViewController, ProfileUpdateDelegate {
     @IBOutlet weak var settingsTableView: UITableView!
-    var isNewImage = false // To check whether image changed
 
-    var tableArray: [String] = [
+    private var tableArray: [String] = [
                                     "SETTINGS_NOTIFICATION_TEXT".localized,
                                     "SETTINGS_RULES_TEXT".localized,
                                     "SETTINGS_TELL_A_FRIEND_TEXT".localized,
-                                    "SETTINGS_LIKE_US_ON_FACEBOOK_TEXT".localized,
                                     "SETTINGS_GIVE_US_FEEDBACK_TEXT".localized,
                                     "SETTINGS_TERMS_PRIVACY_TEXT".localized,
                                     "SETTINGS_LICENSES_TEXT".localized
                                 ]
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,34 +29,44 @@ class EFLSettingsViewController: EFLBaseViewController, ProfileUpdateDelegate {
             EFLManager.sharedManager.isPlayerRefreshed = false
         }
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reloadData), name: REFRESH_DATA_NOTIFICATION, object: nil)
-
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: REFRESH_DATA_NOTIFICATION, object: nil)
     }
+}
 
-    override func initialiseView() {
-        self.navigationItem.title = "SETTINGS_TITLE".localized
+
+// MARK: - EFLBaseViewController's functions
+extension EFLSettingsViewController {
+    
+    override func configurationNavigationAndStatusBars() {
+        self.setConfigurationStatusBar(.Green)
+        self.setConfigurationNavigationBar("SETTINGS_TITLE".localized, titleView: nil, backgroundColor: .Green, topRoundCorner: 0)
+    }
+    
+    override func configurationView() {
         self.tabBarController?.navigationController?.navigationBar.hidden = true
         settingsTableView.registerNib(UINib(nibName: "EFLProfileCell", bundle: nil), forCellReuseIdentifier: profileCellIdentifier)
         settingsTableView.registerNib(UINib(nibName: "EFLSettingsCell", bundle: nil), forCellReuseIdentifier: settingsCellIdentifier)
         settingsTableView.registerNib(UINib(nibName: "EFLSettingsLogoCell", bundle: nil), forCellReuseIdentifier: settingsLogoCellIdentifier)
     }
+}
+
+
+// MARK: Actions
+extension EFLSettingsViewController {
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    //MARK: Refresh user details
     func reloadData() {
         EFLManager.sharedManager.isPlayerRefreshed = false
         settingsTableView.reloadData()
     }
-    
-    // MARK: UITableView DataSource Methods
+}
+
+
+// MARK: - UITableView DataSource Methods
+extension EFLSettingsViewController {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
@@ -109,8 +112,12 @@ class EFLSettingsViewController: EFLBaseViewController, ProfileUpdateDelegate {
             
         }
     }
+}
+
+
+// MARK: - UI Tableview Delegate
+extension EFLSettingsViewController {
     
-    //MARK: UI Tableview Delegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if indexPath.section == 0 {
@@ -140,31 +147,25 @@ class EFLSettingsViewController: EFLBaseViewController, ProfileUpdateDelegate {
         return 0.001
     }
     
-    // method to run when table view cell is tapped
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         if indexPath.section == 0 {
             
             let profileVC = self.storyboard?.instantiateViewControllerWithIdentifier(PROFILE_VIEW_CONTROLLER_ID) as? EFLProfileViewController
             profileVC?.delegate = self
-            self.navigationController?.pushViewController(profileVC!, animated: true)
+            self.pushViewController(profileVC!, animation: .Default)
         }
     }
+}
+
+
+// MARK: - ProfileUpdateDelegate
+extension EFLSettingsViewController {
     
     func reloadSettingsData(reverted: Bool) {
         if reverted {
             self.settingsTableView.reloadData()
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

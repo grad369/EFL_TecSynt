@@ -18,11 +18,7 @@ class EFLLoginViewController: EFLBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.bringSubviewToFront(self.view)
-
-        
-//        self.spinner?.showIndicator()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -31,7 +27,7 @@ class EFLLoginViewController: EFLBaseViewController {
         self.playVideo()
     }
 
-    //MARK: Play BackGround Video
+    // MARK: Play BackGround Video
     func playVideo() -> Void {
         
         let path = NSBundle.mainBundle().pathForResource("Login_BG_Video", ofType:"mp4")
@@ -51,9 +47,7 @@ class EFLLoginViewController: EFLBaseViewController {
         self.videoPlayer.play()
     }
     
-    // MARK: IBActions
-    
-    //MARK : Login With Facebook
+    // MARK : Login With Facebook
     @IBAction func loginWithFacebookAction(sender: AnyObject) {
         
         if ReachabilityManager.isReachable() {
@@ -91,7 +85,7 @@ class EFLLoginViewController: EFLBaseViewController {
         
     }
     
-    //MARK: Terms And Privacy
+    // MARK: Terms And Privacy
     @IBAction func termsAndPrivacyAction(sender: AnyObject) {
         let termsPolicyVC = self.storyboard?.instantiateViewControllerWithIdentifier(TERMS_POLICY_VC_ID) as! EFLTermsPolicyViewController
         self.navigationController?.pushViewController(termsPolicyVC, animated: true)
@@ -100,13 +94,8 @@ class EFLLoginViewController: EFLBaseViewController {
     // MARK: Login Method
     
     func loginToApp(accessToken: String, facebookId: String) {
-        
         let requestModel = self.loginRequestModel(accessToken, facebookId: facebookId)
         EFLPlayerAPI().loginPlayer(requestModel)  { (error, data) -> Void in
-//            EFLActivityIndicator.sharedSpinner.hideIndicator()
-            
-//            let spinner = EFLActivityIndicator(supView: self.view, size: CGSizeMake(45, 45), centerPoint: self.view.center)
-//            spinner.hideIndicator()
             
             self.spinner!.hideIndicator()
             if !error.isKindOfClass(APIErrorTypeNone){
@@ -127,11 +116,7 @@ class EFLLoginViewController: EFLBaseViewController {
                     EFLManager.sharedManager.refreshPlayerData(response.data!)
 
                     self.syncDatas()
-                    
-                    let tabBarController = self.storyboard!.instantiateViewControllerWithIdentifier(TAB_BAR_CONTROLLER_ID) as! EFLBaseTabBarController
-                    tabBarController.selectedIndex = 1
-                    self.navigationController?.pushViewController(tabBarController, animated: true)
-
+                    self.pushFromLoginScreen()
                 }
                 else {
                     self.handleResponseFailure(response)
@@ -180,7 +165,7 @@ class EFLLoginViewController: EFLBaseViewController {
     
     // MARK: Hanlde login response
     func handleResponseFailure(response: EFLPlayerResponse) {
-        print(response.message)
+        //print(response.message)
     }
     
     // MARK: Login Failure Alert
@@ -201,5 +186,19 @@ class EFLLoginViewController: EFLBaseViewController {
         self.presentViewController(alert, animated: true, completion: {
             alert.view.tintColor = UIColor.eflGreenColor()
         })
+    }
+    
+    // MARK:
+    func pushFromLoginScreen() {
+        let tabBarController = self.storyboard!.instantiateViewControllerWithIdentifier(TAB_BAR_CONTROLLER_ID) as! EFLBaseTabBarController
+        tabBarController.selectedIndex = 1
+        self.navigationController?.pushViewController(tabBarController, animated: true)
+        
+        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 2 * Int64(NSEC_PER_SEC))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            let viewControllers = NSMutableArray(array: (self.navigationController!.viewControllers))
+            viewControllers.removeObject(0)
+            self.navigationController!.viewControllers = viewControllers.copy() as! [UIViewController]
+        }
     }
 }

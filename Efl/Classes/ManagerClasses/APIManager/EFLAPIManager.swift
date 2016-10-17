@@ -15,7 +15,7 @@ class EFLAPIManager: NSObject {
     static let sharedAPIManager = EFLAPIManager()
     typealias APICompletion = (status: String) -> Void
     
-    //MARK: URL Siffix
+    // MARK: URL Siffix
     
     //Player URL + Player ID
     var playerURLSuffix: String {
@@ -48,8 +48,7 @@ class EFLAPIManager: NSObject {
     
     //Device ID update API on log in
     
-    //MARK: Create/Update Device API
-    
+    // MARK: Create/Update Device API
     func createOrUpdateDeviceDetails(){
         
         let qualityOfServiceClass = QOS_CLASS_BACKGROUND
@@ -76,7 +75,7 @@ class EFLAPIManager: NSObject {
     }
     
     
-    //MARK: Player API methods
+    // MARK: Player API methods
     
     //Refresh player details in background
     func refreshPlayer(completion: APICompletion) {
@@ -122,7 +121,7 @@ class EFLAPIManager: NSObject {
         })
     }
     
-    //MARK: Friends API methods
+    // MARK: Friends API methods
     
     // Get/Update friends in background
     func getFriends(completion: APICompletion) {
@@ -162,14 +161,14 @@ class EFLAPIManager: NSObject {
                     completion(status: CompletionStatusSuccess)
                 }
                 else {
-                    print(response.message)
+                    //print(response.message)
                     completion(status: CompletionStatusFailed)
                 }
             }
         }
     }
     
-    //MARK: Competition API methods
+    // MARK: Competition API methods
     
     //Get competition list (List of all competition ids)
     func getCompetitionList(completion: APICompletion) {
@@ -206,7 +205,7 @@ class EFLAPIManager: NSObject {
                         }
                     }
                     else {
-                        print(response.message)
+                        //print(response.message)
                         completion(status: CompletionStatusFailed)
                     }
                 }
@@ -241,7 +240,7 @@ class EFLAPIManager: NSObject {
                         EFLCompetitionDataManager.sharedDataManager.syncCompetitionToCache(response.data)
                     }
                     else {
-                        print("competition get failed : \(response.message)")
+                        //print("competition get failed : \(response.message)")
                     }
                     
                     if count == 0 {
@@ -252,7 +251,7 @@ class EFLAPIManager: NSObject {
         }
     }
     
-    //MARK: Pool Room API methods
+    // MARK: Pool Room API methods
     //Get pool room list (List of all competition ids)
     func getPoolRoomList(completion: APICompletion) {
         
@@ -292,7 +291,7 @@ class EFLAPIManager: NSObject {
                         completion(status: CompletionStatusLoading)
                     }
                     else {
-                        print(response.message)
+                        //print(response.message)
                         completion(status: CompletionStatusFailed)
                     }
                 }
@@ -326,7 +325,7 @@ class EFLAPIManager: NSObject {
                         print("pool room \(poolRoomId) get success")
                     }
                     else {
-                        print("pool room get failed : \(response.message)")
+                        //print("pool room get failed : \(response.message)")
 
                     }
                     if count == 0 {

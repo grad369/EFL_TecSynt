@@ -11,7 +11,6 @@ import XCTest
 @testable import FBSDKLoginKit
 @testable import FBSDKCoreKit
 @testable import FBSDKShareKit
-//@testable import PMKVObserver
 
 let FacebookToken = "EACQS8z7e3YgBAFNS9NtQUOZCDq10HOzFfRDvW3NTd7nRHuZBgEIFVEJ6wTTBYzoXXn3ZAJ24BPqgE7IIJwNeuDG9loXSlbB7hZBQoLcgp9xUJp1XN8va2oUUzY8KaPBzoZALAmpjZCB7yviTA4S2lZCDyY5uN2WbV0w0fvCdX1jr9ZAaESkUfRypRLFzWMcUDEhcoLKzWfCfenO4zQxoZCk7A0KWYAZC4ZB89wZD"
 
@@ -59,10 +58,6 @@ class EFLApiTest: XCTestCase {
             }
         }
         self.waitForExpectationsWithTimeout(8, handler: nil)
-    }
-    
-    func testPlayerAPIUpdatePlayer() {
-        //EFLPlayerAPI().update
     }
     
     func tes1tCompetitionApi() {
@@ -119,18 +114,20 @@ class EFLApiTest: XCTestCase {
         let expectation: XCTestExpectation = self.expectationWithDescription("testPlayerApiUpdate")
         
         let model = EFLPlayerUpdateRequestModel()
-        model.first_name = "Ops1"
-        model.last_name = "Kov"
-        model.image = NSData()
-        model.facebook_token = FacebookToken
-        model.notification_received_invite = false
-        model.notification_received_response = true
-        model.notification_picks_reminder = true
-        model.notification_received_result = true
+        model.first_name = "Ops11"
+//        model.last_name = "Kov"
+//        model.image = NSData()
+//        model.facebook_token = FacebookToken
+//        model.notification_received_invite = false
+//        model.notification_received_response = true
+//        model.notification_picks_reminder = true
+//        model.notification_received_result = true
         
         EFLPlayerAPI().updatePlayer(model) { (error, data) in
             expectation.fulfill()
             let response = (data as! EFLPlayerResponse)
+            print(error)
+            print(response.data?.last_name)
             self.currentServerTime = response.data?.current_server_time!
             XCTAssertTrue(response.status == ResponseStatusSuccess, "testPlayerApiUpdate--: response must be success")
         }
@@ -187,7 +184,8 @@ class EFLApiTest: XCTestCase {
         
         EFLDeviceAPI().createOrUpdateDevice(EFLUtility.getDeviceModel(), and: { (error, data) in
             expectation.fulfill()
-            XCTAssertNil(error, "testDeviceApi--: error must be nil")
+            XCTAssertNil(error, "testDeviceApi--: error must be nil \(error.code)")
+            print(error.message)
             XCTAssertNotNil(data, "testDeviceApi--: data must be don't nil")
             
             let response = (data as! EFLDeviceResponse)
@@ -347,7 +345,6 @@ class EFLApiTest: XCTestCase {
         
         self.waitForExpectationsWithTimeout(8, handler: nil)
     }
-    
     
     
     

@@ -1,53 +1,38 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xwn-jo-ady">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xwn-jo-ady">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="Roboto-Medium.ttf">
+        <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
-            <string>Roboto-Medium</string>
-            <string>Roboto-Medium</string>
-        </mutableArray>
-        <mutableArray key="Roboto-Regular.ttf">
+        </array>
+        <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-            <string>Roboto-Regular</string>
-        </mutableArray>
+        </array>
     </customFonts>
     <scenes>
         <!--Base Navigation Controller-->
         <scene sceneID="UQq-2a-A7T">
             <objects>
-                <navigationController storyboardIdentifier="RootNavigationControllerID" id="xwn-jo-ady" customClass="EFLBaseNavigationController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="822-ur-Zbw">
+                <navigationController storyboardIdentifier="RootNavigationControllerID" id="xwn-jo-ady" customClass="EFLBaseNavigationController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="822-ur-Zbw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GrJ-Ve-ST2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1651" y="147"/>
+            <point key="canvasLocation" x="-2348" y="897"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="bi3-pj-x07">
             <objects>
-                <viewController storyboardIdentifier="EFLLoginViewControllerID" id="whV-Es-jqe" customClass="EFLLoginViewController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFLLoginViewControllerID" id="whV-Es-jqe" customClass="EFLLoginViewController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pb2-fO-t4M"/>
                         <viewControllerLayoutGuide type="bottom" id="Ilh-Bu-wTY"/>
@@ -57,13 +42,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginLogoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vu5-Os-UtY">
-                                <rect key="frame" x="63" y="81" width="249" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vu5-Os-UtY" secondAttribute="height" multiplier="83:19" id="2Em-na-YaO"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rjf-Di-agj">
-                                <rect key="frame" x="38" y="486" width="299" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Rjf-Di-agj" secondAttribute="height" multiplier="299:41" id="Snc-XT-h5x"/>
                                 </constraints>
@@ -74,65 +57,60 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We don’t post on your behalf." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ez-g0-FLd">
-                                <rect key="frame" x="81" y="557" width="214" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="214" id="m4L-15-OKe"/>
                                     <constraint firstAttribute="height" constant="20" id="pa6-Bp-gkW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing, you agree to our" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vf5-10-8ow">
-                                <rect key="frame" x="76" y="576" width="224" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Pi0-lZ-gua"/>
                                     <constraint firstAttribute="width" constant="224" id="SPA-LO-zEN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    and" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ui4-hy-cEW">
-                                <rect key="frame" x="163" y="595" width="50" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="LRv-CH-qEC"/>
                                     <constraint firstAttribute="width" constant="50" id="QJD-V4-DNP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0t-uO-VVC">
-                                <rect key="frame" x="63" y="595" width="116" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="116" id="Fca-td-vfZ"/>
                                     <constraint firstAttribute="height" constant="20" id="JDj-se-Bfc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                 <state key="normal" title="terms of service">
-                                    <color key="titleColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="termsAndPrivacyAction:" destination="whV-Es-jqe" eventType="touchUpInside" id="x9a-qh-PsI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkh-mf-rxp">
-                                <rect key="frame" x="213" y="595" width="102" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="Llz-Na-xsO"/>
                                     <constraint firstAttribute="height" constant="20" id="mdh-FM-zuA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                 <state key="normal" title="privacy policy.">
-                                    <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="termsAndPrivacyAction:" destination="whV-Es-jqe" eventType="touchUpInside" id="rVD-ny-Hyf"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ui4-hy-cEW" firstAttribute="top" secondItem="7ez-g0-FLd" secondAttribute="bottom" constant="18" id="0Ih-c6-kWX"/>
                             <constraint firstItem="7ez-g0-FLd" firstAttribute="top" secondItem="Rjf-Di-agj" secondAttribute="bottom" constant="30" id="3DG-Uc-wX2"/>
@@ -152,7 +130,6 @@
                             <constraint firstItem="Vf5-10-8ow" firstAttribute="top" secondItem="Rjf-Di-agj" secondAttribute="bottom" constant="49" id="yPt-ZM-1El"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="liC-Le-A5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +138,7 @@
         <!--Terms Policy View Controller-->
         <scene sceneID="nwY-iq-tfa">
             <objects>
-                <viewController storyboardIdentifier="EFLTermsPolicyViewControllerID" id="44o-fK-Ufb" customClass="EFLTermsPolicyViewController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFLTermsPolicyViewControllerID" id="44o-fK-Ufb" customClass="EFLTermsPolicyViewController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XCt-fC-Ztr"/>
                         <viewControllerLayoutGuide type="bottom" id="GdZ-Gh-mcv"/>
@@ -171,11 +148,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXt-JR-QgF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lXt-JR-QgF" firstAttribute="centerX" secondItem="8er-xT-wL8" secondAttribute="centerX" id="f1v-Bc-SzD"/>
                             <constraint firstItem="lXt-JR-QgF" firstAttribute="leading" secondItem="8er-xT-wL8" secondAttribute="leading" id="hUY-V9-xPf"/>
@@ -183,27 +159,25 @@
                             <constraint firstItem="lXt-JR-QgF" firstAttribute="top" secondItem="8er-xT-wL8" secondAttribute="top" id="qZs-UZ-V1z"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="webView" destination="lXt-JR-QgF" id="cr7-uy-pkc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ivh-Cw-X20" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142.5" y="-681.5"/>
+            <point key="canvasLocation" x="169" y="-682"/>
         </scene>
         <!--Base Tab Bar Controller-->
         <scene sceneID="lec-4u-sn3">
             <objects>
-                <tabBarController storyboardIdentifier="EFLBaseTabBarControllerID" id="cr9-Bn-2Ce" customClass="EFLBaseTabBarController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                <tabBarController storyboardIdentifier="EFLBaseTabBarControllerID" id="cr9-Bn-2Ce" customClass="EFLBaseTabBarController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="centered" id="5It-V2-teQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="PqJ-p7-3Fz" kind="relationship" relationship="viewControllers" id="zXD-K3-A7p"/>
@@ -213,17 +187,16 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xps-xE-8g7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1184.5" y="887.5"/>
+            <point key="canvasLocation" x="-1630" y="899"/>
         </scene>
         <!--Base Navigation Controller-->
         <scene sceneID="LCJ-1T-Dcu">
             <objects>
-                <navigationController id="PqJ-p7-3Fz" customClass="EFLBaseNavigationController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="PqJ-p7-3Fz" customClass="EFLBaseNavigationController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="TabBarSettingsInactiveIcon" id="hLg-4C-LP9">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="85b-Lt-Yz1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="85b-Lt-Yz1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -233,17 +206,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ah2-Ii-heV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-687.5" y="125.5"/>
+            <point key="canvasLocation" x="-740" y="155"/>
         </scene>
         <!--Base Navigation Controller-->
         <scene sceneID="TSG-f6-Vbt">
             <objects>
-                <navigationController id="KTS-R0-8PG" customClass="EFLBaseNavigationController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="KTS-R0-8PG" customClass="EFLBaseNavigationController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="TabBarRoomsInactiveIcon" id="tFV-zW-sIm">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OJ4-Ak-vn9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OJ4-Ak-vn9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -253,17 +225,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xe3-pc-Mpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-687.5" y="887.5"/>
+            <point key="canvasLocation" x="-718" y="898"/>
         </scene>
         <!--Base Navigation Controller-->
         <scene sceneID="1aM-yW-HyC">
             <objects>
-                <navigationController id="dV9-9G-60f" customClass="EFLBaseNavigationController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="dV9-9G-60f" customClass="EFLBaseNavigationController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="TabBarFriendsInactiveIcon" id="CsX-Nm-0v0">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gMl-JV-KNE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gMl-JV-KNE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -278,7 +249,7 @@
         <!--Select Competition View Controller-->
         <scene sceneID="lKZ-Vi-HKy">
             <objects>
-                <viewController storyboardIdentifier="EFLSelectCompetitionViewControllerID" id="tQN-JC-zNc" customClass="EFLSelectCompetitionViewController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFLSelectCompetitionViewControllerID" id="tQN-JC-zNc" customClass="EFLSelectCompetitionViewController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ctb-sr-cQ2"/>
                         <viewControllerLayoutGuide type="bottom" id="6NG-iD-YyB"/>
@@ -288,15 +259,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gPe-mN-PzW">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="tQN-JC-zNc" id="ii9-gi-PTj"/>
                                     <outlet property="delegate" destination="tQN-JC-zNc" id="8Hx-34-PPc"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gPe-mN-PzW" firstAttribute="top" secondItem="ctb-sr-cQ2" secondAttribute="bottom" id="8HZ-BY-ju0"/>
                             <constraint firstItem="gPe-mN-PzW" firstAttribute="centerX" secondItem="Rns-AK-NrB" secondAttribute="centerX" id="U4r-9I-PMg"/>
@@ -304,19 +274,18 @@
                             <constraint firstItem="6NG-iD-YyB" firstAttribute="top" secondItem="gPe-mN-PzW" secondAttribute="bottom" id="u49-3F-wFf"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="competitionTableView" destination="gPe-mN-PzW" id="rJT-HT-Xqw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zB2-7E-VuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997.5" y="1639.5"/>
+            <point key="canvasLocation" x="1844" y="1664"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="C8s-IT-NLN">
             <objects>
-                <viewController storyboardIdentifier="EFLSettingsViewControllerID" automaticallyAdjustsScrollViewInsets="NO" id="HFa-h9-SHG" customClass="EFLSettingsViewController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFLSettingsViewControllerID" automaticallyAdjustsScrollViewInsets="NO" id="HFa-h9-SHG" customClass="EFLSettingsViewController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VWB-Hj-4Ab"/>
                         <viewControllerLayoutGuide type="bottom" id="gLk-Jx-b2I"/>
@@ -326,8 +295,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="p2t-wL-Xaw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="HFa-h9-SHG" id="9rd-ac-E8R"/>
@@ -335,7 +303,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="p2t-wL-Xaw" secondAttribute="trailing" id="KHj-ux-A6t"/>
                             <constraint firstItem="p2t-wL-Xaw" firstAttribute="leading" secondItem="94r-jn-oer" secondAttribute="leading" id="NH3-Jb-81A"/>
@@ -345,19 +313,18 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="MDj-tR-Chl"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="settingsTableView" destination="p2t-wL-Xaw" id="CZb-cl-cMF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyD-0l-9kX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142.5" y="125.5"/>
+            <point key="canvasLocation" x="239" y="146"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="BZC-lj-pfE">
             <objects>
-                <viewController storyboardIdentifier="EFLProfileViewControllerID" id="pbx-wV-sNg" customClass="EFLProfileViewController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFLProfileViewControllerID" id="pbx-wV-sNg" customClass="EFLProfileViewController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hx8-oa-jwF"/>
                         <viewControllerLayoutGuide type="bottom" id="0yO-sz-Fh7"/>
@@ -367,8 +334,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="E1m-Xz-OAr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="pbx-wV-sNg" id="1bb-NY-E74"/>
@@ -376,7 +342,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="E1m-Xz-OAr" firstAttribute="top" secondItem="3rR-Yr-6DY" secondAttribute="top" id="VdL-U1-uXh"/>
                             <constraint firstItem="E1m-Xz-OAr" firstAttribute="centerY" secondItem="3rR-Yr-6DY" secondAttribute="centerY" id="q32-HC-3NX"/>
@@ -384,19 +350,18 @@
                             <constraint firstItem="E1m-Xz-OAr" firstAttribute="leading" secondItem="3rR-Yr-6DY" secondAttribute="leading" id="z1D-Pf-cJ0"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="profileTableView" destination="E1m-Xz-OAr" id="G3m-DN-vcq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9NI-eS-4sa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409.5" y="1647.5"/>
+            <point key="canvasLocation" x="991" y="1661"/>
         </scene>
         <!--Rooms View Controller-->
         <scene sceneID="dyJ-7w-vy0">
             <objects>
-                <viewController storyboardIdentifier="EFLRoomsViewControllerID" id="iqK-X5-mPm" customClass="EFLRoomsViewController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFLRoomsViewControllerID" id="iqK-X5-mPm" customClass="EFLRoomsViewController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sAO-qk-HVP"/>
                         <viewControllerLayoutGuide type="bottom" id="xWX-cr-xZ9"/>
@@ -406,47 +371,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zhf-Ox-Ytw">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="iqK-X5-mPm" id="hNg-ag-f2c"/>
                                     <outlet property="delegate" destination="iqK-X5-mPm" id="XER-Ca-7Sm"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1D-ff-m4f">
-                                <rect key="frame" x="0.0" y="64" width="375" height="277"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing here yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU1-Ww-DV1">
-                                        <rect key="frame" x="116" y="111" width="142" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="sck-5v-ERD"/>
                                             <constraint firstAttribute="width" constant="142" id="sdh-W9-JBy"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="19"/>
-                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why don't you send a challenge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7X-OR-uhU">
-                                        <rect key="frame" x="53" y="139" width="269" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="mAn-Gk-jWS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="19"/>
-                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to a friend?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNT-K4-aJN">
-                                        <rect key="frame" x="139" y="162" width="96" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="U09-0N-10C"/>
                                             <constraint firstAttribute="width" constant="96" id="aEf-jQ-iw3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="19"/>
-                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="B7X-OR-uhU" firstAttribute="centerY" secondItem="C1D-ff-m4f" secondAttribute="centerY" multiplier="1.08" id="HXS-7m-7Ma"/>
                                     <constraint firstItem="PNT-K4-aJN" firstAttribute="centerX" secondItem="C1D-ff-m4f" secondAttribute="centerX" id="T72-Cp-Q2B"/>
@@ -458,17 +418,14 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FingerPointerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="glZ-eE-O4T">
-                                <rect key="frame" x="324" y="76" width="41" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="6Te-1i-hw4"/>
                                     <constraint firstAttribute="height" constant="47" id="9hD-T6-O7s"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyRoomsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="TDw-2c-fKs">
-                                <rect key="frame" x="77" y="324" width="220" height="219"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyRoomsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="TDw-2c-fKs"/>
                         </subviews>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="C1D-ff-m4f" firstAttribute="leading" secondItem="xLA-Rh-ThV" secondAttribute="leading" id="055-cF-zTh"/>
                             <constraint firstItem="glZ-eE-O4T" firstAttribute="top" secondItem="sAO-qk-HVP" secondAttribute="bottom" constant="12" id="3Z6-Br-8OS"/>
@@ -495,12 +452,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Rn-ne-SYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142.5" y="887.5"/>
+            <point key="canvasLocation" x="257" y="900"/>
         </scene>
         <!--Create Pool View Controller-->
         <scene sceneID="bq4-ML-HeZ">
             <objects>
-                <viewController storyboardIdentifier="EFLCreatePoolViewControllerID" id="luJ-ad-nrk" customClass="EFLCreatePoolViewController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFLCreatePoolViewControllerID" id="luJ-ad-nrk" customClass="EFLCreatePoolViewController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WaA-dd-4e0"/>
                         <viewControllerLayoutGuide type="bottom" id="dCa-2O-YBO"/>
@@ -510,15 +467,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Bxc-Ba-uxd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="luJ-ad-nrk" id="nEZ-2E-eeO"/>
                                     <outlet property="delegate" destination="luJ-ad-nrk" id="dYB-6H-4vW"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Bxc-Ba-uxd" firstAttribute="top" secondItem="s2t-ZO-lRS" secondAttribute="top" id="Yqy-xe-g9k"/>
                             <constraint firstItem="Bxc-Ba-uxd" firstAttribute="leading" secondItem="s2t-ZO-lRS" secondAttribute="leading" id="b4J-T2-aib"/>
@@ -528,19 +484,18 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="poolTableView" destination="Bxc-Ba-uxd" id="kXI-RM-vqS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i60-Ds-Eyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409.5" y="887.5"/>
+            <point key="canvasLocation" x="969" y="937"/>
         </scene>
         <!--Add Player View Controller-->
         <scene sceneID="vit-yr-dI0">
             <objects>
-                <viewController storyboardIdentifier="EFLAddPlayerViewControllerID" id="o7j-Ze-iyc" customClass="EFLAddPlayerViewController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFLAddPlayerViewControllerID" id="o7j-Ze-iyc" customClass="EFLAddPlayerViewController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eN6-ls-Fnm"/>
                         <viewControllerLayoutGuide type="bottom" id="Y4B-Pc-KVh"/>
@@ -550,55 +505,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bm1-4h-zKH">
-                                <rect key="frame" x="0.0" y="34" width="375" height="569"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="o7j-Ze-iyc" id="5P0-af-9Yw"/>
                                     <outlet property="delegate" destination="o7j-Ze-iyc" id="7tm-lX-hYP"/>
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FingerPointerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dtc-WL-yzx">
-                                <rect key="frame" x="250" y="54" width="41" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="1AS-9v-hYP"/>
                                     <constraint firstAttribute="width" constant="41" id="LSl-r8-Thq"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHo-cp-4tO">
-                                <rect key="frame" x="0.0" y="44" width="375" height="277"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No one here yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIC-7E-Cv7">
-                                        <rect key="frame" x="121" y="107" width="134" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="kzf-wt-KqY"/>
                                             <constraint firstAttribute="width" constant="134" id="lhr-db-uR1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="19"/>
-                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go ahead and invite your friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95i-P3-g1S">
-                                        <rect key="frame" x="50" y="135" width="276" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="276" id="XbY-dO-SP2"/>
                                             <constraint firstAttribute="height" constant="21" id="bWV-T3-dQX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="19"/>
-                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to join you!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWX-Ag-v3X">
-                                        <rect key="frame" x="140" y="158" width="95" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="8Km-XI-0Be"/>
                                             <constraint firstAttribute="width" constant="95" id="Edk-7k-grF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="19"/>
-                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="rIC-7E-Cv7" firstAttribute="centerX" secondItem="vHo-cp-4tO" secondAttribute="centerX" id="H7R-0s-qJi"/>
                                     <constraint firstItem="YWX-Ag-v3X" firstAttribute="top" secondItem="95i-P3-g1S" secondAttribute="bottom" constant="2" id="U0Q-JR-PA7"/>
@@ -609,11 +558,9 @@
                                     <constraint firstItem="95i-P3-g1S" firstAttribute="centerX" secondItem="vHo-cp-4tO" secondAttribute="centerX" id="pPS-a5-bMq"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyFriendsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="b9R-6i-fsR">
-                                <rect key="frame" x="90" y="295" width="196" height="219"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyFriendsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="b9R-6i-fsR"/>
                         </subviews>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Y4B-Pc-KVh" firstAttribute="top" secondItem="Bm1-4h-zKH" secondAttribute="bottom" id="8yA-N0-gYy"/>
                             <constraint firstItem="vHo-cp-4tO" firstAttribute="centerX" secondItem="h9v-dB-wPg" secondAttribute="centerX" id="Ajr-YW-gPi"/>
@@ -629,7 +576,6 @@
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="emptyFriendsImageView" destination="b9R-6i-fsR" id="d32-SC-Xtt"/>
                         <outlet property="friendsTableView" destination="Bm1-4h-zKH" id="GrO-ul-Mq0"/>
@@ -642,12 +588,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCe-OV-2bt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="997.5" y="887.5"/>
+            <point key="canvasLocation" x="1665" y="889"/>
         </scene>
         <!--Pool Details View Controller-->
         <scene sceneID="fjT-lB-Egi">
             <objects>
-                <viewController storyboardIdentifier="EFLPoolDetailsViewControllerID" id="seg-bJ-cgk" customClass="EFLPoolDetailsViewController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFLPoolDetailsViewControllerID" id="seg-bJ-cgk" customClass="EFLPoolDetailsViewController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Swo-Z4-qKG"/>
                         <viewControllerLayoutGuide type="bottom" id="F2V-yQ-F09"/>
@@ -657,15 +603,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Lp3-Yr-4bw">
-                                <rect key="frame" x="0.0" y="34" width="375" height="520"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="seg-bJ-cgk" id="bTJ-WX-eLL"/>
                                     <outlet property="delegate" destination="seg-bJ-cgk" id="X47-oQ-bfU"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Lp3-Yr-4bw" firstAttribute="leading" secondItem="yxZ-EM-Mvh" secondAttribute="leading" id="9sc-mP-k5r"/>
                             <constraint firstItem="F2V-yQ-F09" firstAttribute="top" secondItem="Lp3-Yr-4bw" secondAttribute="bottom" id="aei-L1-A9f"/>
@@ -675,19 +620,18 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="poolInfoTableView" destination="Lp3-Yr-4bw" id="hCi-vG-ziE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcj-b1-Uqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562.5" y="887.5"/>
+            <point key="canvasLocation" x="2431" y="906"/>
         </scene>
         <!--Pool Action View Controller-->
         <scene sceneID="Moz-Ju-8Ro">
             <objects>
-                <viewController storyboardIdentifier="EFLPoolActionViewControllerID" id="zf6-wm-ITj" customClass="EFLPoolActionViewController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFLPoolActionViewControllerID" id="zf6-wm-ITj" customClass="EFLPoolActionViewController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Cl-Ry-KU8"/>
                         <viewControllerLayoutGuide type="bottom" id="I6a-3m-j34"/>
@@ -697,42 +641,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Iqj-k1-9Oy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="zf6-wm-ITj" id="2zV-OA-HxK"/>
                                     <outlet property="delegate" destination="zf6-wm-ITj" id="t5c-sg-dPj"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSk-RC-mbJ">
-                                <rect key="frame" x="196" y="537" width="163" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="4"/>
                                 <state key="normal" title="Accept" backgroundImage="AcceptButtonIcon">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="acceptButtonTapped:" destination="zf6-wm-ITj" eventType="touchUpInside" id="YMY-5K-Qa8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHL-Ip-U5g">
-                                <rect key="frame" x="16" y="537" width="163" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Aqj-r0-Ul9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="4"/>
                                 <state key="normal" title="Decline" backgroundImage="DeclineButtonIcon">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="declineButtonTapped:" destination="zf6-wm-ITj" eventType="touchUpInside" id="VWb-rK-W8c"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OSk-RC-mbJ" firstAttribute="leading" secondItem="QHL-Ip-U5g" secondAttribute="trailing" constant="17" id="5Ru-6G-utW"/>
                             <constraint firstItem="Iqj-k1-9Oy" firstAttribute="leading" secondItem="eUj-zf-wxd" secondAttribute="leading" id="EWS-7C-RiD"/>
@@ -749,19 +690,18 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="poolInfoTableView" destination="Iqj-k1-9Oy" id="SDP-31-ikC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQW-w2-rEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2103.5" y="887.5"/>
+            <point key="canvasLocation" x="3140" y="879"/>
         </scene>
         <!--Friends View Controller-->
         <scene sceneID="bi3-H4-ne3">
             <objects>
-                <viewController storyboardIdentifier="EFLFriendsViewControllerID" id="ojB-aT-eJ3" customClass="EFLFriendsViewController" customModule="Efl_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EFLFriendsViewControllerID" id="ojB-aT-eJ3" customClass="EFLFriendsViewController" customModule="Efl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0af-UD-zS3"/>
                         <viewControllerLayoutGuide type="bottom" id="haY-rc-K7a"/>
@@ -771,47 +711,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FingerPointerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="xEr-XV-vzK">
-                                <rect key="frame" x="324" y="76" width="41" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="Xts-Wp-u9d"/>
                                     <constraint firstAttribute="height" constant="47" id="cpu-gw-NMg"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8A6-GB-K8w">
-                                <rect key="frame" x="0.0" y="64" width="375" height="277"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No one here yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoG-dy-pAP">
-                                        <rect key="frame" x="121" y="111" width="134" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="134" id="lCF-0y-KUd"/>
                                             <constraint firstAttribute="height" constant="21" id="nuz-FO-j4g"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="19"/>
-                                        <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go ahead and invite your friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRN-ED-pxM">
-                                        <rect key="frame" x="50" y="139" width="276" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="91c-TC-vpe"/>
                                             <constraint firstAttribute="width" constant="276" id="mKE-r4-odA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="19"/>
-                                        <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to join you!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iay-KX-qf8">
-                                        <rect key="frame" x="140" y="161" width="95" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="VgX-O8-pym"/>
                                             <constraint firstAttribute="width" constant="95" id="jXz-5q-0Ll"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="19"/>
-                                        <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8A6-GB-K8w" secondAttribute="height" multiplier="375:277" id="7V6-w7-a64"/>
                                     <constraint firstItem="ZoG-dy-pAP" firstAttribute="centerX" secondItem="8A6-GB-K8w" secondAttribute="centerX" id="AWt-df-GbJ"/>
@@ -822,19 +757,16 @@
                                     <constraint firstItem="LRN-ED-pxM" firstAttribute="centerX" secondItem="8A6-GB-K8w" secondAttribute="centerX" id="xK2-K9-zR2"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyFriendsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iKP-6S-Rjk">
-                                <rect key="frame" x="90" y="324" width="196" height="219"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyFriendsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="iKP-6S-Rjk"/>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fmc-WZ-Hvk">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ojB-aT-eJ3" id="G5I-7X-6f9"/>
                                     <outlet property="delegate" destination="ojB-aT-eJ3" id="l8e-Af-hK5"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8A6-GB-K8w" firstAttribute="leading" secondItem="Cmg-9Y-uHC" secondAttribute="leading" id="2kk-9J-eIM"/>
                             <constraint firstItem="xEr-XV-vzK" firstAttribute="top" secondItem="0af-UD-zS3" secondAttribute="bottom" constant="12" id="4ko-q3-FTG"/>
@@ -850,7 +782,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kdf-lI-dz4"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="emptyFriendsImageView" destination="iKP-6S-Rjk" id="OLY-di-3Sc"/>
                         <outlet property="friendsTableView" destination="fmc-WZ-Hvk" id="ZSi-tJ-ejL"/>
@@ -862,7 +793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llg-Tw-Fv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-142.5" y="1639.5"/>
+            <point key="canvasLocation" x="265" y="1639"/>
         </scene>
     </scenes>
     <resources>

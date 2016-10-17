@@ -128,13 +128,4 @@ class EFLSegmentedControl: UIView {
         self.layer.shadowRadius = 2.0;
         self.layer.shadowOpacity = 0.5;
     }
-    
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-
-    override func drawRect(rect: CGRect) {
-    }
-     */
-
 }

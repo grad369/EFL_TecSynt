@@ -75,7 +75,7 @@ class EFLManager: NSObject {
         }
     }
     
-    //MARK: Handle HTTP error cases
+    // MARK: Handle HTTP error cases
     func handleHTTPErrorCasesInView(view: UIView, bannerOffset: CGFloat) {
         EFLBannerView.sharedBanner.showBanner(view, message: "ALERT_FAILURE_TITLE".localized, yOffset: bannerOffset)
     }
@@ -88,7 +88,6 @@ class EFLManager: NSObject {
         EFLUtility.removeValueFromUserDefaults(FIRST_NAME_KEY)
         EFLUtility.removeValueFromUserDefaults(LAST_NAME_KEY)
         EFLUtility.removeValueFromUserDefaults(PROFILE_IMAGE_URL_KEY)
-        EFLUtility.removeValueFromUserDefaults(PLAYER_LAST_UPDATED_TIME_STAMP_KEY)
         EFLUtility.removeValueFromUserDefaults(FACEBOOK_ID_KEY)
 
         EFLUtility.removeValueFromUserDefaults(NOTIFICATION_RECEIVED_INVITE_KEY)

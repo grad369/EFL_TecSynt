@@ -58,7 +58,8 @@ private extension AppDelegate {
         {
             let tabBarController = storyboard.instantiateViewControllerWithIdentifier(TAB_BAR_CONTROLLER_ID) as! EFLBaseTabBarController
             tabBarController.selectedIndex = 1
-            rootNavigationController!.viewControllers = [loginViewController, tabBarController]
+            rootNavigationController!.viewControllers = [tabBarController]
+            tabBarController.navigationController?.navigationBar.hidden = true
             EFLManager.sharedManager.player_id = Int(EFLUtility.readValueFromUserDefaults(EFL_PLAYER_ID_KEY)!)!
         }
         

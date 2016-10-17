@@ -20,9 +20,9 @@ class EFLActivityIndicator: UIView {
     // = CGSizeMake(30, 30)
     init(supView: UIView, size: CGSize = CGSizeMake(30, 30), centerPoint: CGPoint = CGPointZero) {
         super.init(frame: UIScreen.mainScreen().bounds)
-        
+    
         let centPoint = CGPointEqualToPoint(centerPoint, CGPointZero) ? supView.center : centerPoint;
-        
+    
         self.spinnerSuperView = supView
         self.spinnerImageView = UIImageView(frame: CGRectMake(centPoint.x - size.width/2, centPoint.y - size.height/2, size.width, size.height))
         let image: UIImage = UIImage(named: SpinnerWhiteIcon)!

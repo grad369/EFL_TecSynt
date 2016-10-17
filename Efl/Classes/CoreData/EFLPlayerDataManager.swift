@@ -13,7 +13,7 @@ class EFLPlayerDataManager: NSObject {
 
     static let sharedDataManager = EFLPlayerDataManager()
     
-    //MARK: Friends cache methods
+    // MARK: Friends cache methods
     //Sync friends to cache
     func syncFriends(values:EFLFriendsResponseModel) {
         
@@ -70,8 +70,8 @@ class EFLPlayerDataManager: NSObject {
     }
     
     
-    //Get friends from cache
-    func getFriendsFromCache() -> [AnyObject]? {
+    //Get all friends from cache
+    func getFriendsFromCache() -> [Friends]? {
         let privateMOC = EFLCoreDataManager.sharedInstance.writerManagedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Friends")
         do {
@@ -79,7 +79,7 @@ class EFLPlayerDataManager: NSObject {
                 try privateMOC.executeFetchRequest(fetchRequest)
             if let res = result{
                 if res.count > 0 {
-                    return res as [AnyObject];
+                    return res as? [Friends];
                 }
                 else {
                     return nil
@@ -89,6 +89,42 @@ class EFLPlayerDataManager: NSObject {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         return nil
+    }
+    
+    // Get all friends for alphabetical table
+    func getAlphabeticalFriends(filter: (([Friends]) -> [Friends])? = nil) -> [String : [Friends]]? {
+        guard var friends = getFriendsFromCache()  else {
+            return nil
+        }
+        
+        if filter != nil {
+            friends = filter!(friends)
+        }
+        
+        var alphabeticalUsers : [String : [Friends]] = Dictionary()
+        var tempArray: [Friends]
+        
+        for friend in friends {
+            let char = (friend.lastName! as NSString).substringToIndex(1)
+            let keys = alphabeticalUsers.keys
+            if keys.elements.contains(char) {
+                tempArray = alphabeticalUsers[char]!
+                tempArray.append(friend)
+                alphabeticalUsers[char]! = tempArray
+            } else {
+                alphabeticalUsers[char] = [friend]
+            }
+        }
+        
+        alphabeticalUsers.keys.forEach { (key: String) in
+            var friends = alphabeticalUsers[key]! as [Friends]
+            friends.sortInPlace{ (friend1, friend2) -> Bool in
+                friend1.lastName < friend2.lastName
+            }
+            alphabeticalUsers[key] = friends
+        }
+        
+        return alphabeticalUsers
     }
     
     // Save friend profile picture
@@ -157,7 +193,7 @@ class EFLPlayerDataManager: NSObject {
     }
     
     
-    //MARK : Truncate tables on log out
+    // MARK : Truncate tables on log out
     func truncateDataBase() {
         
         let persistentStoreCoordinator = EFLCoreDataManager.sharedInstance.persistentStoreCoordinator

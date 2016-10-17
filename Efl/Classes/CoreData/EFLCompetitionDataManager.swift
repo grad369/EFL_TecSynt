@@ -12,7 +12,7 @@ import CoreData
 class EFLCompetitionDataManager: NSObject {
     static let sharedDataManager = EFLCompetitionDataManager()
     
-    //MARK: Competition cache methods
+    // MARK: Competition cache methods
     
     //Get competition last updated time stamp from cache
     func getCompetitionLastUpdatedTimeStamp(competitionId: String) -> String? {
