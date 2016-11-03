@@ -11,4 +11,5 @@ import UIKit
 class EFLCompetitionRequestModel: EFLBaseAPIRequest {
     
     var last_updated_on: String?
+    var modified_since: String?
 }

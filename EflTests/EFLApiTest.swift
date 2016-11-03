@@ -50,8 +50,7 @@ class EFLApiTest: XCTestCase {
                         if data == nil {return}
                         let response = (data as! EFLPlayerResponse)
                         if response.status == ResponseStatusSuccess {
-                            EFLManager.sharedManager.player_id = (response.data?.player_id)!
-                            EFLManager.sharedManager.refreshPlayerData(response.data!)
+                            EFLManager.sharedManager.player_id = (response.data?.player!.player_id)!
                         }
                     }
                 })
@@ -59,40 +58,6 @@ class EFLApiTest: XCTestCase {
         }
         self.waitForExpectationsWithTimeout(8, handler: nil)
     }
-    
-    func tes1tCompetitionApi() {
-       let expectation: XCTestExpectation = self.expectationWithDescription("getCompetitionList")
-       let expectation1: XCTestExpectation = self.expectationWithDescription("getCompetition")
-        
-        let request = EFLCompetitionRequestModel()
-        request.last_updated_on = EFLUtility.readValueFromUserDefaults(COMPETITION_LIST_LAST_UPDATED_TIME_STAMP_KEY)
-        
-        EFLCompetitionAPI().getCompetitionList(request) { (error, data) in
-            expectation.fulfill()
-            XCTAssertNil(error, "getCompetitionList: error must be nil")
-            XCTAssertNotNil(data, "getCompetitionList: data must be don't nil")
-            
-            let response = (data as! EFLCompetitionListResponse)
-            XCTAssertTrue(response.status == ResponseStatusSuccess, "getCompetitionList: response must be success")
-            XCTAssertTrue(response.data.competitions.count > 0, "getCompetitionList: competitions must greater then 0")
-            
-            let competitionId = response.data.competitions.last!
-            
-            let requestModel = EFLCompetitionRequestModel()
-            requestModel.last_updated_on = EFLCompetitionDataManager.sharedDataManager.getCompetitionLastUpdatedTimeStamp(String(competitionId))
-            
-            EFLCompetitionAPI().getCompetition(String(competitionId), request: requestModel) { (error, data) in
-                expectation1.fulfill()
-                XCTAssertNil(error, "getCompetition: error must be nil")
-                XCTAssertNotNil(data, "getCompetition: data must be don't nil")
-                let response = (data as! EFLCompetitionListResponse)
-                XCTAssertTrue(response.status == ResponseStatusSuccess, "getCompetition: response must be success")
-            }
-        }
-
-        self.waitForExpectationsWithTimeout(2, handler: nil)
-    }
-    
     
     //EFLPlayerAPI
     func testPlayerApiLogin() {
@@ -127,7 +92,7 @@ class EFLApiTest: XCTestCase {
             expectation.fulfill()
             let response = (data as! EFLPlayerResponse)
             print(error)
-            print(response.data?.last_name)
+            print(response.data?.player!.last_name)
             self.currentServerTime = response.data?.current_server_time!
             XCTAssertTrue(response.status == ResponseStatusSuccess, "testPlayerApiUpdate--: response must be success")
         }
@@ -138,7 +103,7 @@ class EFLApiTest: XCTestCase {
         let expectation: XCTestExpectation = self.expectationWithDescription("testPlayerApiRefresh")
         
         let model = EFLPlayerRefreshRequestModel()
-        model.last_updated_on = "2016-09-20 14:46:33"//self.currentServerTime!
+        model.modified_since = "2016-09-20 14:46:33"//self.currentServerTime!
         
         EFLPlayerAPI().refreshPlayer(model) { (error, data) in
             expectation.fulfill()
@@ -153,7 +118,7 @@ class EFLApiTest: XCTestCase {
         let expectation: XCTestExpectation = self.expectationWithDescription("testEFLCompetitionAPIGetCompetitionList")
         
         let model = EFLCompetitionRequestModel()
-        model.last_updated_on = "2016-09-20 14:46:33"//self.currentServerTime!
+        model.modified_since = "2016-08-20 14:46:33"//self.currentServerTime!
         
         EFLCompetitionAPI().getCompetitionList(model) { (error, data) in
             expectation.fulfill()
@@ -167,7 +132,7 @@ class EFLApiTest: XCTestCase {
         let expectation: XCTestExpectation = self.expectationWithDescription("testEFLCompetitionAPIGetCompetition")
         
         let model = EFLCompetitionRequestModel()
-        model.last_updated_on = "2016-09-20 14:46:33"//self.currentServerTime!
+        model.modified_since = "2016-09-20 14:46:33"//self.currentServerTime!
         
         EFLCompetitionAPI().getCompetition("0", request: model) { (error, data) in
             expectation.fulfill()
@@ -313,7 +278,7 @@ class EFLApiTest: XCTestCase {
         let expectation: XCTestExpectation = self.expectationWithDescription("testFriendsAPIGetFriends")
         
         let model = EFLFriendsGetRequestModel()
-        model.last_updated_on = "2016-09-20 14:46:33"//self.currentServerTime!
+        model.modified_since = "2016-09-20 14:46:33"//self.currentServerTime!
         
         EFLFriendsAPI().getFriends(model) { (error, data) in
             expectation.fulfill()
@@ -332,7 +297,7 @@ class EFLApiTest: XCTestCase {
         let expectation: XCTestExpectation = self.expectationWithDescription("testFriendsAPIUpdateFriends")
         
         let model = EFLFriendsUpdateRequestModel()
-        model.facebook_ids = ["1157880720940416"]
+        model.facebook_ids = "1157880720940416"
         
         EFLFriendsAPI().updateFriends(model) { (error, data) in
             expectation.fulfill()

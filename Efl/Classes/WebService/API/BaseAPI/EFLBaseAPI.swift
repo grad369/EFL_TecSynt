@@ -12,7 +12,7 @@ class EFLBaseAPI: BaseAPI {
 
     override func requestHeaders() -> Dictionary<String, String>? {
         if let auth = EFLUtility.readValueFromUserDefaults(AUTHORIZATION_TOKEN_KEY) {
-            return [RequestAuthorizationHeaderKey: auth];
+            return [RequestAuthorizationHeaderKey: ("JWT " + auth)]
         }
         return nil
     }

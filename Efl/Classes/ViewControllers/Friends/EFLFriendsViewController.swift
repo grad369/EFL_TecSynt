@@ -13,7 +13,7 @@ import CoreData
 import MessageUI
 
 
-class EFLFriendsViewController: EFLBaseViewController, FBSDKGameRequestDialogDelegate, MFMailComposeViewControllerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
+class EFLFriendsViewController: EFLBaseViewController, FBSDKGameRequestDialogDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var friendsTableView: UITableView!
     @IBOutlet weak var topContainerView: UIView!
     @IBOutlet weak var pointerImageView: UIImageView!
@@ -27,7 +27,7 @@ class EFLFriendsViewController: EFLBaseViewController, FBSDKGameRequestDialogDel
     var seperationView: UIView = UIView (frame: CGRectZero)
     
     lazy var spinner: EFLActivityIndicator = {
-        return EFLActivityIndicator (supView: self.view)
+        return EFLActivityIndicator (supView: APP_DELEGATE.window!, size: CGSizeMake(40, 40))
     }()
     
     override func viewWillAppear(animated: Bool) {
@@ -51,7 +51,7 @@ extension EFLFriendsViewController {
     
     override func configurationNavigationAndStatusBars() {
         self.setConfigurationStatusBar(.Green)
-        self.setConfigurationNavigationBar("FRIENDS_TITLE".localized, titleView: nil, backgroundColor: .Green, topRoundCorner: 0)
+        self.setConfigurationNavigationBar("FRIENDS_TITLE".localized, titleView: nil, backgroundColor: .Green)
         self.setBarButtonItem(.AddFriends, placeType: .Right, tintColorType: .White)
         self.setBarButtonItem(.Share, placeType: .Left, tintColorType: .White)
     }
@@ -73,7 +73,6 @@ extension EFLFriendsViewController {
 extension EFLFriendsViewController {
     
     func rightBarButtonItemDidPress() {
-        
         self.searchFriendBar.resignFirstResponder()
         if ReachabilityManager.isReachable() {
             self.showGameRequestDialogue()
@@ -84,27 +83,7 @@ extension EFLFriendsViewController {
     }
     
     func leftBarButtonItemDidPress() {
-        let string: String = "SHARE_MESSAGE".localized
-        let URL: NSURL = NSURL(string: "http://example.com")!
-        
-        let activityViewController = UIActivityViewController(activityItems: [string, URL], applicationActivities: nil)
-        activityViewController.excludedActivityTypes = [UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeAddToReadingList, UIActivityTypeAirDrop]
-        self.navigationController?.presentViewController(activityViewController, animated: true, completion: nil)
-    }
-    
-    // MARK: Email action - CHEK This
-    func email() {
-        if MFMailComposeViewController.canSendMail() {
-            let mailComposerVC = MFMailComposeViewController()
-            mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
-            
-            mailComposerVC.setSubject("Friendlies")
-            mailComposerVC.setMessageBody("SHARE_MESSAGE".localized + " " + "http://example.com", isHTML: true)
-            
-            self.presentViewController(mailComposerVC, animated: true, completion: nil)
-        } else {
-            EFLUtility.showOKAlertWithMessage("NO_EMAIL_ACCOUNT_MESSAGE".localized, andTitle: "NO_EMAIL_ACCOUNT_TITLE".localized)
-        }
+        self.showActivityController()
     }
     
     func handleTap(){
@@ -144,10 +123,10 @@ extension EFLFriendsViewController {
         }
     }
     
-    // MARK create a cell for each table view row
+    // create a cell for each table view row
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell:EFLFriendListCell = tableView.dequeueReusableCellWithIdentifier(friendListCellIdentifier) as! EFLFriendListCell
+        let cell: EFLFriendListCell = tableView.dequeueReusableCellWithIdentifier(friendListCellIdentifier) as! EFLFriendListCell
         
         let symbols = sortedSymbols()!
         let friends = alphabeticalFriends![symbols[indexPath.section]]! as [Friends]
@@ -238,13 +217,13 @@ extension EFLFriendsViewController {
         }
         else {
             let textArraySeperartedBySpace = searchBar.text!.componentsSeparatedByString(" ");
-            var firstName = searchBar.text;
-            var lastName = searchBar.text;
+            var firstName = searchBar.text
+            var lastName = searchBar.text
             var predicate: NSPredicate?
             
-            if(textArraySeperartedBySpace.count > 1){
-                firstName = textArraySeperartedBySpace[0];
-                lastName = textArraySeperartedBySpace[1];
+            if(textArraySeperartedBySpace.count > 1) {
+                firstName = textArraySeperartedBySpace[0]
+                lastName = textArraySeperartedBySpace[1]
                 
                 predicate = NSPredicate (format:"(firstName CONTAINS[cd] %@ AND lastName CONTAINS[cd] %@) OR (firstName CONTAINS[cd] %@ AND lastName CONTAINS[cd] %@)", firstName!, lastName!, lastName!, firstName!);
                 
@@ -260,7 +239,7 @@ extension EFLFriendsViewController {
             }})
             
             alphabeticalFriends = searchDataSource;
-            friendsTableView .reloadData()
+            friendsTableView.reloadData()
         }
     }
 }
@@ -274,7 +253,7 @@ extension EFLFriendsViewController {
         self.spinner.showIndicator()
         
         let requestModel = EFLFriendsUpdateRequestModel()
-        requestModel.facebook_ids = recipients
+        requestModel.facebook_ids = recipients.joinWithSeparator(",")
         
         EFLFriendsAPI().updateFriends(requestModel) { (error, data) -> Void in
             self.spinner.hideIndicator()
@@ -306,8 +285,16 @@ extension EFLFriendsViewController {
 extension EFLFriendsViewController {
     
     func showGameRequestDialogue() {
-        let inviteDialog:FBSDKGameRequestContent = FBSDKGameRequestContent()
-        inviteDialog.filters = FBSDKGameRequestFilter.AppNonUsers
+        if FBSDKAccessToken.currentAccessToken() == nil {
+            let i=0
+        } else {
+            let i=0
+        }
+        //EFLFacebookManager.sharedFacebookManager.getFacebookFriendIds { (facebookIds) in
+        //}
+        let inviteDialog: FBSDKGameRequestContent = FBSDKGameRequestContent()
+        //inviteDialog.filters = FBSDKGameRequestFilter.AppNonUsers
+        inviteDialog.recipientSuggestions = ["AaL45G939mHiIHc_TTuNKAy7TwlXR4tC8KwNsMLpxCecY3MKVHMIlR1oZUMwKUmOAT_vl5mcMbGs8cWrcYREN2959IQHUHLBY9STNbiRW1VvbA"]
         inviteDialog.message = "SHARE_MESSAGE".localized
         inviteDialog.title = "INVITE_FRIENDS_GAME_REQUEST_TITLE".localized
         FBSDKGameRequestDialog.showWithContent(inviteDialog, delegate: self)
@@ -340,6 +327,7 @@ extension EFLFriendsViewController {
     }
     
     func gameRequestDialogDidCancel(gameRequestDialog: FBSDKGameRequestDialog!) {
+        
     }
 }
 
@@ -361,7 +349,7 @@ extension EFLFriendsViewController {
             }
             else {
                 let response = (data as! EFLPlayerResponse)
-                if let authorizationToken = response.data!.jwt_token {
+                if let authorizationToken = response.data!.player!.jwt_token {
                     EFLUtility.saveValuesToUserDefaults(authorizationToken, key: AUTHORIZATION_TOKEN_KEY)
                 }
                 EFLUtility.saveValuesToUserDefaults(accessToken, key: FB_ACCESS_TOKEN_KEY)
@@ -372,19 +360,10 @@ extension EFLFriendsViewController {
 }
 
 
-// MARK: MFMailComposeViewControllerDelegate Method
-extension EFLFriendsViewController {
-        
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
-    }
-}
-
-
 // MARK: - Private functions
 private extension EFLFriendsViewController {
     
-    func addSearchBar(){
+    func addSearchBar() {
         //Search Bar set up
         searchFriendBar.placeholder = "Search";
         searchFriendBar.backgroundColor = UIColor.eflWhiteColor()
@@ -460,4 +439,54 @@ private extension EFLFriendsViewController {
         })
     }
 
+    func showActivityController() {
+        
+        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+        dispatch_async(backgroundQueue, {
+            guard let data = NSData(contentsOfURL: NSURL(string: URL_SHARE_IMAGE)!) else {
+                return
+            }
+            
+            let string: String = "SHARE_MESSAGE".localized
+            let URL: NSURL = NSURL(string: URL_SHARE_LINK)!
+            let image = UIImage(data: data)
+            
+            dispatch_async(dispatch_get_main_queue(), { 
+                let activityViewController = UIActivityViewController(activityItems: [string, URL, image!], applicationActivities: nil)
+                activityViewController.setValue("SHARE_SUBJECT".localized, forKey: "subject")
+                
+                activityViewController.excludedActivityTypes = [
+                    UIActivityTypePrint,
+                    UIActivityTypeAssignToContact,
+                    UIActivityTypeSaveToCameraRoll,
+                    UIActivityTypeAddToReadingList,
+                    UIActivityTypeAirDrop,
+                    UIActivityTypePostToFlickr,
+                    UIActivityTypePostToVimeo]
+                
+                self.navigationController?.presentViewController(activityViewController, animated: true, completion: nil)
+            })
+        })
+    }
+    
+    func recipientSuggests() -> [String]? {
+        let facebookIds = self.facebookIds()
+        return facebookIds
+    }
+    
+    func facebookIds() -> [String]? {
+        guard alphabeticalFriends != nil else {
+            return nil
+        }
+        
+        var facebookIds = [String]()
+        for symbol in alphabeticalFriends!.keys {
+            for friend: Friends in alphabeticalFriends![symbol]! {
+                facebookIds.append(friend.facebookId!)
+            }
+        }
+        
+        return facebookIds
+    }
 }

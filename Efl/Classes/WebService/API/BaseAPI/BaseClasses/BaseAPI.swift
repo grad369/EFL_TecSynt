@@ -118,7 +118,7 @@ class BaseAPI: NSObject {
         let params :[String:AnyObject]
         if multiPartUpload() {
             params = object!.toMultiPartDictionary()
-        }else{
+        } else {
             params = object!.toDictionary()
         }
         
@@ -142,21 +142,29 @@ class BaseAPI: NSObject {
      */
     func processRequest(with urlString: String,  params: [String: AnyObject]?, and completion: RequestCompletion){
         if ReachabilityManager.isReachable(){
+            print("\nREQUEST: ", urlString)
+            print("PARAMS: ", params)
+            
             request(requestMethod(), urlString, parameters: params!, encoding: requestParameterEncoding(), headers: requestHeaders()).responseJSON{ response in
                 
                 let status_code = response.response?.statusCode
-                if SHOULD_LOG {
-                print("response = ",response)
+                
+                if status_code == 304 {
+                    let error = EFLBaseAPIResponse.getAPIError(304)
+                    completion(error: error, data: nil)
+                    return
                 }
                 
-                if response.result.isSuccess{
+                if response.result.isSuccess {
                     let responseObject = self.processSuccessResponse(with: response.result.value)
                     let error = responseObject!.getAPIError(status_code)
-                    
+                    if SHOULD_LOG {
+                        print("RESPONSE = ", response)
+                    }
+                    //assert(error.message! == "Success", "ERROR = " + error.description)
                     completion(error: error, data: responseObject)
-                    
                 }else{
-                    
+                    //assert(false)
                     self.processFailureResponse(response, and: completion)
                 }
             }
@@ -168,6 +176,8 @@ class BaseAPI: NSObject {
     }
     
     func performUploadRequest(with urlString: String, params: [String: AnyObject]?, and completion: RequestCompletion){
+        print("\nREQUEST: ", urlString)
+        print("PARAMS: ", params)
         
         if ReachabilityManager.isReachable(){
             upload(
@@ -197,9 +207,10 @@ class BaseAPI: NSObject {
                             // MARK: Request Success Block
                             // Create the response object
                             let status_code = response.response?.statusCode
+//                            assert(status_code == 200)
                             if response.result.isSuccess {
                                 if SHOULD_LOG {
-                                    print("response     : ",response)
+                                    print("response     : ", response)
                                 }
                                 let responseObject = self.processSuccessResponse(with: response.result.value)
                                 let error = responseObject!.getAPIError(status_code)

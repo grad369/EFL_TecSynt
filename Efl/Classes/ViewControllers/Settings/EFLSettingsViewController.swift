@@ -43,7 +43,7 @@ extension EFLSettingsViewController {
     
     override func configurationNavigationAndStatusBars() {
         self.setConfigurationStatusBar(.Green)
-        self.setConfigurationNavigationBar("SETTINGS_TITLE".localized, titleView: nil, backgroundColor: .Green, topRoundCorner: 0)
+        self.setConfigurationNavigationBar("SETTINGS_TITLE".localized, titleView: nil, backgroundColor: .Green)
     }
     
     override func configurationView() {
@@ -147,7 +147,6 @@ extension EFLSettingsViewController {
         return 0.001
     }
     
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         if indexPath.section == 0 {
@@ -155,6 +154,39 @@ extension EFLSettingsViewController {
             let profileVC = self.storyboard?.instantiateViewControllerWithIdentifier(PROFILE_VIEW_CONTROLLER_ID) as? EFLProfileViewController
             profileVC?.delegate = self
             self.pushViewController(profileVC!, animation: .Default)
+        } else {
+            var url: String = ""
+            var title: String = ""
+            
+            switch indexPath.row {
+            case 0:
+                
+                return
+            case 1:
+                url = URL_RULES
+                title = "RULES"
+            case 2:
+                return
+            case 3:
+                url = URL_CONTACT
+                title = "CONTACT"
+            case 4:
+                url = URL_TERMS
+                title = "TERMS"
+            case 5:
+                url = URL_LICENSES
+                title = "LICENSES"
+                
+            default: break
+            }
+            
+            if url != "" && title != "" {
+                let webVC = self.storyboard?.instantiateViewControllerWithIdentifier(WEB_VC_ID) as! EFLWebViewController
+                print(webVC)
+                self.pushViewController(webVC, animation: .Default)
+                _ = webVC.view
+                webVC.load(url: url, title: title.localized)
+            }
         }
     }
 }

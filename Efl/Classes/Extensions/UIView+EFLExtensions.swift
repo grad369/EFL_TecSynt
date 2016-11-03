@@ -38,5 +38,27 @@ extension UIView {
             layer.borderColor = newValue.CGColor
         }
     }
+    
+    var top: CGFloat {
+        get{
+            return self.frame.origin.y
+        }
+        set{
+            var frame = self.frame
+            frame.origin.y = top
+            self.frame = frame
+        }
+    }
+    
+    var width: CGFloat {
+        get{
+            return self.frame.size.width
+        }
+        set {
+            var frame = self.frame
+            frame.size.width = newValue
+            self.frame = frame
+        }
+    }
 }
 

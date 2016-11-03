@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2707E0A31D50615400DA9973 /* EFLTermsPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707E0A21D50615400DA9973 /* EFLTermsPolicyViewController.swift */; };
 		27217ADD1D464206007CA51E /* EFLBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27217ADC1D464206007CA51E /* EFLBaseNavigationController.swift */; };
 		27217ADF1D464223007CA51E /* EFLBaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27217ADE1D464223007CA51E /* EFLBaseTabBarController.swift */; };
 		27217AE11D464230007CA51E /* EFLBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27217AE01D464230007CA51E /* EFLBaseViewController.swift */; };
@@ -51,7 +50,6 @@
 		27217B911D474D45007CA51E /* EFLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27217B901D474D45007CA51E /* EFLConstants.swift */; };
 		2733320F1D40AB510095167E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2733320E1D40AB510095167E /* AppDelegate.swift */; };
 		273332141D40AB510095167E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273332121D40AB510095167E /* Main.storyboard */; };
-		273332161D40AB510095167E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 273332151D40AB510095167E /* Assets.xcassets */; };
 		273332191D40AB510095167E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273332171D40AB510095167E /* LaunchScreen.storyboard */; };
 		2733322F1D40AB510095167E /* EflUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2733322E1D40AB510095167E /* EflUITests.swift */; };
 		273488E01D486B4A00A27FD0 /* EFLUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273488DF1D486B4A00A27FD0 /* EFLUtility.swift */; };
@@ -104,10 +102,6 @@
 		27B5FD7B1D787D3300B3B7D7 /* EFLFriendsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B5FD7A1D787D3300B3B7D7 /* EFLFriendsResponseModel.swift */; };
 		27B5FD7D1D787D5200B3B7D7 /* EFLPlayerResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B5FD7C1D787D5200B3B7D7 /* EFLPlayerResponseModel.swift */; };
 		27B5FD7F1D78808600B3B7D7 /* EFLFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B5FD7E1D78808600B3B7D7 /* EFLFriendModel.swift */; };
-		27B9B7E41D50C799001E1FD2 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27B9B7E11D50C799001E1FD2 /* Roboto-Bold.ttf */; };
-		27B9B7E51D50C799001E1FD2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27B9B7E21D50C799001E1FD2 /* Roboto-Regular.ttf */; };
-		27B9B7E61D50C799001E1FD2 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27B9B7E31D50C799001E1FD2 /* RobotoCondensed-Regular.ttf */; };
-		27BCA5121D7E7D9900163C05 /* Login_BG_Video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 27BCA5111D7E7D9900163C05 /* Login_BG_Video.mp4 */; };
 		27BCA5141D7EACDA00163C05 /* EFLPoolRoomDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BCA5131D7EACDA00163C05 /* EFLPoolRoomDataManager.swift */; };
 		27BCA5181D7EED3800163C05 /* EFLPlayerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BCA5171D7EED3800163C05 /* EFLPlayerDataManager.swift */; };
 		27C87AF61D79631B00481917 /* EFLLogoutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C87AF01D79631B00481917 /* EFLLogoutAPI.swift */; };
@@ -129,8 +123,6 @@
 		27CC797F1D6DA1A500DCED48 /* EFLRoomListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27CC797D1D6DA1A500DCED48 /* EFLRoomListCell.xib */; };
 		27CD76C31D49C93600C40CBD /* EFLProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD76C21D49C93600C40CBD /* EFLProfileViewController.swift */; };
 		27DBAF1E1D7B0083000BE863 /* EFLFriendListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DBAF1D1D7B0083000BE863 /* EFLFriendListModel.swift */; };
-		27DEC1551D5319D10015F6D6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27DEC1571D5319D10015F6D6 /* Localizable.strings */; };
-		27DEC15F1D532AB70015F6D6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DEC15E1D532AB70015F6D6 /* StringExtension.swift */; };
 		27E75D3E1D6DCE1200C6DAD9 /* EFLSelectCompetitionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75D3C1D6DCE1200C6DAD9 /* EFLSelectCompetitionCell.swift */; };
 		27E75D3F1D6DCE1200C6DAD9 /* EFLSelectCompetitionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E75D3D1D6DCE1200C6DAD9 /* EFLSelectCompetitionCell.xib */; };
 		27E75D431D6DF8F200C6DAD9 /* EFLSelectCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75D421D6DF8F200C6DAD9 /* EFLSelectCompetitionViewController.swift */; };
@@ -144,7 +136,6 @@
 		27E75D531D6E309100C6DAD9 /* EFLAddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75D521D6E309100C6DAD9 /* EFLAddPlayerViewController.swift */; };
 		27E75D551D6E329B00C6DAD9 /* EFLSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E75D541D6E329B00C6DAD9 /* EFLSegmentedControl.swift */; };
 		27E94FBD1D772ED9009DBF1F /* EFLPlayerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E94FBC1D772ED9009DBF1F /* EFLPlayerAPI.swift */; };
-		27EA74C21D51A16800CC5C2A /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27EA74C11D51A16800CC5C2A /* Roboto-Medium.ttf */; };
 		27EA74C41D51A1FE00CC5C2A /* EFLDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA74C31D51A1FE00CC5C2A /* EFLDefinitions.swift */; };
 		27EC8A731D6483D700D0975B /* EFLHighLightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EC8A721D6483D700D0975B /* EFLHighLightButton.swift */; };
 		27EDFC701D5ADCCA0002D96F /* EFLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDFC6F1D5ADCCA0002D96F /* EFLTextField.swift */; };
@@ -165,19 +156,34 @@
 		27EDFCA11D5B7C680002D96F /* EFLFriendsShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EDFC9F1D5B7C680002D96F /* EFLFriendsShareCell.xib */; };
 		27F0D7541D4B3A8800FADBFB /* EFLRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0D7531D4B3A8800FADBFB /* EFLRoomsViewController.swift */; };
 		27F0D7561D4B3B9A00FADBFB /* EFLFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0D7551D4B3B9A00FADBFB /* EFLFriendsViewController.swift */; };
-		435295BD796FE314EC99D1B3 /* Pods_Efl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3102E3706BE399A22997D3EC /* Pods_Efl.framework */; };
 		510770061D88381E00EFB7C5 /* EFLApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510770051D88381E00EFB7C5 /* EFLApiTest.swift */; };
 		5107700B1D88397A00EFB7C5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279FCEEE1D5C75FE00936075 /* Social.framework */; };
+		510F5CAE1DB6B2510021AF47 /* Pods_Efl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510F5CAD1DB6B2510021AF47 /* Pods_Efl.framework */; };
 		512914061DA29CD500336E8F /* UIViewController+EFLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512914051DA29CD500336E8F /* UIViewController+EFLExtensions.swift */; };
-		51C3A9E21DAEBA4C00E96913 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A9E11DAEBA4C00E96913 /* File.swift */; };
-		51C3A9E81DAEBC0100E96913 /* Friends+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A9E51DAEBC0100E96913 /* Friends+CoreDataClass.m */; };
-		51C3A9E91DAEBC0100E96913 /* Friends+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A9E71DAEBC0100E96913 /* Friends+CoreDataProperties.m */; };
-		5ACB361701F2FC6F5EEC1CCE /* Pods_Efl_EflTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722970D169A794443AA3F198 /* Pods_Efl_EflTests.framework */; };
-		6BDFB1BF1AF7B8E507D6C8EB /* Pods_Efl_EflUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAECC9A8E0C57E9D4EDF4EA3 /* Pods_Efl_EflUITests.framework */; };
+		514DDC6C1DC9FD5B00D08385 /* EFLChallengeMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514DDC6B1DC9FD5B00D08385 /* EFLChallengeMatchCell.swift */; };
+		514DDC6E1DC9FD7500D08385 /* EFLChallengeMatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 514DDC6D1DC9FD7500D08385 /* EFLChallengeMatchCell.xib */; };
+		51DA08791DBF9C6600E57F9E /* EFLWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA08781DBF9C6600E57F9E /* EFLWebViewController.swift */; };
+		51DA087B1DBFAFFA00E57F9E /* String+EFLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA087A1DBFAFFA00E57F9E /* String+EFLExtension.swift */; };
+		51DA08841DC0CC1100E57F9E /* EFLBaseSubNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA08831DC0CC1100E57F9E /* EFLBaseSubNavigationBarViewController.swift */; };
+		51DA08871DC0CC2500E57F9E /* EFLSubNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA08851DC0CC2500E57F9E /* EFLSubNavigationBarView.swift */; };
+		51DA08881DC0CC2500E57F9E /* EFLTriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA08861DC0CC2500E57F9E /* EFLTriangleView.swift */; };
+		51DD6D7F1DB6A2AE0028BDFD /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DD6D771DB6A2AE0028BDFD /* Roboto-Bold.ttf */; };
+		51DD6D801DB6A2AE0028BDFD /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DD6D781DB6A2AE0028BDFD /* Roboto-Medium.ttf */; };
+		51DD6D811DB6A2AE0028BDFD /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DD6D791DB6A2AE0028BDFD /* Roboto-Regular.ttf */; };
+		51DD6D821DB6A2AE0028BDFD /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51DD6D7A1DB6A2AE0028BDFD /* RobotoCondensed-Regular.ttf */; };
+		51DD6D851DB6A2AE0028BDFD /* Login_BG_Video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 51DD6D7D1DB6A2AE0028BDFD /* Login_BG_Video.mp4 */; };
+		51DD6D861DB6A9490028BDFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DD6D741DB6A2AE0028BDFD /* Assets.xcassets */; };
+		51DD6D891DB6AF740028BDFD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DD6D871DB6AF740028BDFD /* Crashlytics.framework */; };
+		51DD6D8A1DB6AF740028BDFD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DD6D881DB6AF740028BDFD /* Fabric.framework */; };
 		924FEF9D1D92C9A70059C82E /* UIView+EFLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924FEF9C1D92C9A70059C82E /* UIView+EFLExtensions.swift */; };
 		924FEFA61D933F3D0059C82E /* EFLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924FEFA41D933F3D0059C82E /* EFLAlertView.swift */; };
 		924FEFA71D933F3D0059C82E /* EFLAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 924FEFA51D933F3D0059C82E /* EFLAlertView.xib */; };
+		927361441DC1DD1C00CEDA39 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 927361421DC1DD1C00CEDA39 /* Localizable.strings */; };
 		92AA2E1D1DAAE0D30064E242 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AA2E1C1DAAE0D30064E242 /* QuartzCore.framework */; };
+		92B7800B1DC84E73006D6C44 /* EFLCreateChallengeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7800A1DC84E73006D6C44 /* EFLCreateChallengeRequestModel.swift */; };
+		92D5839C1DC223E600B2F0A5 /* Friends+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D583991DC223E600B2F0A5 /* Friends+CoreDataClass.m */; };
+		92D5839D1DC223E600B2F0A5 /* Friends+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D5839B1DC223E600B2F0A5 /* Friends+CoreDataProperties.m */; };
+		92ED0E401DC69DCC0010BBF6 /* EFLCreateChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED0E3F1DC69DCC0010BBF6 /* EFLCreateChallengeViewController.swift */; };
 		C4ED36C91D7A9CB30021D362 /* EFLRankingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED36C81D7A9CB30021D362 /* EFLRankingListCell.swift */; };
 		C4ED36CB1D7A9CCB0021D362 /* EFLRankingListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4ED36CA1D7A9CCB0021D362 /* EFLRankingListCell.xib */; };
 /* End PBXBuildFile section */
@@ -200,7 +206,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		51ABFF3C1DA673E5006C94B6 /* Embed Frameworks */ = {
+		510F5CC31DB7986E0021AF47 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -215,7 +221,6 @@
 /* Begin PBXFileReference section */
 		18A7C24C96247873675E0DFA /* Pods-Efl-EflUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflUITests/Pods-Efl-EflUITests.release.xcconfig"; sourceTree = "<group>"; };
 		21BF8CBE7F0740FB5131FDDA /* Pods-Efl-EflTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflTests/Pods-Efl-EflTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2707E0A21D50615400DA9973 /* EFLTermsPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLTermsPolicyViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27217ADC1D464206007CA51E /* EFLBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLBaseNavigationController.swift; sourceTree = "<group>"; };
 		27217ADE1D464223007CA51E /* EFLBaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLBaseTabBarController.swift; sourceTree = "<group>"; };
 		27217AE01D464230007CA51E /* EFLBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLBaseViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -261,9 +266,7 @@
 		2733320B1D40AB510095167E /* Efl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Efl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2733320E1D40AB510095167E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		273332131D40AB510095167E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		273332151D40AB510095167E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		273332181D40AB510095167E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2733321A1D40AB510095167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2733321F1D40AB510095167E /* EflTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EflTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		273332251D40AB510095167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2733322A1D40AB510095167E /* Efl.temp_caseinsensitive_rename.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Efl.temp_caseinsensitive_rename.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,10 +322,6 @@
 		27B5FD7A1D787D3300B3B7D7 /* EFLFriendsResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLFriendsResponseModel.swift; sourceTree = "<group>"; };
 		27B5FD7C1D787D5200B3B7D7 /* EFLPlayerResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPlayerResponseModel.swift; sourceTree = "<group>"; };
 		27B5FD7E1D78808600B3B7D7 /* EFLFriendModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLFriendModel.swift; sourceTree = "<group>"; };
-		27B9B7E11D50C799001E1FD2 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		27B9B7E21D50C799001E1FD2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		27B9B7E31D50C799001E1FD2 /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
-		27BCA5111D7E7D9900163C05 /* Login_BG_Video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Login_BG_Video.mp4; sourceTree = "<group>"; };
 		27BCA5131D7EACDA00163C05 /* EFLPoolRoomDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPoolRoomDataManager.swift; sourceTree = "<group>"; };
 		27BCA5171D7EED3800163C05 /* EFLPlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLPlayerDataManager.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27C87AF01D79631B00481917 /* EFLLogoutAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLLogoutAPI.swift; sourceTree = "<group>"; };
@@ -344,8 +343,6 @@
 		27CC797D1D6DA1A500DCED48 /* EFLRoomListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLRoomListCell.xib; sourceTree = "<group>"; };
 		27CD76C21D49C93600C40CBD /* EFLProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLProfileViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27DBAF1D1D7B0083000BE863 /* EFLFriendListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLFriendListModel.swift; sourceTree = "<group>"; };
-		27DEC1561D5319D10015F6D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		27DEC15E1D532AB70015F6D6 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		27E75D3C1D6DCE1200C6DAD9 /* EFLSelectCompetitionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLSelectCompetitionCell.swift; sourceTree = "<group>"; };
 		27E75D3D1D6DCE1200C6DAD9 /* EFLSelectCompetitionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLSelectCompetitionCell.xib; sourceTree = "<group>"; };
 		27E75D421D6DF8F200C6DAD9 /* EFLSelectCompetitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLSelectCompetitionViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -359,7 +356,6 @@
 		27E75D521D6E309100C6DAD9 /* EFLAddPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLAddPlayerViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27E75D541D6E329B00C6DAD9 /* EFLSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLSegmentedControl.swift; sourceTree = "<group>"; };
 		27E94FBC1D772ED9009DBF1F /* EFLPlayerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLPlayerAPI.swift; sourceTree = "<group>"; };
-		27EA74C11D51A16800CC5C2A /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		27EA74C31D51A1FE00CC5C2A /* EFLDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLDefinitions.swift; sourceTree = "<group>"; };
 		27EC8A721D6483D700D0975B /* EFLHighLightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLHighLightButton.swift; sourceTree = "<group>"; };
 		27EDFC6F1D5ADCCA0002D96F /* EFLTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLTextField.swift; sourceTree = "<group>"; };
@@ -381,26 +377,45 @@
 		27F0D7531D4B3A8800FADBFB /* EFLRoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLRoomsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		27F0D7551D4B3B9A00FADBFB /* EFLFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = EFLFriendsViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2AAB90F941FC6E4B5A1BBBFD /* Pods-Efl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl.release.xcconfig"; path = "Pods/Target Support Files/Pods-Efl/Pods-Efl.release.xcconfig"; sourceTree = "<group>"; };
-		3102E3706BE399A22997D3EC /* Pods_Efl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Efl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		510770051D88381E00EFB7C5 /* EFLApiTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLApiTest.swift; sourceTree = "<group>"; };
+		510F5CAD1DB6B2510021AF47 /* Pods_Efl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Efl.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Efl-daesyizavzwtibgtwtnjgfqvyoww/Build/Products/Debug-iphonesimulator/Pods_Efl.framework"; sourceTree = "<group>"; };
 		512914051DA29CD500336E8F /* UIViewController+EFLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+EFLExtensions.swift"; sourceTree = "<group>"; };
-		51C3A9E11DAEBA4C00E96913 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = File.swift; path = Efl/Classes/CoreData/File.swift; sourceTree = SOURCE_ROOT; };
-		51C3A9E31DAEBC0000E96913 /* Efl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Efl-Bridging-Header.h"; sourceTree = "<group>"; };
-		51C3A9E41DAEBC0100E96913 /* Friends+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friends+CoreDataClass.h"; sourceTree = "<group>"; };
-		51C3A9E51DAEBC0100E96913 /* Friends+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataClass.m"; sourceTree = "<group>"; };
-		51C3A9E61DAEBC0100E96913 /* Friends+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friends+CoreDataProperties.h"; sourceTree = "<group>"; };
-		51C3A9E71DAEBC0100E96913 /* Friends+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataProperties.m"; sourceTree = "<group>"; };
-		722970D169A794443AA3F198 /* Pods_Efl_EflTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Efl_EflTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		514DDC6B1DC9FD5B00D08385 /* EFLChallengeMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EFLChallengeMatchCell.swift; path = Efl/Classes/Views/CustomCells/Rooms/EFLChallengeMatchCell.swift; sourceTree = SOURCE_ROOT; };
+		514DDC6D1DC9FD7500D08385 /* EFLChallengeMatchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLChallengeMatchCell.xib; sourceTree = "<group>"; };
+		51DA08781DBF9C6600E57F9E /* EFLWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLWebViewController.swift; sourceTree = "<group>"; };
+		51DA087A1DBFAFFA00E57F9E /* String+EFLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+EFLExtension.swift"; sourceTree = "<group>"; };
+		51DA08831DC0CC1100E57F9E /* EFLBaseSubNavigationBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLBaseSubNavigationBarViewController.swift; sourceTree = "<group>"; };
+		51DA08851DC0CC2500E57F9E /* EFLSubNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLSubNavigationBarView.swift; sourceTree = "<group>"; };
+		51DA08861DC0CC2500E57F9E /* EFLTriangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLTriangleView.swift; sourceTree = "<group>"; };
+		51DD6D741DB6A2AE0028BDFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		51DD6D771DB6A2AE0028BDFD /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		51DD6D781DB6A2AE0028BDFD /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		51DD6D791DB6A2AE0028BDFD /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		51DD6D7A1DB6A2AE0028BDFD /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		51DD6D7D1DB6A2AE0028BDFD /* Login_BG_Video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Login_BG_Video.mp4; sourceTree = "<group>"; };
+		51DD6D871DB6AF740028BDFD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Efl/Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
+		51DD6D881DB6AF740028BDFD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Efl/Frameworks/Fabric.framework; sourceTree = "<group>"; };
 		924FEF9C1D92C9A70059C82E /* UIView+EFLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+EFLExtensions.swift"; sourceTree = "<group>"; };
 		924FEFA41D933F3D0059C82E /* EFLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLAlertView.swift; sourceTree = "<group>"; };
 		924FEFA51D933F3D0059C82E /* EFLAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLAlertView.xib; sourceTree = "<group>"; };
-		92AA2E191DA3CA8D0064E242 /* Efl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Efl.entitlements; path = Efl/Efl.entitlements; sourceTree = SOURCE_ROOT; };
+		9273613E1DC1DA8D00CEDA39 /* Efl.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Efl.entitlements; sourceTree = "<group>"; };
+		9273613F1DC1DA8D00CEDA39 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		927361431DC1DD1C00CEDA39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		92AA2E1C1DAAE0D30064E242 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		92B7800A1DC84E73006D6C44 /* EFLCreateChallengeRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLCreateChallengeRequestModel.swift; sourceTree = "<group>"; };
+		92D583971DC21B1900B2F0A5 /* Efl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Efl-Bridging-Header.h"; sourceTree = "<group>"; };
+		92D583981DC223E600B2F0A5 /* Friends+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friends+CoreDataClass.h"; sourceTree = "<group>"; };
+		92D583991DC223E600B2F0A5 /* Friends+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataClass.m"; sourceTree = "<group>"; };
+		92D5839A1DC223E600B2F0A5 /* Friends+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Friends+CoreDataProperties.h"; sourceTree = "<group>"; };
+		92D5839B1DC223E600B2F0A5 /* Friends+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Friends+CoreDataProperties.m"; sourceTree = "<group>"; };
+		92ED0E3F1DC69DCC0010BBF6 /* EFLCreateChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLCreateChallengeViewController.swift; sourceTree = "<group>"; };
+		96190F841260F69BE20BB5BA /* Pods-Efl-EflTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflTests/Pods-Efl-EflTests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		B8D6BB5AF9FC1B5E0090E0A3 /* Pods-Efl.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-Efl/Pods-Efl.adhoc.xcconfig"; sourceTree = "<group>"; };
 		C4ED36C81D7A9CB30021D362 /* EFLRankingListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EFLRankingListCell.swift; sourceTree = "<group>"; };
 		C4ED36CA1D7A9CCB0021D362 /* EFLRankingListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EFLRankingListCell.xib; sourceTree = "<group>"; };
 		D363AD106D56FB48664A67CE /* Pods-Efl-EflTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflTests/Pods-Efl-EflTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE87373ED475A9EB34D06178 /* Pods-Efl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Efl/Pods-Efl.debug.xcconfig"; sourceTree = "<group>"; };
-		EAECC9A8E0C57E9D4EDF4EA3 /* Pods_Efl_EflUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Efl_EflUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE444D97764FF0845AF55A6F /* Pods-Efl-EflUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflUITests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflUITests/Pods-Efl-EflUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		FE50DB863BC2EA009F1FAA1D /* Pods-Efl-EflUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Efl-EflUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Efl-EflUITests/Pods-Efl-EflUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -409,9 +424,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510F5CAE1DB6B2510021AF47 /* Pods_Efl.framework in Frameworks */,
 				92AA2E1D1DAAE0D30064E242 /* QuartzCore.framework in Frameworks */,
+				51DD6D8A1DB6AF740028BDFD /* Fabric.framework in Frameworks */,
 				279FCEEF1D5C75FE00936075 /* Social.framework in Frameworks */,
-				435295BD796FE314EC99D1B3 /* Pods_Efl.framework in Frameworks */,
+				51DD6D891DB6AF740028BDFD /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +437,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5107700B1D88397A00EFB7C5 /* Social.framework in Frameworks */,
-				5ACB361701F2FC6F5EEC1CCE /* Pods_Efl_EflTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +444,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BDFB1BF1AF7B8E507D6C8EB /* Pods_Efl_EflUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +453,7 @@
 		27217ADB1D464206007CA51E /* BaseControllers */ = {
 			isa = PBXGroup;
 			children = (
+				51DA08831DC0CC1100E57F9E /* EFLBaseSubNavigationBarViewController.swift */,
 				27217ADC1D464206007CA51E /* EFLBaseNavigationController.swift */,
 				27217ADE1D464223007CA51E /* EFLBaseTabBarController.swift */,
 				27217AE01D464230007CA51E /* EFLBaseViewController.swift */,
@@ -560,6 +576,7 @@
 			children = (
 				27217B901D474D45007CA51E /* EFLConstants.swift */,
 				27EA74C31D51A1FE00CC5C2A /* EFLDefinitions.swift */,
+				927361411DC1DD1C00CEDA39 /* en.lproj */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -598,7 +615,6 @@
 			isa = PBXGroup;
 			children = (
 				273488ED1D48908700A27FD0 /* EFLLoginViewController.swift */,
-				2707E0A21D50615400DA9973 /* EFLTermsPolicyViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -610,8 +626,8 @@
 				273332221D40AB510095167E /* EflTests */,
 				2733322D1D40AB510095167E /* EflUITests */,
 				2733320C1D40AB510095167E /* Products */,
-				F56E9EE70E77F0F8006D0E1F /* Frameworks */,
 				67128F0BA940F61192BBE488 /* Pods */,
+				F56E9EE70E77F0F8006D0E1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -632,7 +648,8 @@
 				273332121D40AB510095167E /* Main.storyboard */,
 				273332171D40AB510095167E /* LaunchScreen.storyboard */,
 				27862D201D46003600FA6877 /* Classes */,
-				27862D0B1D45EE8B00FA6877 /* Resources */,
+				9273613D1DC1DA8D00CEDA39 /* Project */,
+				51DD6D731DB6A2AE0028BDFD /* Resourses */,
 			);
 			name = Efl;
 			path = efl;
@@ -666,23 +683,13 @@
 			path = FacebookManager;
 			sourceTree = "<group>";
 		};
-		273488F31D48AB0300A27FD0 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				27B9B7E11D50C799001E1FD2 /* Roboto-Bold.ttf */,
-				27B9B7E21D50C799001E1FD2 /* Roboto-Regular.ttf */,
-				27EA74C11D51A16800CC5C2A /* Roboto-Medium.ttf */,
-				27B9B7E31D50C799001E1FD2 /* RobotoCondensed-Regular.ttf */,
-			);
-			name = Fonts;
-			sourceTree = "<group>";
-		};
 		273488F81D48CD1000A27FD0 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
 				273489011D48F7B600A27FD0 /* EFLActivityIndicator.swift */,
 				27EDFC7B1D5B0C490002D96F /* EFLBannerView.swift */,
 				27E75D541D6E329B00C6DAD9 /* EFLSegmentedControl.swift */,
+				51DA087E1DC0C84E00E57F9E /* EFLSubNavigationBarView */,
 				924FEFA31D933F3D0059C82E /* EFLAlertView */,
 				27EDFC9B1D5B7AB70002D96F /* Friends */,
 			);
@@ -703,6 +710,7 @@
 			children = (
 				27F0D7531D4B3A8800FADBFB /* EFLRoomsViewController.swift */,
 				27E75D421D6DF8F200C6DAD9 /* EFLSelectCompetitionViewController.swift */,
+				92ED0E3E1DC694B40010BBF6 /* Challenge */,
 				27CC79861D6DCAFE00DCED48 /* Pools */,
 			);
 			path = Rooms;
@@ -729,6 +737,7 @@
 		277ADDCF1D6EE4E0007CB85A /* Rooms */ = {
 			isa = PBXGroup;
 			children = (
+				92B780081DC84E1D006D6C44 /* Challenge */,
 				277ADDDC1D6F563E007CB85A /* Pool */,
 			);
 			path = Rooms;
@@ -774,31 +783,18 @@
 			path = PoolInvitation;
 			sourceTree = "<group>";
 		};
-		27862D0B1D45EE8B00FA6877 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				92AA2E191DA3CA8D0064E242 /* Efl.entitlements */,
-				27BCA5111D7E7D9900163C05 /* Login_BG_Video.mp4 */,
-				273488F31D48AB0300A27FD0 /* Fonts */,
-				273332151D40AB510095167E /* Assets.xcassets */,
-				2733321A1D40AB510095167E /* Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		27862D201D46003600FA6877 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				924FEF9B1D92C98E0059C82E /* Extensions */,
+				27862D261D4605FB00FA6877 /* ViewControllers */,
+				27217B8E1D474C37007CA51E /* Views */,
 				27862D221D46014500FA6877 /* Libraries */,
-				27217B841D474C11007CA51E /* Constants */,
-				27217B851D474C18007CA51E /* Utlities */,
-				27DEC15D1D532AB70015F6D6 /* Localization */,
 				27217B8F1D474C50007CA51E /* ManagerClasses */,
 				279FCF631D5D025700936075 /* CoreData */,
 				27862D231D46015B00FA6877 /* WebService */,
-				27217B8E1D474C37007CA51E /* Views */,
-				27862D261D4605FB00FA6877 /* ViewControllers */,
+				27217B841D474C11007CA51E /* Constants */,
+				27217B851D474C18007CA51E /* Utlities */,
+				924FEF9B1D92C98E0059C82E /* Extensions */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -841,6 +837,7 @@
 				273489031D49060700A27FD0 /* Settings */,
 				273489041D49061A00A27FD0 /* Rooms */,
 				273489051D49062D00A27FD0 /* Friends */,
+				51DA08771DBF9C6600E57F9E /* Other */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -917,7 +914,6 @@
 			children = (
 				51C3A9D81DAEB1EC00E96913 /* Models */,
 				278ED6041D8189E2003DC2B8 /* Efl.xcdatamodeld */,
-				51C3A9E11DAEBA4C00E96913 /* File.swift */,
 				279FCF671D5D082900936075 /* EFLCoreDataManager.swift */,
 				27BCA5171D7EED3800163C05 /* EFLPlayerDataManager.swift */,
 				273652B01D7D79B000154BD1 /* EFLCompetitionDataManager.swift */,
@@ -1051,6 +1047,8 @@
 				27E75D471D6DFA6100C6DAD9 /* EFLPoolDetailsCell.xib */,
 				27E75D4A1D6DFA7100C6DAD9 /* EFLPoolMessageCell.swift */,
 				27E75D4B1D6DFA7100C6DAD9 /* EFLPoolMessageCell.xib */,
+				514DDC6B1DC9FD5B00D08385 /* EFLChallengeMatchCell.swift */,
+				514DDC6D1DC9FD7500D08385 /* EFLChallengeMatchCell.xib */,
 				27E75D4E1D6DFA8900C6DAD9 /* EFLPoolPlayerCell.swift */,
 				27E75D4F1D6DFA8900C6DAD9 /* EFLPoolPlayerCell.xib */,
 			);
@@ -1086,15 +1084,6 @@
 				27B5FD5B1D77E9D500B3B7D7 /* EFLPlayerResponse.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		27DEC15D1D532AB70015F6D6 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				27DEC15E1D532AB70015F6D6 /* StringExtension.swift */,
-				27DEC1571D5319D10015F6D6 /* Localizable.strings */,
-			);
-			path = Localization;
 			sourceTree = "<group>";
 		};
 		27EDFC801D5B7A9B0002D96F /* CustomCells */ = {
@@ -1149,15 +1138,55 @@
 		51C3A9D81DAEB1EC00E96913 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				51C3A9E41DAEBC0100E96913 /* Friends+CoreDataClass.h */,
-				51C3A9E51DAEBC0100E96913 /* Friends+CoreDataClass.m */,
-				51C3A9E61DAEBC0100E96913 /* Friends+CoreDataProperties.h */,
-				51C3A9E71DAEBC0100E96913 /* Friends+CoreDataProperties.m */,
-				51C3A9E31DAEBC0000E96913 /* Efl-Bridging-Header.h */,
+				92D583981DC223E600B2F0A5 /* Friends+CoreDataClass.h */,
+				92D583991DC223E600B2F0A5 /* Friends+CoreDataClass.m */,
+				92D5839A1DC223E600B2F0A5 /* Friends+CoreDataProperties.h */,
+				92D5839B1DC223E600B2F0A5 /* Friends+CoreDataProperties.m */,
+				92D583971DC21B1900B2F0A5 /* Efl-Bridging-Header.h */,
 			);
 			name = Models;
 			path = Efl/Classes/CoreData/Models;
 			sourceTree = SOURCE_ROOT;
+		};
+		51DA08771DBF9C6600E57F9E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				51DA08781DBF9C6600E57F9E /* EFLWebViewController.swift */,
+			);
+			name = Other;
+			path = Efl/Classes/ViewControllers/Other;
+			sourceTree = SOURCE_ROOT;
+		};
+		51DA087E1DC0C84E00E57F9E /* EFLSubNavigationBarView */ = {
+			isa = PBXGroup;
+			children = (
+				51DA08851DC0CC2500E57F9E /* EFLSubNavigationBarView.swift */,
+				51DA08861DC0CC2500E57F9E /* EFLTriangleView.swift */,
+			);
+			path = EFLSubNavigationBarView;
+			sourceTree = "<group>";
+		};
+		51DD6D731DB6A2AE0028BDFD /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				51DD6D741DB6A2AE0028BDFD /* Assets.xcassets */,
+				51DD6D761DB6A2AE0028BDFD /* Fonts */,
+				51DD6D7D1DB6A2AE0028BDFD /* Login_BG_Video.mp4 */,
+			);
+			name = Resourses;
+			path = Efl/Resourses;
+			sourceTree = SOURCE_ROOT;
+		};
+		51DD6D761DB6A2AE0028BDFD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				51DD6D771DB6A2AE0028BDFD /* Roboto-Bold.ttf */,
+				51DD6D781DB6A2AE0028BDFD /* Roboto-Medium.ttf */,
+				51DD6D791DB6A2AE0028BDFD /* Roboto-Regular.ttf */,
+				51DD6D7A1DB6A2AE0028BDFD /* RobotoCondensed-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
 		};
 		67128F0BA940F61192BBE488 /* Pods */ = {
 			isa = PBXGroup;
@@ -1168,6 +1197,9 @@
 				D363AD106D56FB48664A67CE /* Pods-Efl-EflTests.release.xcconfig */,
 				FE50DB863BC2EA009F1FAA1D /* Pods-Efl-EflUITests.debug.xcconfig */,
 				18A7C24C96247873675E0DFA /* Pods-Efl-EflUITests.release.xcconfig */,
+				B8D6BB5AF9FC1B5E0090E0A3 /* Pods-Efl.adhoc.xcconfig */,
+				96190F841260F69BE20BB5BA /* Pods-Efl-EflTests.adhoc.xcconfig */,
+				EE444D97764FF0845AF55A6F /* Pods-Efl-EflUITests.adhoc.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1175,6 +1207,7 @@
 		924FEF9B1D92C98E0059C82E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				51DA087A1DBFAFFA00E57F9E /* String+EFLExtension.swift */,
 				512914051DA29CD500336E8F /* UIViewController+EFLExtensions.swift */,
 				924FEF9C1D92C9A70059C82E /* UIView+EFLExtensions.swift */,
 			);
@@ -1192,6 +1225,51 @@
 			path = Efl/Classes/Views/CustomViews/EFLAlertView;
 			sourceTree = SOURCE_ROOT;
 		};
+		9273613D1DC1DA8D00CEDA39 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				9273613E1DC1DA8D00CEDA39 /* Efl.entitlements */,
+				9273613F1DC1DA8D00CEDA39 /* Info.plist */,
+			);
+			name = Project;
+			path = Efl/Project;
+			sourceTree = SOURCE_ROOT;
+		};
+		927361411DC1DD1C00CEDA39 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				927361421DC1DD1C00CEDA39 /* Localizable.strings */,
+			);
+			name = en.lproj;
+			path = Efl/Classes/Constants/en.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
+		92B780081DC84E1D006D6C44 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				92B780091DC84E3A006D6C44 /* CreateChallenge */,
+			);
+			name = Challenge;
+			path = Efl/Classes/WebService/API/Rooms/Challenge;
+			sourceTree = SOURCE_ROOT;
+		};
+		92B780091DC84E3A006D6C44 /* CreateChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				92B7800A1DC84E73006D6C44 /* EFLCreateChallengeRequestModel.swift */,
+			);
+			path = CreateChallenge;
+			sourceTree = "<group>";
+		};
+		92ED0E3E1DC694B40010BBF6 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				92ED0E3F1DC69DCC0010BBF6 /* EFLCreateChallengeViewController.swift */,
+			);
+			name = Challenge;
+			path = Efl/Classes/ViewControllers/Rooms/Challenge;
+			sourceTree = SOURCE_ROOT;
+		};
 		C4ED36C71D7A9B5C0021D362 /* Ranking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1204,11 +1282,11 @@
 		F56E9EE70E77F0F8006D0E1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				510F5CAD1DB6B2510021AF47 /* Pods_Efl.framework */,
+				51DD6D871DB6AF740028BDFD /* Crashlytics.framework */,
+				51DD6D881DB6AF740028BDFD /* Fabric.framework */,
 				92AA2E1C1DAAE0D30064E242 /* QuartzCore.framework */,
 				279FCEEE1D5C75FE00936075 /* Social.framework */,
-				3102E3706BE399A22997D3EC /* Pods_Efl.framework */,
-				722970D169A794443AA3F198 /* Pods_Efl_EflTests.framework */,
-				EAECC9A8E0C57E9D4EDF4EA3 /* Pods_Efl_EflUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1226,7 +1304,8 @@
 				273332091D40AB510095167E /* Resources */,
 				3FF252DF57D184C4121DCBB4 /* [CP] Embed Pods Frameworks */,
 				136D8B0311A1A6D53D513E05 /* [CP] Copy Pods Resources */,
-				51ABFF3C1DA673E5006C94B6 /* Embed Frameworks */,
+				510F5CBF1DB6BBE00021AF47 /* ShellScript */,
+				510F5CC31DB7986E0021AF47 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1285,13 +1364,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = ZNET;
 				TargetAttributes = {
 					2733320A1D40AB510095167E = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 6C66NF5WHF;
+						DevelopmentTeam = 7228BBSRBS;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -1333,30 +1413,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51DD6D861DB6A9490028BDFD /* Assets.xcassets in Resources */,
 				27E75D511D6DFA8900C6DAD9 /* EFLPoolPlayerCell.xib in Resources */,
 				27CC797F1D6DA1A500DCED48 /* EFLRoomListCell.xib in Resources */,
-				27EA74C21D51A16800CC5C2A /* Roboto-Medium.ttf in Resources */,
+				51DD6D7F1DB6A2AE0028BDFD /* Roboto-Bold.ttf in Resources */,
 				273332191D40AB510095167E /* LaunchScreen.storyboard in Resources */,
-				27DEC1551D5319D10015F6D6 /* Localizable.strings in Resources */,
-				27BCA5121D7E7D9900163C05 /* Login_BG_Video.mp4 in Resources */,
 				27EDFC9A1D5B7A9B0002D96F /* EFLSettingsLogoCell.xib in Resources */,
 				27EDFC941D5B7A9B0002D96F /* EFLProfileCell.xib in Resources */,
+				514DDC6E1DC9FD7500D08385 /* EFLChallengeMatchCell.xib in Resources */,
 				27EDFC961D5B7A9B0002D96F /* EFLProfileDetailCell.xib in Resources */,
-				27B9B7E41D50C799001E1FD2 /* Roboto-Bold.ttf in Resources */,
-				27B9B7E51D50C799001E1FD2 /* Roboto-Regular.ttf in Resources */,
 				27E75D491D6DFA6100C6DAD9 /* EFLPoolDetailsCell.xib in Resources */,
 				27E75D4D1D6DFA7100C6DAD9 /* EFLPoolMessageCell.xib in Resources */,
+				927361441DC1DD1C00CEDA39 /* Localizable.strings in Resources */,
+				51DD6D821DB6A2AE0028BDFD /* RobotoCondensed-Regular.ttf in Resources */,
 				279FCF251D5CE67B00936075 /* EFLFriendListCell.xib in Resources */,
-				273332161D40AB510095167E /* Assets.xcassets in Resources */,
+				51DD6D811DB6A2AE0028BDFD /* Roboto-Regular.ttf in Resources */,
 				27EDFC901D5B7A9B0002D96F /* EFLFacebookInfoCell.xib in Resources */,
+				51DD6D851DB6A2AE0028BDFD /* Login_BG_Video.mp4 in Resources */,
 				27EDFC981D5B7A9B0002D96F /* EFLSettingsCell.xib in Resources */,
 				27EDFC921D5B7A9B0002D96F /* EFLLogoutCell.xib in Resources */,
 				924FEFA71D933F3D0059C82E /* EFLAlertView.xib in Resources */,
 				27EDFCA11D5B7C680002D96F /* EFLFriendsShareCell.xib in Resources */,
+				51DD6D801DB6A2AE0028BDFD /* Roboto-Medium.ttf in Resources */,
 				C4ED36CB1D7A9CCB0021D362 /* EFLRankingListCell.xib in Resources */,
 				273332141D40AB510095167E /* Main.storyboard in Resources */,
 				27E75D3F1D6DCE1200C6DAD9 /* EFLSelectCompetitionCell.xib in Resources */,
-				27B9B7E61D50C799001E1FD2 /* RobotoCondensed-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1406,6 +1487,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Efl/Pods-Efl-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		510F5CBF1DB6BBE00021AF47 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CONFIGURATION\" != \"Debug\" ]; then\n./EFL/Frameworks/Fabric.framework/run 4bb2a166d3759731dda93f90a227fcfa5a854631 274cb83838aec32383eba3bb33a8a16c69ad9460c82099a732d080c7859da27b\nfi";
 		};
 		5C1114FF0D873248FEA59C84 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1511,9 +1605,11 @@
 				27217B491D472B6F007CA51E /* ISO8601DateTransform.swift in Sources */,
 				277ADE011D70E0E5007CB85A /* EFLReceivePoolResponse.swift in Sources */,
 				27217B411D472B6F007CA51E /* ToJSON.swift in Sources */,
+				51DA08841DC0CC1100E57F9E /* EFLBaseSubNavigationBarViewController.swift in Sources */,
 				279C00211D7AB68B00C59693 /* EFLPoolRoomModel.swift in Sources */,
 				27F0D7541D4B3A8800FADBFB /* EFLRoomsViewController.swift in Sources */,
 				279FCF241D5CE67B00936075 /* EFLFriendListCell.swift in Sources */,
+				51DA08871DC0CC2500E57F9E /* EFLSubNavigationBarView.swift in Sources */,
 				279C00231D7AB85300C59693 /* EFLPoolCardResponseModel.swift in Sources */,
 				279FCF6B1D5D091500936075 /* EFLAPIManager.swift in Sources */,
 				27217B071D472232007CA51E /* APIErrorTypeServer.swift in Sources */,
@@ -1523,6 +1619,7 @@
 				27C87B1B1D79A82600481917 /* EFLCompetitionListResponse.swift in Sources */,
 				27217B061D472232007CA51E /* APIErrorTypeResponse.swift in Sources */,
 				273652AD1D7D67E700154BD1 /* EFLCreatePoolResponseModel.swift in Sources */,
+				51DA08881DC0CC2500E57F9E /* EFLTriangleView.swift in Sources */,
 				273652B11D7D79B000154BD1 /* EFLCompetitionDataManager.swift in Sources */,
 				279C00101D7AB34F00C59693 /* EFLPoolRoomAPI.swift in Sources */,
 				27C87B1C1D79A82600481917 /* EFLCompetitionRequestModel.swift in Sources */,
@@ -1536,11 +1633,13 @@
 				279C00141D7AB4A900C59693 /* EFLPoolRoomListResponse.swift in Sources */,
 				27217B711D474277007CA51E /* BaseAPIResponse.swift in Sources */,
 				27217B5C1D473F0A007CA51E /* BaseMapableModel.swift in Sources */,
+				51DA087B1DBFAFFA00E57F9E /* String+EFLExtension.swift in Sources */,
 				27217B261D472AD6007CA51E /* AlamofireObjectMapper.swift in Sources */,
 				27C87AFC1D79660800481917 /* EFLDeviceAPI.swift in Sources */,
 				27217B051D472232007CA51E /* APIErrorTypeRequest.swift in Sources */,
 				279C001F1D7AB65800C59693 /* EFLRoomPlayerModel.swift in Sources */,
 				273489021D48F7B600A27FD0 /* EFLActivityIndicator.swift in Sources */,
+				51DA08791DBF9C6600E57F9E /* EFLWebViewController.swift in Sources */,
 				27E75D531D6E309100C6DAD9 /* EFLAddPlayerViewController.swift in Sources */,
 				277ADDFD1D70E0C6007CB85A /* EFLReceivePoolAPI.swift in Sources */,
 				273652AF1D7D686600154BD1 /* EFLCreatePoolRoomModel.swift in Sources */,
@@ -1548,6 +1647,7 @@
 				27AA940B1D4A492400A5925D /* EFLUserDetailsModel.swift in Sources */,
 				27217B3D1D472B6F007CA51E /* Map.swift in Sources */,
 				279C001B1D7AB51C00C59693 /* EFLPoolRoomResponseModel.swift in Sources */,
+				92ED0E401DC69DCC0010BBF6 /* EFLCreateChallengeViewController.swift in Sources */,
 				27217B081D472232007CA51E /* APIErrorTypeTimeOut.swift in Sources */,
 				27217B7F1D4746C4007CA51E /* EFLBaseAPIRequest.swift in Sources */,
 				27217B3E1D472B6F007CA51E /* Mappable.swift in Sources */,
@@ -1560,6 +1660,7 @@
 				27B5FD7D1D787D5200B3B7D7 /* EFLPlayerResponseModel.swift in Sources */,
 				27EDFC951D5B7A9B0002D96F /* EFLProfileDetailCell.swift in Sources */,
 				27217B811D4746D2007CA51E /* EFLBaseAPIResponse.swift in Sources */,
+				92D5839D1DC223E600B2F0A5 /* Friends+CoreDataProperties.m in Sources */,
 				273652AB1D7D67B500154BD1 /* EFLAddPlayerModel.swift in Sources */,
 				27217B0E1D4728C2007CA51E /* Reachability.swift in Sources */,
 				27EA74C41D51A1FE00CC5C2A /* EFLDefinitions.swift in Sources */,
@@ -1575,6 +1676,7 @@
 				27EDFCA01D5B7C680002D96F /* EFLFriendsShareCell.swift in Sources */,
 				278ED60E1D818DC1003DC2B8 /* EFLUpdatePoolRequestModel.swift in Sources */,
 				27EDFC7C1D5B0C490002D96F /* EFLBannerView.swift in Sources */,
+				514DDC6C1DC9FD5B00D08385 /* EFLChallengeMatchCell.swift in Sources */,
 				278ED60B1D818A1E003DC2B8 /* EFLCreatePoolRequestModel.swift in Sources */,
 				27C87AFE1D79662A00481917 /* EFLDeviceRequestModel.swift in Sources */,
 				2733320F1D40AB510095167E /* AppDelegate.swift in Sources */,
@@ -1585,8 +1687,6 @@
 				27217B5A1D473EE9007CA51E /* BaseAPIModel.swift in Sources */,
 				27B5FD5C1D77E9D500B3B7D7 /* EFLPlayerResponse.swift in Sources */,
 				27B5FD7F1D78808600B3B7D7 /* EFLFriendModel.swift in Sources */,
-				27DEC15F1D532AB70015F6D6 /* StringExtension.swift in Sources */,
-				51C3A9E21DAEBA4C00E96913 /* File.swift in Sources */,
 				27217B7D1D4746B8007CA51E /* EFLBaseAPI.swift in Sources */,
 				277ADDFA1D7078BF007CB85A /* EFLPoolActionViewController.swift in Sources */,
 				27E75D4C1D6DFA7100C6DAD9 /* EFLPoolMessageCell.swift in Sources */,
@@ -1610,11 +1710,9 @@
 				279C00161D7AB4B400C59693 /* EFLPoolRoomResponse.swift in Sources */,
 				27E75D3E1D6DCE1200C6DAD9 /* EFLSelectCompetitionCell.swift in Sources */,
 				279FCF1F1D5CD06400936075 /* EFLUserFriendModel.swift in Sources */,
-				51C3A9E91DAEBC0100E96913 /* Friends+CoreDataProperties.m in Sources */,
 				273488EE1D48908700A27FD0 /* EFLLoginViewController.swift in Sources */,
 				27217B401D472B6F007CA51E /* Operators.swift in Sources */,
 				27EDFC911D5B7A9B0002D96F /* EFLLogoutCell.swift in Sources */,
-				51C3A9E81DAEBC0100E96913 /* Friends+CoreDataClass.m in Sources */,
 				27217B4B1D472B6F007CA51E /* TransformType.swift in Sources */,
 				27E94FBD1D772ED9009DBF1F /* EFLPlayerAPI.swift in Sources */,
 				27DBAF1E1D7B0083000BE863 /* EFLFriendListModel.swift in Sources */,
@@ -1627,7 +1725,6 @@
 				27217B451D472B6F007CA51E /* CustomDateFormatTransform.swift in Sources */,
 				27E75D481D6DFA6100C6DAD9 /* EFLPoolDetailsCell.swift in Sources */,
 				27B5FD731D781F7000B3B7D7 /* EFLFriendsResponse.swift in Sources */,
-				2707E0A31D50615400DA9973 /* EFLTermsPolicyViewController.swift in Sources */,
 				27217B461D472B6F007CA51E /* DateFormatterTransform.swift in Sources */,
 				27E75D501D6DFA8900C6DAD9 /* EFLPoolPlayerCell.swift in Sources */,
 				27C87B121D799AA400481917 /* EFLCompetitionMatchDayModel.swift in Sources */,
@@ -1636,7 +1733,9 @@
 				27B5FD561D77E69800B3B7D7 /* EFLPlayerUpdateRequestModel.swift in Sources */,
 				27B5FD581D77E6A500B3B7D7 /* EFLPlayerRefreshRequestModel.swift in Sources */,
 				27217B831D4747D0007CA51E /* EFLDictionary.swift in Sources */,
+				92D5839C1DC223E600B2F0A5 /* Friends+CoreDataClass.m in Sources */,
 				27217ADD1D464206007CA51E /* EFLBaseNavigationController.swift in Sources */,
+				92B7800B1DC84E73006D6C44 /* EFLCreateChallengeRequestModel.swift in Sources */,
 				27BCA5141D7EACDA00163C05 /* EFLPoolRoomDataManager.swift in Sources */,
 				27C87B0C1D79843100481917 /* EFLCompetitionModel.swift in Sources */,
 				27217B041D472232007CA51E /* APIErrorTypeNone.swift in Sources */,
@@ -1696,13 +1795,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		27DEC1571D5319D10015F6D6 /* Localizable.strings */ = {
+		927361421DC1DD1C00CEDA39 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				27DEC1561D5319D10015F6D6 /* en */,
+				927361431DC1DD1C00CEDA39 /* en */,
 			);
 			name = Localizable.strings;
-			path = ../Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1712,6 +1810,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_VERSION = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1727,8 +1826,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1747,11 +1844,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PHOTO_LIBRARY_USAGE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
@@ -1762,6 +1859,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_VERSION = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1777,8 +1875,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ZNET Labs Pte. Ltd. (6C66NF5WHF)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ZNET Labs Pte. Ltd. (6C66NF5WHF)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1791,10 +1887,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "5db587af-7ddc-4c85-9aac-10cc3491a26a";
+				PHOTO_LIBRARY_USAGE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.3;
@@ -1809,19 +1905,26 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUNDLE_VERSION = 0.0.2;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Efl/Efl.entitlements;
+				CLANG_MODULES_AUTOLINK = NO;
+				CODE_SIGN_ENTITLEMENTS = Efl/Project/Efl.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dmitry Stepanov (V7F25AAY4S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7228BBSRBS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Efl/Frameworks",
+					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = Efl/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = "$(SRCROOT)/Efl/Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.znetlabs.efl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecsynt.Efl;
 				PRODUCT_NAME = Efl;
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Efl/Classes/CoreData/Models/Efl-Bridging-Header.h";
+				PROVISIONING_PROFILE = "c24428b1-b6c7-4849-b9c4-883adc43a48e";
+				PROVISIONING_PROFILE_SPECIFIER = "EFL Development";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Efl/Classes/CoreData/Models/Efl-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
 			};
@@ -1834,21 +1937,26 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUNDLE_VERSION = 0.0.2;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Efl/Efl.entitlements;
+				CLANG_MODULES_AUTOLINK = NO;
+				CODE_SIGN_ENTITLEMENTS = Efl/Project/Efl.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: ZNET Labs Pte. Ltd. (6C66NF5WHF)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ZNET Labs Pte. Ltd. (6C66NF5WHF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dmitry Stepanov (V7F25AAY4S)";
+				DEVELOPMENT_TEAM = 6C66NF5WHF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Efl/Frameworks",
+					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = Efl/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = "$(SRCROOT)/Efl/Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.znetlabs.efl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecsynt.Efl;
 				PRODUCT_NAME = Efl;
-				PROVISIONING_PROFILE = "5db587af-7ddc-4c85-9aac-10cc3491a26a";
-				SWIFT_OBJC_BRIDGING_HEADER = "Efl/Classes/CoreData/Models/Efl-Bridging-Header.h";
+				PROVISIONING_PROFILE = "d98235e1-d792-43b0-b0d8-3e0c91621ca7";
+				PROVISIONING_PROFILE_SPECIFIER = EflDevelopmentProfile;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Efl/Classes/CoreData/Models/Efl-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
@@ -1927,6 +2035,117 @@
 			};
 			name = Release;
 		};
+		51DD6D561DB69A440028BDFD /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_VERSION = "";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PHOTO_LIBRARY_USAGE = "";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AdHoc;
+		};
+		51DD6D571DB69A440028BDFD /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8D6BB5AF9FC1B5E0090E0A3 /* Pods-Efl.adhoc.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUNDLE_VERSION = 0.0.2;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_MODULES_AUTOLINK = NO;
+				CODE_SIGN_ENTITLEMENTS = Efl/Project/Efl.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dmitro Stepanov (7228BBSRBS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 7228BBSRBS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Efl/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Efl/Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tecsynt.Efl;
+				PRODUCT_NAME = Efl;
+				PROVISIONING_PROFILE = "d4b9208d-b167-48c9-a7fd-4b0c8789fa9a";
+				PROVISIONING_PROFILE_SPECIFIER = "EFL Distribution";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Efl/Classes/CoreData/Models/Efl-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
+			};
+			name = AdHoc;
+		};
+		51DD6D581DB69A440028BDFD /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96190F841260F69BE20BB5BA /* Pods-Efl-EflTests.adhoc.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/efl/Frameworks",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					TEST,
+				);
+				INFOPLIST_FILE = EflTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.znetlabs.eflTests;
+				PRODUCT_NAME = EflTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Efl.app/Efl";
+			};
+			name = AdHoc;
+		};
+		51DD6D591DB69A440028BDFD /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE444D97764FF0845AF55A6F /* Pods-Efl-EflUITests.adhoc.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = eflUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.znetlabs.eflUITests;
+				PRODUCT_NAME = Efl.temp_caseinsensitive_rename;
+				TEST_TARGET_NAME = efl;
+				USES_XCTRUNNER = YES;
+			};
+			name = AdHoc;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1935,6 +2154,7 @@
 			buildConfigurations = (
 				273332311D40AB520095167E /* Debug */,
 				273332321D40AB520095167E /* Release */,
+				51DD6D561DB69A440028BDFD /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1944,6 +2164,7 @@
 			buildConfigurations = (
 				273332341D40AB520095167E /* Debug */,
 				273332351D40AB520095167E /* Release */,
+				51DD6D571DB69A440028BDFD /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1953,6 +2174,7 @@
 			buildConfigurations = (
 				273332371D40AB520095167E /* Debug */,
 				273332381D40AB520095167E /* Release */,
+				51DD6D581DB69A440028BDFD /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1962,6 +2184,7 @@
 			buildConfigurations = (
 				2733323A1D40AB520095167E /* Debug */,
 				2733323B1D40AB520095167E /* Release */,
+				51DD6D591DB69A440028BDFD /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

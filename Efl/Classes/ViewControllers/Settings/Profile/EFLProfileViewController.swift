@@ -52,7 +52,7 @@ extension EFLProfileViewController {
     
     override func configurationNavigationAndStatusBars() {
         self.setConfigurationStatusBar(.Green)
-        self.setConfigurationNavigationBar("PROFILE_TITLE".localized, titleView: nil, backgroundColor: .Green, topRoundCorner: 0)
+        self.setConfigurationNavigationBar("PROFILE_TITLE".localized, titleView: nil, backgroundColor: .Green)
         self.setBarButtonItem(.Back, placeType: .Left, tintColorType: .White)
     }
     
@@ -69,7 +69,7 @@ extension EFLProfileViewController {
 // MARK: - Actions
 extension EFLProfileViewController {
     
-    // MARK: tap back button
+    // tap back button
     func leftBarButtonItemDidPress() {
         activeTextField?.resignFirstResponder()
         if self.checkForProfileEdit() {
@@ -94,7 +94,7 @@ extension EFLProfileViewController {
         profileTableView.reloadData()
     }
     
-    // MARK: Edit Profile
+    // Edit Profile
     func editButtonDidPress() {
         let imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
@@ -106,6 +106,8 @@ extension EFLProfileViewController {
     
     func logout() {
         EFLManager.sharedManager.logOut()
+        EFLUtility.removeUserImage()
+        EFLPlayerDataManager.sharedDataManager.truncateDataBase()
         self.spinner.showIndicator()
         
         NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(EFLProfileViewController.popToLoginScreen), userInfo: nil, repeats: false)
@@ -223,6 +225,7 @@ extension EFLProfileViewController {
         if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             updateRequired = true
             cell.profileImageView.image = EFLUtility.scaleDownImage(pickedImage, ToSize: imageScaleSize)
+            EFLUtility.saveUserImage(pickedImage)
         }
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -261,7 +264,7 @@ extension EFLProfileViewController {
 // MARK: - API Methods
 extension EFLProfileViewController {
     
-    // MARK: SetUp Request
+    // SetUp Request
     func profileUpdateRequest(facebookAccessToken:String?) -> EFLPlayerUpdateRequestModel {
         
         let requestModel = EFLPlayerUpdateRequestModel()
@@ -273,18 +276,22 @@ extension EFLProfileViewController {
             let trimmedFirstName = cell.firstNameTextField.text!.stringByTrimmingCharactersInSet(
                 NSCharacterSet.whitespaceAndNewlineCharacterSet()
             )
-            if trimmedFirstName != EFLUtility.readValueFromUserDefaults(FIRST_NAME_KEY) {
-                requestModel.first_name = trimmedFirstName
-            }
+            requestModel.first_name = trimmedFirstName
+            
             
             let trimmedLastName = cell.lastNameTextField.text!.stringByTrimmingCharactersInSet(
                 NSCharacterSet.whitespaceAndNewlineCharacterSet()
             )
-            if trimmedLastName != EFLUtility.readValueFromUserDefaults(LAST_NAME_KEY) {
-                requestModel.last_name = trimmedLastName
-            }
-            if updateRequired{
-                requestModel.image = UIImageJPEGRepresentation(cell.profileImageView.image!, 0.6)
+            requestModel.last_name = trimmedLastName
+            
+            if EFLUtility.getUserImage() != nil {
+                if updateRequired {
+                    requestModel.image = UIImageJPEGRepresentation(cell.profileImageView.image!, 0.6)
+                }
+            } else {
+                if updateRequired {
+                    requestModel.image = NSData()
+                }
             }
             
             requestModel.notification_received_invite = EFLUtility.readBooleanFromUserDefaults(NOTIFICATION_RECEIVED_INVITE_KEY)
@@ -299,7 +306,7 @@ extension EFLProfileViewController {
         return requestModel
     }
     
-    // MARK: Profile Update API
+    // Profile Update API
     func updateProfileData(accessToken:String?) {
         
         let requestModel = self.profileUpdateRequest(accessToken)
@@ -321,11 +328,11 @@ extension EFLProfileViewController {
                     if accessToken == nil {
                         self.updateRequired = false
                         self.refreshRequired = true
-                        EFLManager.sharedManager.refreshPlayerData(response.data!)
+                        EFLManager.sharedManager.refreshPlayerData(response.data!.player!)
                         self.leftBarButtonItemDidPress()
                     }
                     else {
-                        if let authorizationToken = response.data!.jwt_token {
+                        if let authorizationToken = response.data!.player!.jwt_token {
                             EFLUtility.saveValuesToUserDefaults(authorizationToken, key: AUTHORIZATION_TOKEN_KEY)
                         }
                         EFLUtility.saveValuesToUserDefaults(accessToken!, key: FB_ACCESS_TOKEN_KEY)
@@ -344,7 +351,7 @@ extension EFLProfileViewController {
 // MARK: - Show Alerts
 private extension EFLProfileViewController {
     
-    // MARK: Logout Action
+    // Logout Action
     func logoutFromApp() {
         
         if ReachabilityManager.isReachable() {
@@ -369,7 +376,7 @@ private extension EFLProfileViewController {
         }
     }
     
-    // MARK: Logout Confirmation Alert
+    // Logout Confirmation Alert
     func showConrimationAlert() {
         
         if ReachabilityManager.isReachable() {
@@ -390,7 +397,7 @@ private extension EFLProfileViewController {
         }
     }
     
-    // MARK: Profile Update Failure Alert
+    // Profile Update Failure Alert
     func showProfileUpdateFailureAlert() {
         let alert: UIAlertController = UIAlertController(title: "ALERT_FAILURE_TITLE".localized, message: "ALERT_FAILURE_MESSAGE".localized, preferredStyle: UIAlertControllerStyle.Alert)
         alert.view.tintColor = UIColor.eflGreenColor()
@@ -416,7 +423,7 @@ private extension EFLProfileViewController {
         })
     }
     
-    // MARK: Profile Update Failure Alert
+    // Profile Update Failure Alert
     func showOfflineAlert() {
         let alert: UIAlertController = UIAlertController(title: "NO_CONNECTION_ALERT_TITLE".localized, message: "NO_CONNECTION_ALERT_MESSAGE".localized, preferredStyle: UIAlertControllerStyle.Alert)
         alert.view.tintColor = UIColor.eflGreenColor()
@@ -447,7 +454,7 @@ private extension EFLProfileViewController {
 // MARK: - Private functions
 private extension EFLProfileViewController {
     
-    // MARK: Get Facebook Profile Picture URL
+    // Get Facebook Profile Picture URL
     func getProfPic(fid: String) -> String? {
         if (fid != "") {
             let imgURLString = "http://graph.facebook.com/" + fid + "/picture?height=240" //type=normal
@@ -459,7 +466,6 @@ private extension EFLProfileViewController {
     func checkAccessToken() {
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             self.spinner.showIndicator()
-            
             FBSDKAccessToken.refreshCurrentAccessToken({ (connection :FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) in
                 if (FBSDKAccessToken.currentAccessToken() != nil) {
                     self.getFacebookData()
@@ -526,7 +532,7 @@ private extension EFLProfileViewController {
         return false
     }
     
-    // MARK: Get Facebook data
+    // Get Facebook data
     func getFacebookData() {
         EFLFacebookManager.sharedFacebookManager.getFacebookDataWith({ (connection, result, error) in
             if error == nil {
@@ -539,7 +545,7 @@ private extension EFLProfileViewController {
         })
     }
     
-    // MARK: Reload data
+    // Reload data
     func saveAndReloadData(result : AnyObject!) {
         let picture = result.valueForKey("picture")
         let data = picture!.valueForKey("data")
@@ -547,17 +553,18 @@ private extension EFLProfileViewController {
         
         EFLUtility.saveValuesToUserDefaults((result.valueForKey("first_name") as? String)!, key: FIRST_NAME_KEY)
         EFLUtility.saveValuesToUserDefaults((result.valueForKey("last_name") as? String)!, key: LAST_NAME_KEY)
+        
+        EFLUtility.removeUserImage()
         if is_silhouette { // If Facebook avatar, no image required
             EFLUtility.removeValueFromUserDefaults(PROFILE_IMAGE_URL_KEY)
         }
         else {
             EFLUtility.saveValuesToUserDefaults(self.getProfPic(((result.valueForKey("id")) as? String)!)!, key: PROFILE_IMAGE_URL_KEY)
         }
-        EFLUtility.removeUserImage()
         self.profileTableView.reloadData()
     }
     
-    // MARK: Validation Methods
+    // Validation Methods
     func validateFields() -> Bool {
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         let cell = profileTableView.cellForRowAtIndexPath(indexPath) as! EFLProfileDetailCell

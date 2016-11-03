@@ -60,7 +60,9 @@ extension UIViewController {
             self.presentViewController(toViewController, animated: false, completion:  comletion)
             return
         case .Default:
-            self.presentViewController(toViewController, animated: true, completion:  comletion)
+            let navigationController = EFLBaseNavigationController(rootViewController: toViewController)
+            self.showViewController(navigationController, sender: nil)
+           // self.presentViewController(navigationController, animated: true, completion:  comletion)
             return
         case .FlipHorizontal:
             let navigationController = EFLBaseNavigationController(rootViewController: toViewController)
@@ -73,10 +75,8 @@ extension UIViewController {
         switch animation {
         case .None:
             self.dismissViewControllerAnimated(false, completion: completion)
-            return
         case .Default:
             self.dismissViewControllerAnimated(true, completion: completion)
-            return
         case .FlipHorizontal:
             self.dismissViewControllerAnimated(true, completion: completion)
         }

@@ -22,7 +22,7 @@ public let HTTP_STATUS_NO_CONTENT              = 204
 public let HTTP_STATUS_MOVED                   = 301
 public let HTTP_STATUS_FOUND                   = 302
 public let HTTP_STATUS_METHOD                  = 303
-public let HTTP_STATUS_NOT_MODIFIED            = 303
+public let HTTP_STATUS_NOT_MODIFIED            = 304
 
 public let HTTP_STATUS_BAD_REQUEST             = 400
 public let HTTP_STATUS_UNAUTHORIZED            = 401
@@ -51,7 +51,7 @@ public let REQUEST_TIMEOUT_MULTIPART_IN_SECONDS = 180
 
 
 // MARK: app boolean Keys
-public let SHOULD_LOG = false
+public let SHOULD_LOG = true
 public let SHOULD_USE_TEST_RESPONSE = false
 
 // MARK: app utility Keys
@@ -79,7 +79,7 @@ public let URLBase = "http://efl-server-staging-1.appspot.com/api/v1.0/"
 //public let URLBase = ""
 
 //Request Header Keys
-public let RequestAuthorizationHeaderKey = "X-Authorization"
+public let RequestAuthorizationHeaderKey = "Authorization"
 
 //URL Suffix
 /*
@@ -90,7 +90,5 @@ public let RequestAuthorizationHeaderKey = "X-Authorization"
 public let URLPlayer            = "players/"
 public let URLFriends           = "/friends/"
 public let URLDevices           = "/devices/"
-
-public let URLTermsAndPolicy    = "http://znet.company/efl/terms.php"
 public let URLCompetitions      = "competitions/"
 public let URLPoolRoom          = "poolrooms/"

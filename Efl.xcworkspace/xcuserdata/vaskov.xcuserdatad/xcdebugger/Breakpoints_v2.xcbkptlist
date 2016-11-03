@@ -6,272 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "efl/Classes/WebService/API/Device/LogoutDevice/EFLLogoutAPI.swift"
-            timestampString = "495625510.453654"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "logout(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "eflTests/EFLApiTest.swift"
-            timestampString = "496140864.591432"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "testEFLCompetitionAPIGetCompetition()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "eflTests/EFLApiTest.swift"
-            timestampString = "496140861.293761"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "testPoolRoomAPIGetPoolRoomList()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "eflTests/EFLApiTest.swift"
-            timestampString = "496141038.516548"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "testEFLCompetitionAPIGetCompetitionList()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "eflTests/EFLApiTest.swift"
-            timestampString = "496144087.173854"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "testPoolRoomAPIGetPoolRoom()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "eflTests/EFLApiTest.swift"
-            timestampString = "496144422.727139"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "testCreatePoolAPICreatePool()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "eflTests/EFLApiTest.swift"
-            timestampString = "496146547.100133"
+            filePath = "efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+            timestampString = "499835542.337486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "305"
             endingLineNumber = "305"
-            landmarkName = "testReceivePoolAPIGetReceivePool()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "eflTests/EFLApiTest.swift"
-            timestampString = "496146895.789853"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "testDeviceApiCreateOrUpdateDevice()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "eflTests/EFLApiTest.swift"
-            timestampString = "496147735.520401"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
-            landmarkName = "testFriendsAPIGetFriends()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "eflTests/EFLApiTest.swift"
-            timestampString = "496148178.862009"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "345"
-            endingLineNumber = "345"
-            landmarkName = "testFriendsAPIUpdateFriends()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "efl/Classes/ViewControllers/Login/EFLLoginViewController.swift"
-            timestampString = "497269015.654184"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "loginToApp(accessToken:facebookId:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "efl/Classes/ViewControllers/Login/EFLLoginViewController.swift"
-            timestampString = "497269040.441845"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "loginWithFacebookAction(sender:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Efl.EFLLoginViewController.(loginWithFacebookAction (Swift.AnyObject) -&gt; ()).(closure #1)"
-                  moduleName = "Efl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ViewControllers/Login/EFLLoginViewController.swift"
-                  timestampString = "498344439.754302"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "1634">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Efl.EFLLoginViewController.(loginWithFacebookAction (Swift.AnyObject) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "Efl"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ViewControllers/Login/EFLLoginViewController.swift"
-                  timestampString = "498344439.756969"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "31">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "efl/Classes/ViewControllers/Login/EFLLoginViewController.swift"
-            timestampString = "497269048.34327"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "loginWithFacebookAction(sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "efl/Classes/ViewControllers/Login/EFLLoginViewController.swift"
-            timestampString = "497269053.083125"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "loginWithFacebookAction(sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "efl/Classes/ViewControllers/BaseControllers/EFLBaseNavigationController.swift"
-            timestampString = "497772725.575907"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "setShadow()"
+            landmarkName = "gameRequestDialog(gameRequestDialog:didCompleteWithResults:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -282,13 +26,525 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
-            timestampString = "498344438.454086"
+            timestampString = "499835542.337486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
-            landmarkName = "updateFriends(_:)"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
+            landmarkName = "gameRequestDialog(gameRequestDialog:didFailWithError:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+            timestampString = "499835542.337486"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
+            landmarkName = "gameRequestDialog(gameRequestDialog:didFailWithError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+            timestampString = "499835542.337486"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
+            landmarkName = "updateAccesToken(accessToken:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/CoreData/EFLPlayerDataManager.swift"
+            timestampString = "499262083.23354"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "getAlphabeticalFriends(filter:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/CoreData/EFLPlayerDataManager.swift"
+            timestampString = "499262083.23354"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "saveUserFriendProfilePicture(id:imageData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+            timestampString = "499254398.999918"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
+            landmarkName = "updateFriends(recipients:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Efl.EFLFriendsViewController.updateFriends (Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "Efl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+                  timestampString = "499839755.864503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "258"
+                  endingLineNumber = "258"
+                  offsetFromSymbolStart = "339">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Efl.EFLFriendsViewController.(updateFriends (Swift.Array&lt;Swift.String&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "Efl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+                  timestampString = "499839755.868046"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "259"
+                  endingLineNumber = "259"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+            timestampString = "499835542.337486"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "464"
+            endingLineNumber = "464"
+            landmarkName = "showActivityController()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Efl/Classes/CoreData/Models/Friends+CoreDataProperties.h"
+            timestampString = "499264292.527164"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "facebookId"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+            timestampString = "499835542.337486"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "gameRequestDialog(gameRequestDialog:didFailWithError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+            timestampString = "499835542.337486"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
+            landmarkName = "showGameRequestDialogue()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/WebService/API/Login/EFLPlayerAPI.swift"
+            timestampString = "499270581.241983"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "loginPlayer(request:and:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/WebService/API/Login/EFLPlayerAPI.swift"
+            timestampString = "499270582.699258"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "updatePlayer(request:and:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/WebService/API/Login/EFLPlayerAPI.swift"
+            timestampString = "499270583.787511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "refreshPlayer(request:and:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ManagerClasses/FacebookManager/EFLFacebookManager.swift"
+            timestampString = "499270772.002916"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "setFacebookPermissionsWith(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ManagerClasses/FacebookManager/EFLFacebookManager.swift"
+            timestampString = "499270774.917257"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "getFacebookDataWith(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ManagerClasses/FacebookManager/EFLFacebookManager.swift"
+            timestampString = "499295439.031871"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "facebookIds(token:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ManagerClasses/FacebookManager/EFLFacebookManager.swift"
+            timestampString = "499295439.031871"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "getFacebookFriendIds(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ViewControllers/Rooms/Pools/EFLCreatePoolViewController.swift"
+            timestampString = "499555642.898875"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "430"
+            endingLineNumber = "430"
+            landmarkName = "textViewDidEndEditing(textView:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Efl.EFLCreatePoolViewController.textViewDidBeginEditing (__ObjC.UITextView) -&gt; ()"
+                  moduleName = "Efl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ViewControllers/Rooms/Pools/EFLCreatePoolViewController.swift"
+                  timestampString = "499839755.92715"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "430"
+                  endingLineNumber = "430"
+                  offsetFromSymbolStart = "1172">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Efl.EFLCreatePoolViewController.(textViewDidBeginEditing (__ObjC.UITextView) -&gt; ()).(closure #2)"
+                  moduleName = "Efl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ViewControllers/Rooms/Pools/EFLCreatePoolViewController.swift"
+                  timestampString = "499839755.930656"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "431"
+                  endingLineNumber = "431"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ViewControllers/Rooms/Pools/EFLCreatePoolViewController.swift"
+            timestampString = "499555258.847737"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
+            landmarkName = "textViewDidBeginEditing(textView:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ViewControllers/Rooms/Pools/EFLCreatePoolViewController.swift"
+            timestampString = "499555258.847737"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
+            landmarkName = "textView(textView:shouldChangeTextInRange:replacementText:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+            timestampString = "499835159.187731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
+            landmarkName = "showGameRequestDialogue()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Efl.EFLFriendsViewController.showGameRequestDialogue () -&gt; ()"
+                  moduleName = "Efl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+                  timestampString = "499835329.512985"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "291"
+                  endingLineNumber = "291"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Efl.EFLFriendsViewController.(showGameRequestDialogue () -&gt; ()).(closure #1)"
+                  moduleName = "Efl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+                  timestampString = "499835329.516028"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "291"
+                  endingLineNumber = "291"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+            timestampString = "499837067.873463"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
+            landmarkName = "showGameRequestDialogue()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Efl.EFLFriendsViewController.showGameRequestDialogue () -&gt; ()"
+                  moduleName = "Efl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+                  timestampString = "499837080.697776"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "289"
+                  endingLineNumber = "289"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Efl.EFLFriendsViewController.(showGameRequestDialogue () -&gt; ()).(closure #1)"
+                  moduleName = "Efl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ViewControllers/Friends/EFLFriendsViewController.swift"
+                  timestampString = "499837080.701364"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "291"
+                  endingLineNumber = "291"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "efl/Classes/ManagerClasses/FacebookManager/EFLFacebookManager.swift"
+            timestampString = "499837111.548162"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "facebookIds(token:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Efl.EFLFacebookManager.(getFacebookFriendIds ((facebookIds : Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(facebookIds #1) (Swift.String) -&gt; ()"
+                  moduleName = "Efl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ManagerClasses/FacebookManager/EFLFacebookManager.swift"
+                  timestampString = "499839755.944078"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "564">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Efl.EFLFacebookManager.(getFacebookFriendIds ((facebookIds : Swift.Array&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).((facebookIds #1) (Swift.String) -&gt; ()).(closure #1)"
+                  moduleName = "Efl"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macmini1/Dropbox/TecSyntSolutions_Project/Efi/trunk/Efl/efl/Classes/ManagerClasses/FacebookManager/EFLFacebookManager.swift"
+                  timestampString = "499839755.947654"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

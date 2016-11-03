@@ -24,7 +24,12 @@ class EFLAlertView: UIView {
     var delegate: EFLAlertViewDelegate?
     
     private var defaultTopAlertView: CGFloat?
-    
+}
+
+
+// MARK: - Public functions
+extension EFLAlertView {
+
     class func alertView() -> EFLAlertView {
         let alertView = NSBundle.mainBundle().loadNibNamed("EFLAlertView", owner: nil, options: nil)![0] as! EFLAlertView
         alertView.frame = APP_DELEGATE.window!.frame
@@ -37,12 +42,12 @@ class EFLAlertView: UIView {
         APP_DELEGATE.window!.addSubview(self)
         
         self.backgroundView.alpha = 0
-        self.defaultTopAlertView = self.alertViewWithoutCancelButton.frame.origin.y
+        self.defaultTopAlertView = self.frame.height
         self.bottomCancelButtonConstraint.constant -= self.defaultTopAlertView!
         self.layoutIfNeeded()
         
         self.bottomCancelButtonConstraint.constant += self.defaultTopAlertView!
-        UIView.animateWithDuration(0.4, animations: {
+        UIView.animateWithDuration(0.5, animations: {
             self.backgroundView.alpha = 0.4
             self.layoutIfNeeded()
         })
@@ -51,7 +56,7 @@ class EFLAlertView: UIView {
     func hide() {
         self.bottomCancelButtonConstraint.constant -= self.defaultTopAlertView!
         
-        UIView.animateWithDuration(0.4, animations: {
+        UIView.animateWithDuration(0.5, animations: {
             self.backgroundView.alpha = 0.0
             self.layoutIfNeeded()
         }) { (bool) in
@@ -61,7 +66,8 @@ class EFLAlertView: UIView {
 }
 
 
-extension EFLAlertView {  // Actions
+// MARK: - Actions
+extension EFLAlertView {
     
     @IBAction func challengeButtonClick(sender: AnyObject) {
         delegate!.challengeButtonClickWithAlertView(self)

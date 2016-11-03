@@ -2,7 +2,7 @@
 //  Friends+CoreDataProperties.m
 //  Efl
 //
-//  Created by TS on 12.10.16.
+//  Created by vaskov on 27.10.16.
 //  Copyright © 2016 ZNET. All rights reserved.
 //
 
@@ -20,5 +20,6 @@
 @dynamic isSignedUp;
 @dynamic lastName;
 @dynamic playerId;
+@dynamic facebookId;
 
 @end

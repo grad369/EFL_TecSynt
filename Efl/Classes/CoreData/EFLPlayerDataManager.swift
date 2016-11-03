@@ -14,7 +14,7 @@ class EFLPlayerDataManager: NSObject {
     static let sharedDataManager = EFLPlayerDataManager()
     
     // MARK: Friends cache methods
-    //Sync friends to cache
+    // Sync friends to cache
     func syncFriends(values:EFLFriendsResponseModel) {
         
         let privateMOC = EFLCoreDataManager.sharedInstance.writerManagedObjectContext
@@ -31,6 +31,7 @@ class EFLPlayerDataManager: NSObject {
                         result.setValue(friendModel.first_name, forKey: FriendsFirstNameKey)
                         result.setValue(friendModel.last_name, forKey: FriendsLastNameKey)
                         result.setValue(friendModel.image, forKey: FriendsImageUrlKey)
+                        result.setValue(friendModel.facebook_id, forKey: FacebookId)
                         result.setValue(nil, forKey: FriendsImageKey)
                         if friendModel.signedup_on.isEmpty {
                             result.setValue(false, forKey: FriendsIsSignedUpKey)
@@ -50,6 +51,7 @@ class EFLPlayerDataManager: NSObject {
                         friend.setValue(friendModel.last_name, forKey: FriendsLastNameKey)
                         friend.setValue(friendModel.image, forKey: FriendsImageUrlKey)
                         friend.setValue(nil, forKey: FriendsImageKey)
+                        friend.setValue(friendModel.facebook_id, forKey: FacebookId)
                         
                         if friendModel.signedup_on.isEmpty {
                             friend.setValue(false, forKey: FriendsIsSignedUpKey)
@@ -68,7 +70,6 @@ class EFLPlayerDataManager: NSObject {
             print(success)
         }
     }
-    
     
     //Get all friends from cache
     func getFriendsFromCache() -> [Friends]? {
@@ -105,7 +106,11 @@ class EFLPlayerDataManager: NSObject {
         var tempArray: [Friends]
         
         for friend in friends {
-            let char = (friend.lastName! as NSString).substringToIndex(1)
+            let friendId = EFLUtility.readValueFromUserDefaults(EFL_PLAYER_ID_KEY)!
+            if friend.playerId == friendId {
+                continue
+            }
+            let char = (friend.firstName! as NSString).substringToIndex(1)
             let keys = alphabeticalUsers.keys
             if keys.elements.contains(char) {
                 tempArray = alphabeticalUsers[char]!
@@ -119,7 +124,7 @@ class EFLPlayerDataManager: NSObject {
         alphabeticalUsers.keys.forEach { (key: String) in
             var friends = alphabeticalUsers[key]! as [Friends]
             friends.sortInPlace{ (friend1, friend2) -> Bool in
-                friend1.lastName < friend2.lastName
+                friend1.firstName < friend2.firstName
             }
             alphabeticalUsers[key] = friends
         }

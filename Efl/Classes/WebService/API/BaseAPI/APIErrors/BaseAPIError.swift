@@ -11,14 +11,15 @@ class BaseAPIError: NSObject {
         case HTTP_STATUS_OK:                      return APIErrorTypeNone()             // 200
         case HTTP_STATUS_CREATED:                 return APIErrorTypeNone()             // 201
         case HTTP_STATUS_NO_CONTENT:              return APIErrorTypeResponse()         // 204
-        case HTTP_STATUS_BAD_REQUEST:             return APIErrorTypeRequest()         // 400
-        case HTTP_STATUS_NOT_FOUND:               return APIErrorTypeRequest()        // 404
-        case HTTP_STATUS_UNAUTHORIZED:            return APIErrorTypeAuthentication()  // 401
-        case HTTP_STATUS_INTERNAL_SERVER_ERROR:   return APIErrorTypeServer()          // 500
+        case HTTP_STATUS_NOT_MODIFIED:            return APIErrorTypeResponse()         // 304
+        case HTTP_STATUS_BAD_REQUEST:             return APIErrorTypeRequest()          // 400
+        case HTTP_STATUS_NOT_FOUND:               return APIErrorTypeRequest()          // 404
+        case HTTP_STATUS_UNAUTHORIZED:            return APIErrorTypeAuthentication()   // 401
+        case HTTP_STATUS_INTERNAL_SERVER_ERROR:   return APIErrorTypeServer()           // 500
         case HTTP_STATUS_GATEWAY_TIMEOUT:         return APIErrorTypeTimeOut()
         case HTTP_STATUS_REQUEST_TIME_OUT:        return APIErrorTypeTimeOut()
 
-        default:                                  return APIErrorTypeGeneric()       // All others
+        default:                                  return APIErrorTypeGeneric()          // All others
             
       
         }

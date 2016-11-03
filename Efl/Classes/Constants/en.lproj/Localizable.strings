@@ -47,6 +47,7 @@
 "ROOMS_TITLE"                       = "Rooms";
 "SELECT_COMPETITION_TITLE"          = "Select competition";
 "NEW_POOL_TITLE"                    = "New pool";
+"NEW_CHALLENGE_TITLE"               = "New challenge";
 "ADD_PLAYERS_TITLE"                 = "Add players";
 
 "ADD_PLAYER_BUTTON_TITLE"           = "Add";
@@ -77,7 +78,21 @@
 "MORE_TEXT"                     = "More";
 "NO_EMAIL_ACCOUNT_TITLE"        = "No email account found";
 "NO_EMAIL_ACCOUNT_MESSAGE"      = "Please configure an email account on this device to invite your friends.";
+"SHARE_SUBJECT"                 = "Friendlies";
 
 //Select Competetion Strings
 "FOOTER_TITLE" = "We will add more competitions soon. Give us feedback which ones you’d like to see.";
+
+//Settings View Controller
+"RULES" = "Rules";
+"CONTACT" = "Contact";
+"TERMS" = "Terms";
+"LICENSES" = "Licenses";
+
+//New Challenge View Controller
+"CHALLENGE_MESSAGE_HEADER_TEXT" = "Message";
+"CHALLENGE_PLAYERS_HEADER_TEXT" = "Players";
+"CHALLENGE_MATCHES_HEADER_TEXT" = "Matches";
+
+
 

@@ -85,7 +85,7 @@ class EFLAPIManager: NSObject {
         dispatch_async(backgroundQueue, {
             
             let requestModel = EFLPlayerRefreshRequestModel()
-            requestModel.last_updated_on = EFLUtility.readValueFromUserDefaults(PLAYER_LAST_UPDATED_TIME_STAMP_KEY)!
+            requestModel.modified_since = EFLUtility.readValueFromUserDefaults(PLAYER_LAST_UPDATED_TIME_STAMP_KEY)!
             EFLPlayerAPI().refreshPlayer(requestModel)  { (error, data) -> Void in
                 
                 if !error.isKindOfClass(APIErrorTypeNone){
@@ -99,8 +99,8 @@ class EFLAPIManager: NSObject {
                     if response.status == ResponseStatusSuccess {
                         if response.data == nil {return}//TODO: Check this.
                         print(response.data!)
-                        EFLManager.sharedManager.refreshPlayerData(response.data!)
-                        if response.data!.first_name != nil || response.data!.last_name != nil || response.data!.image != nil {
+                        EFLManager.sharedManager.refreshPlayerData(response.data!.player!)
+                        if response.data!.player!.first_name != nil || response.data!.player!.last_name != nil || response.data!.player!.image != nil {
                             NSNotificationCenter.defaultCenter().postNotificationName(REFRESH_DATA_NOTIFICATION, object: nil)
                             EFLManager.sharedManager.isPlayerRefreshed = true
                         }
@@ -143,7 +143,7 @@ class EFLAPIManager: NSObject {
     // Get Friend List
     func friendList(completion: APICompletion) {
         let requestModel = EFLFriendsGetRequestModel()
-        requestModel.last_updated_on = EFLUtility.readValueFromUserDefaults(FRIENDS_LAST_UPDATED_TIME_STAMP_KEY)
+        requestModel.modified_since = EFLUtility.readValueFromUserDefaults(FRIENDS_LAST_UPDATED_TIME_STAMP_KEY)
         
         EFLFriendsAPI().getFriends(requestModel) { (error, data) -> Void in
             
@@ -177,7 +177,7 @@ class EFLAPIManager: NSObject {
         let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
         dispatch_async(backgroundQueue, {
             let requestModel = EFLCompetitionRequestModel()
-            requestModel.last_updated_on = EFLUtility.readValueFromUserDefaults(COMPETITION_LIST_LAST_UPDATED_TIME_STAMP_KEY)
+            requestModel.modified_since = EFLUtility.readValueFromUserDefaults(COMPETITION_LIST_LAST_UPDATED_TIME_STAMP_KEY)
             
             EFLCompetitionAPI().getCompetitionList(requestModel) { (error, data) in
                 if !error.isKindOfClass(APIErrorTypeNone) {
@@ -221,7 +221,7 @@ class EFLAPIManager: NSObject {
         
         for competitionId in competitions {
             let requestModel = EFLCompetitionRequestModel()
-            requestModel.last_updated_on = EFLCompetitionDataManager.sharedDataManager.getCompetitionLastUpdatedTimeStamp(String(competitionId))
+            requestModel.modified_since = EFLCompetitionDataManager.sharedDataManager.getCompetitionLastUpdatedTimeStamp(String(competitionId))
             
             EFLCompetitionAPI().getCompetition(String(competitionId), request: requestModel) { (error, data) in
                 count = count - 1

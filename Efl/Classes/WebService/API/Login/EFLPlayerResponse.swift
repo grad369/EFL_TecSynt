@@ -10,10 +10,11 @@ import UIKit
 
 class EFLPlayerResponse: EFLBaseAPIResponse {
 
-    var data: EFLPlayerResponseModel?
+    var data: EFLPlayerOverResponseModel?
     
     override func mapping(map: Map) {
         super.mapping(map)
         data <- map["data"]
     }
 }
+

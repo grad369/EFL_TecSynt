@@ -10,5 +10,5 @@ import UIKit
 
 class EFLPlayerRefreshRequestModel: EFLBaseAPIRequest {
 
-    var last_updated_on: String?
+    var modified_since: String?
 }

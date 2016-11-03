@@ -9,32 +9,33 @@
 import UIKit
 import FBSDKCoreKit
 import CoreData
+import Fabric
+import Crashlytics
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var rootNavigationController: EFLBaseNavigationController?
 }
 
 
-
-extension AppDelegate: UIApplicationDelegate {
+// MARK: - UIApplicationDelegate
+extension AppDelegate  {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        Fabric.with([Crashlytics.self])
         
         self.window!.rootViewController = addRootNavigationController()
         
         if EFLUtility.readValueFromUserDefaults(FB_ACCESS_TOKEN_KEY) != nil {
+            EFLUtility.checkAndRefreshData()
             EFLManager.sharedManager.player_id = Int(EFLUtility.readValueFromUserDefaults(EFL_PLAYER_ID_KEY)!)!
         }
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-    }
-    
-    func applicationDidBecomeActive(application: UIApplication) {
-        EFLUtility.checkAndRefreshData()
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
@@ -43,7 +44,9 @@ extension AppDelegate: UIApplicationDelegate {
 }
 
 
+// MARK: - Private Functions
 private extension AppDelegate {
+    
     func addRootNavigationController() -> EFLBaseNavigationController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

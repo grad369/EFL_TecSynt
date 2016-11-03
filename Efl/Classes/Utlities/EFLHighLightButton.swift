@@ -10,7 +10,6 @@ import UIKit
 
 class EFLHighLightButton: UIButton {
     var bgColor = UIColor.eflWhiteColor()
-    
 
     override var highlighted: Bool {
         get {
@@ -23,7 +22,9 @@ class EFLHighLightButton: UIButton {
             else {
                 backgroundColor = bgColor
             }
+            
             super.highlighted = newValue
+            
         }
     }
 }

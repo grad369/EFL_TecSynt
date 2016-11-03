@@ -30,7 +30,7 @@ class EFLRoomsViewController: EFLBaseViewController, EFLAlertViewDelegate, UITab
         self.tabBarController?.tabBar.hidden = false
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reloadData), name: REFRESH_DATA_NOTIFICATION, object: nil)
         if EFLManager.sharedManager.isRoomsRefreshed {
-            self.populateView()
+            populateView()
         }
     }
     
@@ -46,7 +46,7 @@ extension EFLRoomsViewController {
     
     override func configurationNavigationAndStatusBars() {
         self.setConfigurationStatusBar(.Green)
-        self.setConfigurationNavigationBar(nil, titleView: nil, backgroundColor: .Green, topRoundCorner: 0)
+        self.setConfigurationNavigationBar(nil, titleView: nil, backgroundColor: .Green)
         self.setBarButtonItem(.Plus, placeType: .Right, tintColorType: .White)
     }
     
@@ -161,17 +161,21 @@ extension EFLRoomsViewController {
 extension EFLRoomsViewController { 
     
     func challengeButtonClickWithAlertView(view: EFLAlertView) {
-        
+        let createChallengeVC = self.storyboard?.instantiateViewControllerWithIdentifier(CREATE_CHALLENGE_VIEW_CONTROLLER_ID) as? EFLCreateChallengeViewController
+        self.presentViewController(createChallengeVC!, animation: .Default, comletion: {})
     }
     
     func poolButtonClickWithAlertView(view: EFLAlertView) {
-        
+        let createPoolVC = self.storyboard?.instantiateViewControllerWithIdentifier(CREATE_POOL_VIEW_CONTROLLER_ID) as? EFLCreatePoolViewController
+        self.presentViewController(createPoolVC!, animation: .Default, comletion: { 
+        })
     }
 }
 
 
-// MARK: Update indicator
+// MARK: - Update indicator
 extension EFLRoomsViewController {
+    
     func showUpdateIndicator() {
         
         if indicatorView == nil {
@@ -270,7 +274,7 @@ private extension EFLRoomsViewController {
         indicatorView?.addSubview(label)
     }
 
-    // MARK: Helper Methods
+    // Helper Methods
     func isManager(roomDetails: NSManagedObject?) -> Bool {
         
         if let playerList = EFLPoolRoomDataManager.sharedDataManager.getPoolRoomPlayersFromCache(roomDetails!.valueForKey("poolroom_id") as! String)
@@ -286,7 +290,7 @@ private extension EFLRoomsViewController {
         return false
     }
     
-    //Check invite status
+    // Check invite status
     func isAcceptedStatus(roomDetails: NSManagedObject?) -> Bool {
         
         if let playerList = EFLPoolRoomDataManager.sharedDataManager.getPoolRoomPlayersFromCache(roomDetails!.valueForKey("poolroom_id") as! String)

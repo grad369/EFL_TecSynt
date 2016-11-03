@@ -69,7 +69,6 @@ class EFLPoolDetailsViewController: EFLBaseViewController, EFLSegmentedControlDe
         if statusBar.respondsToSelector(Selector("setBackgroundColor:")) {
             statusBar.backgroundColor = UIColor.clearColor()
         }
-        navController.setShadow()
     }
     
     override func didReceiveMemoryWarning() {

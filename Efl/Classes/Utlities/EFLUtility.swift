@@ -60,6 +60,10 @@ public class EFLUtility: NSObject {
         let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         let url = NSURL(fileURLWithPath: path)
         let filePath = url.URLByAppendingPathComponent("UserImage.JPEG")!.path!
+        
+        if NSFileManager.defaultManager().fileExistsAtPath(filePath) {
+            removeUserImage()
+        }
 
         let imageData       = UIImageJPEGRepresentation(image, 0.6)
         let result = imageData!.writeToFile(filePath, atomically: true)

@@ -79,12 +79,7 @@ class EFLDeviceAPI: EFLBaseAPI {
 //    }
     
     override func requestParameterEncoding() -> Alamofire.ParameterEncoding {
-        switch apiMethod {
-        case .Create:
-            return .JSON
-        default:
-            return .URL
-        }
+        return .URL
     }
     
 }

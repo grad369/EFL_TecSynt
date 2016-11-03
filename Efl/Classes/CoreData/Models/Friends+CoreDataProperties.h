@@ -2,7 +2,7 @@
 //  Friends+CoreDataProperties.h
 //  Efl
 //
-//  Created by TS on 12.10.16.
+//  Created by vaskov on 27.10.16.
 //  Copyright © 2016 ZNET. All rights reserved.
 //
 
@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSNumber *isSignedUp;
 @property (nullable, nonatomic, copy) NSString *lastName;
 @property (nullable, nonatomic, copy) NSString *playerId;
+@property (nullable, nonatomic, copy) NSString *facebookId;
 
 @end
 

@@ -13,11 +13,11 @@ internal let APP_DELEGATE   = UIApplication.sharedApplication().delegate as! App
 internal let SCREEN_WIDTH    = UIScreen.mainScreen().bounds.width
 internal let SCREEN_HEIGHT   = UIScreen.mainScreen().bounds.height
 
+
 public let IS_IPHONE4 = UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone && SCREEN_HEIGHT == 480
 public let IS_IPHONE5 = UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone && SCREEN_HEIGHT == 568
 public let IS_IPHONE6_OR_7 = UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone && SCREEN_HEIGHT == 667
 public let IS_IPHONE6PLUS_OR_7PLUS = UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Phone && SCREEN_HEIGHT == 736
-
 
 
 public let FONT_REGULAR_10 = UIFont(name: "Roboto-Regular", size: 10)

@@ -16,11 +16,6 @@ class EFLProfileCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     func setData() {
         if let userImage = EFLUtility.getUserImage() {
             profileImageView.image = userImage
@@ -42,11 +37,4 @@ class EFLProfileCell: UITableViewCell {
         }
         nameLabel.text = EFLUtility.readValueFromUserDefaults(FIRST_NAME_KEY)! + " " + EFLUtility.readValueFromUserDefaults(LAST_NAME_KEY)!
     }
-    
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

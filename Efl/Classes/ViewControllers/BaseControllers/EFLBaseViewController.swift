@@ -2,7 +2,7 @@
 //  EFLBaseViewController.swift
 //  Efl
 //
-//  Created by vishnu vijayan on 25/07/16.
+//  Created by vaskov on 25/07/16.
 //  Copyright © 2016 ZNET. All rights reserved.
 //
 
@@ -10,6 +10,12 @@ import UIKit
 import QuartzCore
 
 class EFLBaseViewController: UIViewController {
+    
+    var eflNavigationController: EFLBaseNavigationController? {
+        get{
+            return self.navigationController as? EFLBaseNavigationController
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,22 +25,35 @@ class EFLBaseViewController: UIViewController {
     }
 }
 
+
+// MARK: -
 extension EFLBaseViewController {
     
-    // MARK: - configuration Navigation Item and Status Bar in inherit classes
+    // configuration Navigation Item and Status Bar in inherit classes
     func configurationNavigationAndStatusBars() {
     }
     
-    // MARK: Initialise View in inherit classes
+    // Initialise View in inherit classes
     func configurationView() {
     }
 }
 
 
-// MARK: Configuration Navigation and Status bars
+// MARK: -
 extension EFLBaseViewController {
     
-    func setConfigurationNavigationBar(title: String?, titleView: UIView?, backgroundColor: EFLColorType, topRoundCorner: CGFloat) {
+    func showBannerViewWith(text: String) {
+        
+        let bannerView = EFLBannerView()
+        bannerView.showBanner(self.view, message: "Default baseControlelr message", yOffset: 0)
+    }
+}
+
+
+// MARK: - Configuration Navigation and Status bars
+extension EFLBaseViewController {
+    
+    func setConfigurationNavigationBar(title: String?, titleView: UIView?, backgroundColor: EFLColorType, topRoundCorner: CGFloat = 0) {
         if title != nil {
             self.navigationItem.title = title
         }
@@ -101,16 +120,22 @@ extension EFLBaseViewController {
     }
 }
 
-// Mark: private functions
+
+// Mark: - Private functions
 private extension EFLBaseViewController {
     
     func roundNavigationBar(roundCorner: CGFloat = 8) {
-        let navigationBar = self.navigationController!.navigationBar
-        let path = UIBezierPath(roundedRect: navigationBar.bounds, byRoundingCorners: [.TopLeft, .TopRight], cornerRadii: CGSizeMake(roundCorner, roundCorner))
-        let layer = CAShapeLayer()
-        layer.frame = navigationBar.bounds
-        layer.path = path.CGPath
-        navigationBar.layer.mask = layer
+        let layer = self.navigationController!.navigationBar.layer
+        
+        var bounds = layer.bounds
+        bounds.size.height += 10
+        
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: [.TopLeft, .TopRight], cornerRadii: CGSizeMake(roundCorner, roundCorner))
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.frame = bounds
+        shapeLayer.path = path.CGPath
+        layer.mask = shapeLayer
     }
     
     func barButtonItem(buttonType: EFLBarButtonType, placeType: EFLBarButtonPlaceType, tintColorType: EFLColorType) -> UIBarButtonItem? {
@@ -151,7 +176,17 @@ private extension EFLBaseViewController {
         button.setTitle(title, forState: UIControlState.Normal)
         button.contentHorizontalAlignment = (placeType == .Left ? .Left : .Right)
         
-        let titleColor = tintColorType == .White ? UIColor.eflWhiteColor() : UIColor.eflBlackColor()
+        let titleColor: UIColor?
+        
+        switch tintColorType {
+        case .White:
+            titleColor = UIColor.eflWhiteColor()
+        case .Black:
+            titleColor = UIColor.eflBlackColor()
+        case .Green:
+            titleColor = UIColor.eflGreenColor()
+        }
+        
         let actionSelector = Selector((placeType == .Left ? "left" : "right") + "BarButtonItemDidPress")
         button.setTitleColor(titleColor, forState: UIControlState.Normal)
         button.titleLabel?.font = FONT_REGULAR_19

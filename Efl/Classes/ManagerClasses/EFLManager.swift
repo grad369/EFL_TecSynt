@@ -33,14 +33,8 @@ class EFLManager: NSObject {
         if let playerId = player.player_id {
             EFLUtility.saveValuesToUserDefaults(String(playerId), key: EFL_PLAYER_ID_KEY)
         }
-        if let facebookId = player.facebook_id {
-            EFLUtility.saveValuesToUserDefaults(facebookId, key: FACEBOOK_ID_KEY)
-        }
         if let authorizationToken = player.jwt_token {
             EFLUtility.saveValuesToUserDefaults(authorizationToken, key: AUTHORIZATION_TOKEN_KEY)
-        }
-        if let facebookToken = player.facebook_token {
-            EFLUtility.saveValuesToUserDefaults(facebookToken, key: FB_ACCESS_TOKEN_KEY)
         }
         if let firstName = player.first_name {
             EFLUtility.saveValuesToUserDefaults(firstName, key: FIRST_NAME_KEY)
@@ -50,7 +44,6 @@ class EFLManager: NSObject {
         }
         if let imageURL = player.image {
             EFLUtility.saveValuesToUserDefaults(imageURL, key: PROFILE_IMAGE_URL_KEY)
-            EFLUtility.removeUserImage()
         }
         if let lastUpdatedTimeStamp = player.last_updated_on {
             EFLUtility.saveValuesToUserDefaults(lastUpdatedTimeStamp, key: PLAYER_LAST_UPDATED_TIME_STAMP_KEY)

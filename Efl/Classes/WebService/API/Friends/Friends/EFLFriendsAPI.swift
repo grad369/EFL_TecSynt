@@ -53,7 +53,7 @@ class EFLFriendsAPI: EFLBaseAPI {
         case .Get:
             return .URL
         case .Update:
-            return .JSON
+            return .URL
         default:
             return .URL
         }

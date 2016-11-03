@@ -10,6 +10,7 @@ import UIKit
 
 class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, AddPlayerDelegate, EFLSelectCompetitionDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var poolTableView: UITableView!
+    @IBOutlet weak var topTableViewConstraint: NSLayoutConstraint!
     
     var messageCellHeight:CGFloat = 66
     var placeHolderSelectedOnce:Bool = false
@@ -22,109 +23,84 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
     
     var createPoolRequest = EFLCreatePoolRequestModel()
     
-    var spinner: EFLActivityIndicator?
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        createPoolRequest.message = "POOL_DEFAULT_MESSAGE".localized
-    }
-    
-    override func configurationView() {
-        
-        self.addRightBarButtonItem()
-        self.navigationItem.title = "NEW_POOL_TITLE".localized
-        self.tabBarController?.navigationController?.navigationBar.hidden = true
-        poolTableView.registerNib(UINib(nibName: "EFLPoolDetailsCell", bundle: nil), forCellReuseIdentifier: poolDetailsCellIdentifier)
-        poolTableView.registerNib(UINib(nibName: "EFLPoolMessageCell", bundle: nil), forCellReuseIdentifier: poolMessageCellIdentifier)
-        poolTableView.registerNib(UINib(nibName: "EFLLogoutCell", bundle: nil), forCellReuseIdentifier: logoutCellIdentifier)
-        poolTableView.registerNib(UINib(nibName: "EFLPoolPlayerCell", bundle: nil), forCellReuseIdentifier: poolPlayerCellIdentifier)
-    }
+    lazy var spinner: EFLActivityIndicator = {
+        return EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height))
+    }()
     
     deinit{
         placeHolderSelectedOnce = false
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     override func viewWillDisappear(animated: Bool) {
-        self.view .endEditing(true)
+        self.view.endEditing(true)
+    }
+}
+
+
+// MARK: - EFLBaseViewController's functions
+extension EFLCreatePoolViewController {
+    
+    override func configurationNavigationAndStatusBars() {
+        self.setConfigurationStatusBar(.Green)
+        self.setConfigurationNavigationBar("NEW_POOL_TITLE".localized, titleView: nil, backgroundColor: .Green)
+        self.setBarButtonItem(.Send, placeType: .Right, tintColorType: .White)
+        self.setBarButtonItem(.Cancel, placeType: .Left, tintColorType: .White)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        let navController: EFLBaseNavigationController = self.navigationController as! EFLBaseNavigationController
-        navController.setShadow()
-    }
-    // MARK: UI Methods
-    
-    func addRightBarButtonItem() {
+    override func configurationView() {
+        self.tabBarController?.navigationController?.navigationBar.hidden = true
+        createPoolRequest.message = "POOL_DEFAULT_MESSAGE".localized
         
-        let sendButton = UIButton.init(type: UIButtonType.System)
-        sendButton.frame = CGRectMake(0, 0, 70, 44)
-        sendButton.backgroundColor = UIColor.clearColor()
-        sendButton.setTitle("SEND_BUTTON_TITLE".localized, forState: UIControlState.Normal)
-        sendButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
-        sendButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 3, 0)
-        sendButton.titleLabel?.font = FONT_REGULAR_19
-        sendButton.addTarget(self, action: #selector(sendButtonDidPress), forControlEvents: UIControlEvents.TouchUpInside)
+        poolTableView.registerNib(UINib(nibName: "EFLPoolDetailsCell", bundle: nil), forCellReuseIdentifier: poolDetailsCellIdentifier)
+        poolTableView.registerNib(UINib(nibName: "EFLPoolMessageCell", bundle: nil), forCellReuseIdentifier: poolMessageCellIdentifier)
+        poolTableView.registerNib(UINib(nibName: "EFLLogoutCell", bundle: nil), forCellReuseIdentifier: logoutCellIdentifier)
+        poolTableView.registerNib(UINib(nibName: "EFLPoolPlayerCell", bundle: nil), forCellReuseIdentifier: poolPlayerCellIdentifier)
         
-        let backButtonItem: UIBarButtonItem = UIBarButtonItem.init(customView: sendButton)
-        let negativeSpace:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
-        negativeSpace.width = 0
-        self.navigationItem.setRightBarButtonItems([negativeSpace,backButtonItem], animated: true)
         self.activateSendButton()
     }
+}
+
+
+// MARK: - Actions
+extension EFLCreatePoolViewController {
     
-    func activateSendButton() {
-        let barButtonItem = self.navigationItem.rightBarButtonItems![1]
-        let sendButton = barButtonItem.customView as! UIButton
-        
-        if self.isValidPool() {
-            sendButton.setTitleColor(UIColor.eflWhiteColor(), forState: UIControlState.Normal)
-            sendButton.userInteractionEnabled = true
-        }
-        else {
-            sendButton.setTitleColor(UIColor.efllighterGreyColor(), forState: UIControlState.Normal)
-            sendButton.userInteractionEnabled = false
-        }
-    }
-    
-    
-    // MARK: Selector Methods
-    
-    func backButtonAction() {
-        for controller in self.navigationController!.viewControllers as Array {
-            if controller.isKindOfClass(EFLRoomsViewController) {
-                self.navigationController?.popToViewController(controller as UIViewController, animated: true)
-                break
-            }
-        }
-    }
-    
-    func sendButtonDidPress(){
+    func rightBarButtonItemDidPress() {
         self.resignTexts()
         if isValidPool() {
             self.createPoolRoom()
         }
     }
     
-    func resignTexts() {
-        poolTableView.contentOffset = CGPointMake(0, 0)
-        activeTextField?.resignFirstResponder()
-        activeTextView?.resignFirstResponder()
+    func leftBarButtonItemDidPress() {
+        self.dismissViewController(.Default) {}
     }
     
     func handleTap(){
         UIView .animateWithDuration(0.5, animations: {
-            self.view .endEditing(true)
+            self.view.endEditing(true)
         })
     }
     
-    // MARK: - API Methods
+    func imageButtonDidPress() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func deleteButtonDidPress(sender: AnyObject) {
+        let button = sender as! UIButton
+        createPoolRequest.players.removeAtIndex(button.tag)
+        self.reloadPoolData()
+    }
+}
+
+
+// MARK: - API Methods
+extension EFLCreatePoolViewController {
+    
     func createPoolRoom() {
         if ReachabilityManager.isReachable() {
             
@@ -134,13 +110,10 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
             
             createPoolRequest.players.append(addManagerModel)
             
-//            EFLActivityIndicator.sharedSpinner.showIndicator()
-            self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
-            self.spinner!.showIndicator()
+            self.spinner.showIndicator()
             
             EFLCreatePoolAPI().createPoolWith(createPoolRequest){ (error, data) -> Void in
-//                EFLActivityIndicator.sharedSpinner.hideIndicator()
-                self.spinner!.hideIndicator()
+                self.spinner.hideIndicator()
                 
                 if !error.isKindOfClass(APIErrorTypeNone){
                     if error.code == HTTP_STATUS_REQUEST_TIME_OUT || error.code == HTTP_STATUS_CONFLICT {
@@ -178,8 +151,11 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
             EFLBannerView.sharedBanner.showBanner(self.view, message: "NO_CONNECTION".localized, yOffset: 44)
         }
     }
-    
-    // MARK: UITableView DataSource Methods
+}
+
+
+// MARK: - UITableView DataSource Methods
+extension EFLCreatePoolViewController {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
@@ -285,14 +261,19 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
             }
         }
     }
+}
+
+
+// MARK: - UI Tableview Delegate Methods
+extension EFLCreatePoolViewController {
     
-    // MARK: UI Tableview Delegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
         if indexPath.section == 0 {
             return 50
         }
         else if indexPath.section == 1 {
-            if messageCellHeight < 60{
+            if messageCellHeight < 60 {
                 return 60
             }else{
                 return messageCellHeight
@@ -310,10 +291,12 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        
         if indexPath.section == 0 && indexPath.row == 1 {
             self.imageButtonDidPress()
         }
         else if indexPath.section == 0 && indexPath.row == 2 {
+            return
             let selectCompetitionVC = self.storyboard?.instantiateViewControllerWithIdentifier(SELECT_COMPETITION_VIEW_CONTROLLER_ID) as? EFLSelectCompetitionViewController
             selectCompetitionVC?.delegate = self
             let navigationController = EFLBaseNavigationController(rootViewController: selectCompetitionVC!)
@@ -321,36 +304,28 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
             
         }
         if indexPath.section == 2 && indexPath.row == 0 {
+            return
             let addPlayerVC = self.storyboard?.instantiateViewControllerWithIdentifier(ADD_PLAYER_VIEW_CONTROLLER_ID) as? EFLAddPlayerViewController
             addPlayerVC?.delegate = self
             addPlayerVC?.selectedPlayers = createPoolRequest.players
             self.navigationController?.pushViewController(addPlayerVC!, animated: true)
         }
     }
+}
+
+
+// MARK: - EFLSelectCompetitionDelegate
+extension EFLCreatePoolViewController {
     
-    // MARK: EFLSelectCompetitionDelegate
     func didSelectCompetition(competitionId: Int) {
         createPoolRequest.competition_id = competitionId
         self.reloadPoolData()
     }
+}
     
-    // MARK: Edit image
-    func imageButtonDidPress() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = true
-        imagePicker.delegate = self
-        imagePicker.sourceType = .PhotoLibrary
-        
-        presentViewController(imagePicker, animated: true, completion: nil)
-    }
-    
-    func deleteButtonDidPress(sender: AnyObject) {
-        let button = sender as! UIButton
-        createPoolRequest.players.removeAtIndex(button.tag)
-        self.reloadPoolData()
-    }
-    
-    // MARK: - UIImagePickerControllerDelegate Methods
+
+// MARK: - UIImagePickerControllerDelegate Methods
+extension EFLCreatePoolViewController {
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
@@ -372,8 +347,182 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+}
+
     
-    // MARK: - Helper Methods
+// MARK: - AddPlayerDelegate Method
+extension EFLCreatePoolViewController {
+    
+    func reloadPoolRequestWithSelectedPlayers(players: [EFLAddPlayerModel]) {
+        createPoolRequest.players = players
+        self.reloadPoolData()
+    }
+}
+
+
+// MARK: - UITextFieldDelegate Methods
+extension EFLCreatePoolViewController {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        let characterSet = NSCharacterSet(charactersInString: " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.").invertedSet
+        let filteredString = string.componentsSeparatedByCharactersInSet(characterSet).joinWithSeparator(EmptyString)
+        guard let text = textField.text else { return true }
+        let newLength = text.characters.count + string.characters.count - range.length
+        
+        let nsString = textField.text! as NSString
+        let newString = nsString.stringByReplacingCharactersInRange(range, withString: string)
+
+        let trimmedName = newString.stringByTrimmingCharactersInSet(
+            NSCharacterSet.whitespaceAndNewlineCharacterSet()
+        )        
+        createPoolRequest.pool_name = trimmedName
+        self.activateSendButton()
+        return (newLength <= 100) && (string == filteredString)
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+    }
+}
+
+
+// MARK: - UITextViewDelegate
+extension EFLCreatePoolViewController {
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        
+        let heightOfText = textView.text.size(textView.font!, width: textView.width).height
+        
+        if messageCellHeight != heightOfText + 35 {
+            poolTableView.beginUpdates()
+            messageCellHeight = heightOfText + 35
+            poolTableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .None)
+            poolTableView.endUpdates()
+        }
+        
+//        poolTableView.beginUpdates()
+//        if messageCellHeight != textView.contentSize.height + 60 {
+//            messageCellHeight = textView.contentSize.height + 60
+//            poolTableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .None)
+//        }
+//        poolTableView.endUpdates()
+        
+        let text = textView.text
+        let newLength = text.characters.count - range.length
+        return (newLength <= 500)
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.tag == 1 && !placeHolderSelectedOnce {
+            placeHolderText = textView.text
+            placeHolderSelectedOnce = true
+            dispatch_async(dispatch_get_main_queue(), {
+                textView.selectAll(nil)
+            })
+        }
+        
+        topTableViewConstraint.constant = -150
+        UIView.animateWithDuration(0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        
+        let trimmedMessage = textView.text.stringByTrimmingCharactersInSet(
+            NSCharacterSet.whitespaceAndNewlineCharacterSet()
+        )
+
+        if !(trimmedMessage.isEmpty) {
+            createPoolRequest.message = trimmedMessage
+        }
+        else {
+            createPoolRequest.message = "POOL_DEFAULT_MESSAGE".localized
+            self.reloadPoolData()
+        }
+        
+        if textView.tag == 1 && placeHolderText != textView.text{
+            placeHolderSelectedOnce = true
+            placeHolderOnceSet = true
+        }else if !placeHolderOnceSet{
+            placeHolderSelectedOnce = false
+        }
+        
+        topTableViewConstraint.constant = 0
+        UIView.animateWithDuration(0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+}
+
+
+// MARK: - GestureRecognizer Delegate
+extension EFLCreatePoolViewController {
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        self.view .resignFirstResponder()
+        if touch.view != poolTableView {
+            return false
+        }
+        return true
+    }
+    
+}
+
+
+// MARK: - Profile Update Failure Alert
+private extension EFLCreatePoolViewController {
+    
+    func showFailureAlert() {
+        let alert: UIAlertController = UIAlertController(title: "ALERT_FAILURE_TITLE".localized, message: "ALERT_FAILURE_MESSAGE".localized, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.view.tintColor = UIColor.eflGreenColor()
+        
+        let cancel: UIAlertAction = UIAlertAction(title: "ALERT_CANCEL_BUTTON_TITLE".localized, style: UIAlertActionStyle.Default, handler:{
+            (alert: UIAlertAction!) in
+        })
+        
+        let tryAgain: UIAlertAction = UIAlertAction(title: "TRY_AGAIN_BUTTON_TITLE".localized, style: UIAlertActionStyle.Default, handler:{
+            (alert: UIAlertAction!) in
+            self.createPoolRoom()
+        })
+        
+        alert.addAction(cancel)
+        alert.addAction(tryAgain)
+        
+        self.presentViewController(alert, animated: true, completion: {
+            alert.view.tintColor = UIColor.eflGreenColor()
+        })
+    }
+}
+
+
+// MARK: - Private Functions
+private extension EFLCreatePoolViewController {
+    
+    func activateSendButton() {
+        let barButtonItem = self.navigationItem.rightBarButtonItems![0]
+        let sendButton = barButtonItem.customView as! UIButton
+        
+        if self.isValidPool() {
+            sendButton.setTitleColor(UIColor.eflWhiteColor(), forState: UIControlState.Normal)
+            sendButton.userInteractionEnabled = true
+        }
+        else {
+            sendButton.setTitleColor(UIColor.efllighterGreyColor(), forState: UIControlState.Normal)
+            sendButton.userInteractionEnabled = false
+        }
+    }
+    
+    func resignTexts() {
+        poolTableView.contentOffset = CGPointMake(0, 0)
+        activeTextField?.resignFirstResponder()
+        activeTextView?.resignFirstResponder()
+    }
     
     func isValidPool() -> Bool {
         
@@ -429,131 +578,5 @@ class EFLCreatePoolViewController: EFLBaseViewController, UITextFieldDelegate, U
         view.addSubview(label)
         return view
     }
-    
-    // MARK: AddPlayerDelegate Method
-    
-    func reloadPoolRequestWithSelectedPlayers(players: [EFLAddPlayerModel]) {
-        createPoolRequest.players = players
-        self.reloadPoolData()
-    }
-    
-    // MARK: UITextFieldDelegate Methods
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        
-        let characterSet = NSCharacterSet(charactersInString: " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.").invertedSet
-        let filteredString = string.componentsSeparatedByCharactersInSet(characterSet).joinWithSeparator(EmptyString)
-        guard let text = textField.text else { return true }
-        let newLength = text.characters.count + string.characters.count - range.length
-        
-        let nsString = textField.text! as NSString
-        let newString = nsString.stringByReplacingCharactersInRange(range, withString: string)
-
-        let trimmedName = newString.stringByTrimmingCharactersInSet(
-            NSCharacterSet.whitespaceAndNewlineCharacterSet()
-        )        
-        createPoolRequest.pool_name = trimmedName
-        self.activateSendButton()
-        return (newLength <= 100) && (string == filteredString)
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-    }
-    
-    // MARK: UITextViewDelegate
-    
-    
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        poolTableView.setContentOffset(CGPointMake(0, messageCellHeight + 15), animated: true)
-        poolTableView.beginUpdates()
-        messageCellHeight = textView.contentSize.height + 60
-        poolTableView.endUpdates()
-        //poolTableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .None)
-        
-        let text = textView.text
-        let newLength = text.characters.count - range.length
-        return (newLength <= 500)
-    }
-    
-    
-    func textViewDidBeginEditing(textView: UITextView) {
-        if textView.tag == 1 && !placeHolderSelectedOnce {
-            placeHolderText = textView.text
-            placeHolderSelectedOnce = true
-            dispatch_async(dispatch_get_main_queue(), {
-                textView.selectAll(nil)
-            })
-//            let point: CGPoint = (textView.superview?.convertPoint(textView.frame.origin, toView: self.view))!
-//            var contentOffset: CGPoint  = poolTableView.contentOffset;
-//            
-//            contentOffset.y = (point.y - textView.contentSize.height);
-//            
-//            self.poolTableView.contentOffset = contentOffset
-
-            let heightOffset = CGPointMake(0, 150);
-            self.poolTableView.contentOffset = heightOffset
-//            self.poolTableView .scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 1), atScrollPosition: UITableViewScrollPosition.None, animated: true)
-        }
-    }
-    
-    func textViewDidEndEditing(textView: UITextView) {
-        
-        let trimmedMessage = textView.text.stringByTrimmingCharactersInSet(
-            NSCharacterSet.whitespaceAndNewlineCharacterSet()
-        )
-
-        if !(trimmedMessage.isEmpty) {
-            createPoolRequest.message = trimmedMessage
-        }
-        else {
-            createPoolRequest.message = "POOL_DEFAULT_MESSAGE".localized
-            self.reloadPoolData()
-        }
-        
-        if textView.tag == 1 && placeHolderText != textView.text{
-            placeHolderSelectedOnce = true
-            placeHolderOnceSet = true
-        }else if !placeHolderOnceSet{
-            placeHolderSelectedOnce = false
-        }
-    }
-    
-    // MARK: PopUp Methods
-    // MARK: Profile Update Failure Alert
-    func showFailureAlert() {
-        let alert: UIAlertController = UIAlertController(title: "ALERT_FAILURE_TITLE".localized, message: "ALERT_FAILURE_MESSAGE".localized, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.view.tintColor = UIColor.eflGreenColor()
-        
-        let cancel: UIAlertAction = UIAlertAction(title: "ALERT_CANCEL_BUTTON_TITLE".localized, style: UIAlertActionStyle.Default, handler:{
-            (alert: UIAlertAction!) in
-        })
-        
-        let tryAgain: UIAlertAction = UIAlertAction(title: "TRY_AGAIN_BUTTON_TITLE".localized, style: UIAlertActionStyle.Default, handler:{
-            (alert: UIAlertAction!) in
-            self.createPoolRoom()
-        })
-        
-        alert.addAction(cancel)
-        alert.addAction(tryAgain)
-        
-        self.presentViewController(alert, animated: true, completion: {
-            alert.view.tintColor = UIColor.eflGreenColor()
-        })
-    }
-    
-    
-    // MARK:GestureRecognizer Delegate
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        self.view .resignFirstResponder()
-        if touch.view != poolTableView {
-            return false
-        }
-        return true
-    }
-    
 }
+

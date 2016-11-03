@@ -10,5 +10,5 @@ import UIKit
 
 class EFLFriendsUpdateRequestModel: EFLBaseAPIRequest { //Invite friends from Facebook - request model
     
-    var facebook_ids: [String]?
+    var facebook_ids: String?//[String]?
 }

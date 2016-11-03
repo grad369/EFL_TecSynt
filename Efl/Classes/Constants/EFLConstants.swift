@@ -49,6 +49,16 @@ public let CompletionStatusFailed = "Failed"
 public let ResponseStatusSuccess    = "success"
 public let ResponseStatusError      = "error"
 
+
+// MARK: - URLs
+public let URL_TERMS       = "http://znet.company/efl/terms.php"
+public let URL_RULES       = "http://znet.company/efl/rules.php"
+public let URL_CONTACT     = "http://znet.company/efl/contact.php"
+public let URL_LICENSES    = "http://znet.company/efl/licenses.php"
+public let URL_SHARE_LINK  = "http://example.com"
+public let URL_SHARE_IMAGE = "http://drive.google.com/uc?export=view&id=0Bx3gpJZKOg6cek9KTlVXN1E3NDA"
+
+
 // UserDefault Keys
 
     //Player Keys
@@ -91,17 +101,19 @@ public let FriendsLastNameKey           = "lastName"
 public let FriendsImageUrlKey           = "imageURL"
 public let FriendsImageKey              = "image"
 public let FriendsIsSignedUpKey         = "isSignedUp"
+public let FacebookId                   = "facebookId"
 
 // Storyboard IDs
 
 public let ROOT_NAVIGATION_ID                       = "RootNavigationControllerID"
 public let LOGIN_VC_ID                              = "EFLLoginViewControllerID"
-public let TERMS_POLICY_VC_ID                       = "EFLTermsPolicyViewControllerID"
+public let WEB_VC_ID                                = "EFLWebViewControllerID"
 public let TAB_BAR_CONTROLLER_ID                    = "EFLBaseTabBarControllerID"
 public let PROFILE_VIEW_CONTROLLER_ID               = "EFLProfileViewControllerID"
 public let FRIENDS_SHARE_VIEW_CONTROLLER_ID         = "EFLFriendsShareViewControllerID"
 public let SELECT_COMPETITION_VIEW_CONTROLLER_ID    = "EFLSelectCompetitionViewControllerID"
 public let CREATE_POOL_VIEW_CONTROLLER_ID           = "EFLCreatePoolViewControllerID"
+public let CREATE_CHALLENGE_VIEW_CONTROLLER_ID      = "EFLCreateChallengeViewControllerID"
 public let ADD_PLAYER_VIEW_CONTROLLER_ID            = "EFLAddPlayerViewControllerID"
 public let POOL_ACTION_VIEW_CONTROLLER_ID           = "EFLPoolActionViewControllerID"
 public let POOL_DETAILS_VIEW_CONTROLLER_ID          = "EFLPoolDetailsViewControllerID"

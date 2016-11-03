@@ -28,6 +28,7 @@
         <attribute name="tiny_display_name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Friends" representedClassName="Friends" syncable="YES">
+        <attribute name="facebookId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
@@ -73,10 +74,10 @@
         <element name="CompetitionMatchdays" positionX="115" positionY="-228" width="128" height="120"/>
         <element name="CompetitionMatches" positionX="124" positionY="-42" width="128" height="150"/>
         <element name="Competitions" positionX="-54" positionY="-252" width="128" height="180"/>
-        <element name="Friends" positionX="-182" positionY="-36" width="128" height="135"/>
-        <element name="PoolRoomCardMatches" positionX="-18" positionY="117" width="128" height="43"/>
-        <element name="PoolRoomCardPlayerPicks" positionX="-27" positionY="198" width="128" height="43"/>
-        <element name="PoolRoomCardPlayers" positionX="133" positionY="189" width="128" height="43"/>
+        <element name="Friends" positionX="-182" positionY="-36" width="128" height="150"/>
+        <element name="PoolRoomCardMatches" positionX="-18" positionY="117" width="128" height="45"/>
+        <element name="PoolRoomCardPlayerPicks" positionX="-27" positionY="198" width="128" height="45"/>
+        <element name="PoolRoomCardPlayers" positionX="133" positionY="189" width="128" height="45"/>
         <element name="PoolRoomCards" positionX="-270" positionY="-234" width="128" height="150"/>
         <element name="PoolRoomPlayers" positionX="-477" positionY="-36" width="128" height="195"/>
         <element name="PoolRooms" positionX="-479" positionY="-234" width="128" height="165"/>

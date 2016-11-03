@@ -10,5 +10,5 @@ import UIKit
 
 class EFLFriendsGetRequestModel: EFLBaseAPIRequest {
 
-    var last_updated_on: String?
+    var modified_since: String?
 }

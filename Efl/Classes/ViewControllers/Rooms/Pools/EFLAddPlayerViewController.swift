@@ -78,7 +78,6 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let navController: EFLBaseNavigationController = self.navigationController as! EFLBaseNavigationController
-        navController.removeNavigationBarSperarationView()
         segmentedControl.addShadowLayer()
     }
     
@@ -90,8 +89,6 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
         if statusBar.respondsToSelector(Selector("setBackgroundColor:")) {
             statusBar.backgroundColor = UIColor.clearColor()
         }
-
-        navController.setShadow()
     }
 
     
@@ -412,7 +409,7 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
             }
             else {
                 let response = (data as! EFLPlayerResponse)
-                if let authorizationToken = response.data!.jwt_token {
+                if let authorizationToken = response.data!.player!.jwt_token {
                     EFLUtility.saveValuesToUserDefaults(authorizationToken, key: AUTHORIZATION_TOKEN_KEY)
                 }
                 EFLUtility.saveValuesToUserDefaults(accessToken, key: FB_ACCESS_TOKEN_KEY)
@@ -427,7 +424,7 @@ class EFLAddPlayerViewController: EFLBaseViewController, EFLSegmentedControlDele
         self.spinner = EFLActivityIndicator (supView: self.view, size: CGSizeMake(self.view.frame.width, self.view.frame.height), centerPoint: self.view.center)
         
         let requestModel = EFLFriendsUpdateRequestModel()
-        requestModel.facebook_ids = recipients
+        requestModel.facebook_ids = recipients.joinWithSeparator(",")
         
         EFLFriendsAPI().updateFriends(requestModel) { (error, data) -> Void in
 //            EFLActivityIndicator.sharedSpinner.hideIndicator()
